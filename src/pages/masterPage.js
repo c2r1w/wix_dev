@@ -1,10 +1,21 @@
-// API Reference: https://www.wix.com/velo/reference/api-overview/introduction
-// “Hello, World!” Example: https://learn-code.wix.com/en/article/hello-world
+import wixLocationFrontend from 'wix-location-frontend';
 
 $w.onReady(function () {
-    // Write your JavaScript here
+    const rootx = $w('#rootx');
+    if (!rootx) return;
 
-    // To select an element by ID use: $w('#elementID')
+    // Determine the current page slug from the URL path
+    const path = wixLocationFrontend.path;
+    const slug = (path && path.length > 0) ? path[0] : 'home';
 
-    // Click 'Preview' to run your code
+    // Set the page attribute on the custom element so it renders the correct page
+    rootx.setAttribute('page', slug);
+
+    // Listen for internal navigation events from the custom element
+    rootx.on('rootx-navigate', (event) => {
+        const detail = event.detail;
+        if (detail && detail.href) {
+            wixLocationFrontend.to(detail.href);
+        }
+    });
 });
