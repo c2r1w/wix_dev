@@ -3,7 +3,7 @@
 // Complete rewrite with Web Awesome components
 // Design inspired by: aka1908.com, ncnw.org, sgrho1922.org
 // ============================================================================
-
+// made by Raju Haldar - rajuhaldarx@gmial.com
 // ─── IMAGE URLS ─────────────────────────────────────────────────────────────
 const IMG = {
   logo: 'https://static.wixstatic.com/media/fd8f92_34328d41c68541d6b564f5cd1d865153~mv2.png/v1/fill/w_200,h_233,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Las%20Amigas%20Logo.png',
