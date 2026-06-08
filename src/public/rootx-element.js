@@ -2112,7 +2112,7 @@ function renderFooter() {
         </div>
         <div class="footer-bottom">
           Las Amigas Incorporated is a 501(c)(3) organization, and all monetary donations are tax deductible to the fullest extent allowed by tax laws.<br>
-          &copy;2021 Las Amigas, Incorporated &nbsp;|&nbsp; Website by <a href="/simply-be-rooted">Simply Be Rooted</a>
+          &copy;2021 Las Amigas, Incorporated &nbsp;|&nbsp; Website by <a href="https://linkedvisuals.com/">linkedvisuals</a>
         </div>
       </div>
     </footer>`;
