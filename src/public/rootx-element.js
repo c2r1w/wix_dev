@@ -4,6 +4,7 @@
 // Design inspired by: aka1908.com, ncnw.org, sgrho1922.org
 // ============================================================================
 // made by Raju Haldar - rajuhaldarx@gmial.com
+let _siteLoaderComplete = false;
 // ─── IMAGE URLS ─────────────────────────────────────────────────────────────
 const IMG = {
   logo: 'https://static.wixstatic.com/media/fd8f92_34328d41c68541d6b564f5cd1d865153~mv2.png/v1/fill/w_200,h_233,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Las%20Amigas%20Logo.png',
@@ -379,7 +380,7 @@ const STYLES = `
 }
 
 a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
-a:hover { color: #c9a84c; }
+a:hover { color: #b76e79; }
 img { max-width: 100%; height: auto; display: block; object-fit: cover; }
 ul, ol { list-style: none; }
 button { cursor: pointer; font-family: inherit; border: none; background: none; }
@@ -403,7 +404,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 0.8rem;
-  color: #c9a84c;
+  color: #b76e79;
   font-weight: 500;
   display: inline-block;
   margin-bottom: 12px;
@@ -438,7 +439,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   background: linear-gradient(135deg, #5e398f 0%, #3d2066 40%, #1a1a2e 100%);
 }
 .bg-gradient-gold {
-  background: linear-gradient(135deg, #c9a84c 0%, #a88a32 100%);
+  background: linear-gradient(135deg, #b76e79 0%, #9a5660 100%);
 }
 
 /* Grid system */
@@ -508,14 +509,14 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   color: #fff;
 }
 .btn-gold {
-  background: linear-gradient(135deg, #c9a84c, #a88a32);
+  background: linear-gradient(135deg, #b76e79, #9a5660);
   color: #1a1a2e;
   border: none;
-  box-shadow: 0 4px 15px rgba(201,168,76,0.3);
+  box-shadow: 0 4px 15px rgba(183,110,121,0.3);
 }
 .btn-gold:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(201,168,76,0.45);
+  box-shadow: 0 8px 30px rgba(183,110,121,0.45);
   color: #1a1a2e;
 }
 .btn-outline {
@@ -579,7 +580,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   color: rgba(255,255,255,0.7);
   transition: color 0.3s;
 }
-.header-top a:hover { color: #c9a84c; }
+.header-top a:hover { color: #b76e79; }
 .header-top-social {
   display: flex;
   gap: 16px;
@@ -626,7 +627,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   font-size: 0.65rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #c9a84c;
+  color: #b76e79;
   font-weight: 400;
 }
 
@@ -653,9 +654,9 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   transition: color 0.3s;
   white-space: nowrap;
 }
-.nav-item > a:hover { color: #c9a84c; }
+.nav-item > a:hover { color: #b76e79; }
 .nav-item > a svg { width: 12px; height: 12px; opacity: 0.6; }
-.nav-item.active > a { color: #c9a84c; }
+.nav-item.active > a { color: #b76e79; }
 
 /* Dropdown */
 .dropdown {
@@ -690,8 +691,8 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   text-transform: none;
 }
 .dropdown a:hover {
-  color: #c9a84c;
-  background: rgba(201,168,76,0.08);
+  color: #b76e79;
+  background: rgba(183,110,121,0.08);
   padding-left: 28px;
 }
 
@@ -815,7 +816,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   text-transform: uppercase;
   letter-spacing: 6px;
   font-size: 0.8rem;
-  color: #c9a84c;
+  color: #b76e79;
   font-weight: 400;
   margin-bottom: 24px;
   display: block;
@@ -890,7 +891,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
-.breadcrumbs a { color: #c9a84c; }
+.breadcrumbs a { color: #b76e79; }
 .breadcrumbs span { color: rgba(255,255,255,0.5); }
 
 /* ── Stats Bar ──────────────────────────────────────── */
@@ -921,7 +922,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
-  color: #c9a84c;
+  color: #b76e79;
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -1010,7 +1011,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #5e398f, #c9a84c);
+  background: linear-gradient(90deg, #5e398f, #b76e79);
   transform: scaleX(0);
   transition: transform 0.4s;
 }
@@ -1055,7 +1056,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   display: block;
 }
 .icon-card:hover .card-icon-img {
-  border-color: #c9a84c;
+  border-color: #b76e79;
   transform: scale(1.05);
 }
 .icon-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
@@ -1087,7 +1088,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   position: absolute;
   bottom: -20px; right: -20px;
   width: 100px; height: 100px;
-  border: 3px solid #c9a84c;
+  border: 3px solid #b76e79;
   border-radius: 12px;
   z-index: -1;
 }
@@ -1113,7 +1114,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   top: 20px; left: 40px;
   font-size: 20rem;
   font-family: 'Playfair Display', serif;
-  color: rgba(201,168,76,0.06);
+  color: rgba(183,110,121,0.06);
   line-height: 1;
 }
 .quote-content {
@@ -1133,7 +1134,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 }
 .quote-author {
   font-family: 'Oswald', sans-serif;
-  color: #c9a84c;
+  color: #b76e79;
   font-size: 0.9rem;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1149,7 +1150,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   background: #fff;
   padding: 32px;
   border-radius: 12px;
-  border-left: 4px solid #c9a84c;
+  border-left: 4px solid #b76e79;
   box-shadow: 0 4px 20px rgba(0,0,0,0.04);
   transition: all 0.3s;
 }
@@ -1181,7 +1182,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #5e398f, #c9a84c);
+  background: linear-gradient(135deg, #5e398f, #b76e79);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1198,7 +1199,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   object-fit: cover;
   margin: 0 auto 16px;
   display: block;
-  border: 3px solid #c9a84c;
+  border: 3px solid #b76e79;
   box-shadow: 0 4px 16px rgba(94,57,143,0.15);
 }
 .leader-card h4 { font-size: 1rem; margin-bottom: 4px; }
@@ -1207,7 +1208,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   font-size: 0.75rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #c9a84c;
+  color: #b76e79;
   margin-bottom: 8px;
 }
 .leader-card .leader-email {
@@ -1275,7 +1276,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 
 /* ── Marquee Strip (inspired by NCNW) ──────────────── */
 .marquee-strip {
-  background: #c9a84c;
+  background: #b76e79;
   padding: 14px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -1322,7 +1323,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   position: absolute;
   top: -15px; left: -15px;
   width: 100%; height: 100%;
-  border: 2px solid #c9a84c;
+  border: 2px solid #b76e79;
   border-radius: 16px;
   z-index: -1;
 }
@@ -1330,7 +1331,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .president-info h2 { margin-bottom: 8px; }
 .president-info .president-title {
   font-family: 'Oswald', sans-serif;
-  color: #c9a84c;
+  color: #b76e79;
   font-size: 0.9rem;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1393,7 +1394,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   transform: translateX(-50%);
   width: 2px;
   height: 100%;
-  background: linear-gradient(to bottom, #c9a84c, #5e398f);
+  background: linear-gradient(to bottom, #b76e79, #5e398f);
 }
 .timeline-item {
   display: flex;
@@ -1419,7 +1420,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #c9a84c;
+  background: #b76e79;
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   z-index: 1;
@@ -1542,7 +1543,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .signup-form input::placeholder { color: rgba(255,255,255,0.4); }
 .signup-form input:focus {
   outline: none;
-  border-color: #c9a84c;
+  border-color: #b76e79;
   background: rgba(255,255,255,0.12);
 }
 @media (max-width: 768px) {
@@ -1585,8 +1586,8 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   transition: all 0.3s;
 }
 .footer-social a:hover {
-  background: #c9a84c;
-  border-color: #c9a84c;
+  background: #b76e79;
+  border-color: #b76e79;
   color: #1a1a2e;
 }
 .footer-social svg { width: 16px; height: 16px; }
@@ -1595,7 +1596,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   font-size: 0.85rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #c9a84c;
+  color: #b76e79;
   margin-bottom: 24px;
   font-weight: 500;
 }
@@ -1607,7 +1608,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   transition: all 0.3s;
 }
 .footer-col a:hover {
-  color: #c9a84c;
+  color: #b76e79;
   padding-left: 4px;
 }
 .footer-bottom {
@@ -1616,7 +1617,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   font-size: 0.8rem;
   color: rgba(255,255,255,0.35);
 }
-.footer-bottom a { color: #c9a84c; }
+.footer-bottom a { color: #b76e79; }
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
 }
@@ -1680,14 +1681,14 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .section-divider {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #5e398f, #c9a84c);
+  background: linear-gradient(90deg, #5e398f, #b76e79);
   margin: 0 auto 24px;
   border-radius: 2px;
 }
 .gold-line {
   width: 40px;
   height: 2px;
-  background: #c9a84c;
+  background: #b76e79;
   margin-bottom: 16px;
 }
 .gold-line-center { margin-left: auto; margin-right: auto; }
@@ -1720,7 +1721,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   font-size: 0.8rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #c9a84c;
+  color: #b76e79;
   margin-bottom: 12px;
 }
 .memorial-card p { font-size: 0.9rem; color: #777; margin: 0; }
@@ -1758,7 +1759,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #c9a84c;
+  background: #b76e79;
 }
 
 /* ── Responsive hide/show ───────────────────────────── */
@@ -1773,6 +1774,227 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 @keyframes shimmer {
   0% { background-position: -200px 0; }
   100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* ── Welcome Modal ─────────────────────────────────── */
+/* ── Welcome Modal ─────────────────────────────────── */
+.welcome-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,8,20,0.92);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 0.7s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.welcome-modal.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.welcome-modal-inner {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 880px;
+  width: 100%;
+  max-height: 88vh;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(183,110,121,0.18);
+}
+.wm-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d1f3d 100%);
+  color: #fff;
+  padding: 22px 36px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  border-bottom: 3px solid #b76e79;
+  flex-shrink: 0;
+}
+.wm-columns {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.wm-image {
+  flex: 0 0 340px;
+  overflow: hidden;
+  position: relative;
+}
+.wm-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.wm-text-wrap {
+  flex: 1;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  position: relative;
+  padding: 28px 32px 0 32px;
+}
+.wm-text-wrap::-webkit-scrollbar { display: none; }
+.wm-text-wrap::after {
+  content: '';
+  position: sticky;
+  bottom: 0;
+  display: block;
+  height: 56px;
+  background: linear-gradient(transparent, #fff);
+  pointer-events: none;
+  margin-top: -56px;
+}
+.wm-text-inner p {
+  font-size: 0.875rem;
+  line-height: 1.9;
+  color: #444;
+  margin: 0 0 18px 0;
+}
+.wm-text-inner p em {
+  color: #b76e79;
+  font-style: italic;
+  font-weight: 600;
+}
+.wm-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #f9f5f6;
+  border-top: 1px solid rgba(183,110,121,0.2);
+  flex-shrink: 0;
+}
+.wm-footer audio {
+  flex: 1;
+  height: 36px;
+  border-radius: 8px;
+  min-width: 0;
+}
+.wm-footer .wm-enter-btn {
+  flex-shrink: 0;
+  background: #b76e79;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 32px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.15s;
+}
+.wm-footer .wm-enter-btn:hover {
+  background: #9a5660;
+  transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .wm-image { display: none; }
+  .wm-header { padding: 18px 20px; }
+  .wm-text-wrap { padding: 20px 20px 0 20px; }
+  .wm-footer { flex-wrap: wrap; gap: 12px; }
+  .wm-footer audio { min-width: 100%; order: 1; }
+  .wm-footer .wm-enter-btn { order: 2; width: 100%; }
+}
+
+/* ── Welcome Overlay ────────────────────────────────── */
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+}
+.welcome-overlay.active { display: flex; }
+.wov-text1, .wov-text2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.wov-text1 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  color: #fff;
+  transform: translateY(20px);
+  font-weight: 700;
+  max-width: 800px;
+}
+.wov-text1.show { opacity: 1; transform: translateY(0); }
+.wov-text1.shift { transform: translateY(-50px); }
+.wov-text2 {
+  font-size: clamp(4rem, 8vw, 7.6rem);
+  color: #b76e79;
+  font-style: italic;
+  transform: translateY(20px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+.wov-text2.show { opacity: 1; transform: translateY(0); }
+/* ── Site Loader ─────────────────────────────────── */
+.site-loader {
+  position: fixed; inset: 0;
+  background: #0e0c1e;
+  z-index: 20000;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.8s ease;
+}
+.site-loader.sl-done { opacity: 0; pointer-events: none; }
+.sl-inner { text-align: center; padding: 24px; }
+.sl-logo { width: 72px; height: 72px; margin: 0 auto 24px; }
+.sl-logo img { width: 100%; height: 100%; object-fit: contain; }
+.sl-brand {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.sl-tagline {
+  font-family: 'Lato', sans-serif;
+  color: #b76e79;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 44px;
+}
+.sl-bar-wrap {
+  width: 260px;
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.sl-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #b76e79 0%, #f0b8c2 100%);
+  border-radius: 3px;
+  transition: width 0.25s ease;
+}
+.sl-pct {
+  color: rgba(255,255,255,0.35);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  margin-top: 12px;
 }
 `;
 
@@ -1880,8 +2102,8 @@ function renderFooter() {
           <div class="footer-col">
             <h4>Contact</h4>
             <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;line-height:1.7;">
-              P O BOX 1957<br>
-              Greensboro, NC 27402
+              PO Box 511, Indian Trail,<br>
+              NC 28078
             </p>
             <a href="mailto:info@lasamigasincorporated.org">info@lasamigasincorporated.org</a>
             <a href="/contact-us" data-nav>Contact Form</a>
@@ -2133,7 +2355,7 @@ function renderHomePage() {
     <!-- Donation Amounts -->
     <section class="section-sm bg-gradient text-white">
       <div class="container text-center">
-        <div class="label" style="color:#c9a84c;margin-bottom:16px">Support Our Mission</div>
+        <div class="label" style="color:#b76e79;margin-bottom:16px">Support Our Mission</div>
         <h2 style="color:#fff;margin-bottom:32px">Make a Donation</h2>
         <div class="grid grid-3 fade-in" style="max-width:700px;margin:0 auto;gap:16px">
           <a href="/donate" data-nav class="btn btn-gold btn-sm" style="justify-content:center">$25</a>
@@ -2190,7 +2412,7 @@ function renderHomePage() {
     <section class="cta-section">
       <div class="cta-bg" style="background-image:url('${IMG.harambe}')"></div>
       <div class="cta-content container">
-        <div class="label" style="color:#c9a84c">Join the Movement</div>
+        <div class="label" style="color:#b76e79">Join the Movement</div>
         <h2 style="color:#fff">Sign Up to Learn More About Las Amigas</h2>
         <p style="color:rgba(255,255,255,0.8)">Stay connected with our mission and discover how you can make a difference in underserved communities.</p>
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
@@ -2205,11 +2427,11 @@ function renderHomePage() {
       <div class="container text-center">
         <div class="label" style="margin-bottom:32px">Our Affiliate Partners</div>
         <div class="partner-grid fade-in">
-          <img src="${IMG.kidneyFoundation}" alt="Kidney Foundation" class="partner-logo" loading="lazy">
-          <img src="${IMG.lupus}" alt="Lupus Foundation" class="partner-logo" loading="lazy">
-          <img src="${IMG.habitat}" alt="Habitat for Humanity" class="partner-logo" loading="lazy">
-          <img src="${IMG.ncnw}" alt="NCNW" class="partner-logo" loading="lazy">
-          <img src="${IMG.boneMarrow}" alt="Bone Marrow Foundation" class="partner-logo" loading="lazy">
+          <a href="https://www.kidney.org" target="_blank" rel="noopener"><img src="${IMG.kidneyFoundation}" alt="Kidney Foundation" class="partner-logo" loading="lazy"></a>
+          <a href="https://www.lupus.org" target="_blank" rel="noopener"><img src="${IMG.lupus}" alt="Lupus Foundation" class="partner-logo" loading="lazy"></a>
+          <a href="https://www.habitat.org" target="_blank" rel="noopener"><img src="${IMG.habitat}" alt="Habitat for Humanity" class="partner-logo" loading="lazy"></a>
+          <a href="https://ncnw.org" target="_blank" rel="noopener"><img src="${IMG.ncnw}" alt="NCNW" class="partner-logo" loading="lazy"></a>
+          <a href="https://bonemarrow.org" target="_blank" rel="noopener"><img src="${IMG.boneMarrow}" alt="Bone Marrow Foundation" class="partner-logo" loading="lazy"></a>
         </div>
       </div>
     </section>`;
@@ -2321,7 +2543,7 @@ function renderAboutPage() {
     <section class="quote-section">
       <div class="container">
         <div class="quote-content fade-in">
-          <div class="label" style="color:#c9a84c;margin-bottom:24px">Our Creed</div>
+          <div class="label" style="color:#b76e79;margin-bottom:24px">Our Creed</div>
           <blockquote>We believe in the principles and ideals of Las Amigas. We further believe that through the bonds of a united sisterhood, we can greatly enhance the society in which we live by availing ourselves to the opportunities to know and serve others; to remain loyal to our organization and the fulfillment of our individual responsibilities in making this world a better place in which to live. These things we believe.</blockquote>
         </div>
       </div>
@@ -2457,16 +2679,16 @@ function renderImpactPage() {
             <div class="stat-label">Chapters</div>
           </div>
           <div class="stat-item fade-in">
-            <div class="stat-number">500+</div>
+            <div class="stat-number">400</div>
             <div class="stat-label">Members</div>
           </div>
           <div class="stat-item fade-in">
-            <div class="stat-number">$500K+</div>
-            <div class="stat-label">Scholarships</div>
+            <div class="stat-number">$500K</div>
+            <div class="stat-label">Raised</div>
           </div>
           <div class="stat-item fade-in">
-            <div class="stat-number">1M+</div>
-            <div class="stat-label">Service Hours</div>
+            <div class="stat-number">$1M</div>
+            <div class="stat-label">In Scholarships</div>
           </div>
         </div>
       </div>
@@ -2637,11 +2859,11 @@ function renderAffiliatePartnersPage() {
           <div class="section-divider"></div>
         </div>
         <div class="partner-grid fade-in" style="gap:64px">
-          <img src="${IMG.kidneyFoundation}" alt="Kidney Foundation" class="partner-logo" loading="lazy" style="max-width:220px">
-          <img src="${IMG.lupus}" alt="Lupus Foundation" class="partner-logo" loading="lazy" style="max-width:220px">
-          <img src="${IMG.habitat}" alt="Habitat for Humanity" class="partner-logo" loading="lazy" style="max-width:220px">
-          <img src="${IMG.ncnw}" alt="NCNW" class="partner-logo" loading="lazy" style="max-width:220px">
-          <img src="${IMG.boneMarrow}" alt="Bone Marrow Foundation" class="partner-logo" loading="lazy" style="max-width:220px">
+          <a href="https://www.kidney.org" target="_blank" rel="noopener"><img src="${IMG.kidneyFoundation}" alt="Kidney Foundation" class="partner-logo" loading="lazy" style="max-width:220px"></a>
+          <a href="https://www.lupus.org" target="_blank" rel="noopener"><img src="${IMG.lupus}" alt="Lupus Foundation" class="partner-logo" loading="lazy" style="max-width:220px"></a>
+          <a href="https://www.habitat.org" target="_blank" rel="noopener"><img src="${IMG.habitat}" alt="Habitat for Humanity" class="partner-logo" loading="lazy" style="max-width:220px"></a>
+          <a href="https://ncnw.org" target="_blank" rel="noopener"><img src="${IMG.ncnw}" alt="NCNW" class="partner-logo" loading="lazy" style="max-width:220px"></a>
+          <a href="https://bonemarrow.org" target="_blank" rel="noopener"><img src="${IMG.boneMarrow}" alt="Bone Marrow Foundation" class="partner-logo" loading="lazy" style="max-width:220px"></a>
         </div>
       </div>
     </section>
@@ -3479,6 +3701,8 @@ class RootxApp extends HTMLElement {
 
     this.style.display = 'block';
 
+    const isHome = (page === 'home' || page === '');
+
     this.shadowRoot.innerHTML = `
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
       <style>${STYLES}</style>
@@ -3486,6 +3710,46 @@ class RootxApp extends HTMLElement {
       <main>${content}</main>
       ${renderFooter()}
       <div class="scroll-top" id="scrollTop">${ICONS.arrowUp}</div>
+      ${isHome ? `
+      <div id="welcomeModal" class="welcome-modal">
+        <div class="welcome-modal-inner">
+          <div class="wm-header">
+            Welcome Sisters, Partnerships, Affiliates, Sponsors and Supporters of Las Amigas Incorporated
+          </div>
+          <div class="wm-columns">
+            <div class="wm-image">
+              <img src="${IMG.president}" alt="Cynthia Haddock Shepard, 22nd National President">
+            </div>
+            <div class="wm-text-wrap" id="wmTextWrap">
+              <div class="wm-text-inner" id="wmTextInner">
+                <p>Las Amigas Incorporated is more than just an organization—we are a sisterhood whose legacy believes in giving back and serving all humankind coupled with an empowering sisterhood. Our Co-Founders Dora Ramsey Mason and Mary Quick Moore, who were amazing visionaries, knew the importance and value of fostering lifelong friendships and creating a positive impact in our communities.</p>
+                <p>It is crucial that we concentrate on training, professional development, growing and sustaining membership, and emphasizing the value of our history. This also allows us as an organization to continue to build upon our five programmatic thrusts: Economic Development, Education, Family, Health, and Political Awareness. Together, we strive to build a brighter future while cherishing the bonds that unite us as one.</p>
+                <p>Whether you are a current member or someone exploring the possibility of joining (rejoining), we invite you to be part of this incredible journey.</p>
+                <p>Let us continue to inspire, lead, and uplift one another. Thank you for visiting our website, and we look forward to connecting with you!</p>
+                <p><em>In Highest Regards,<br>Cynthia Haddock Shepard<br>22nd National President<br>Las Amigas Incorporated</em></p>
+              </div>
+            </div>
+          </div>
+          <div class="wm-footer">
+            <audio controls src="https://samplelib.com/mp3/sample-10s.mp3"></audio>
+            <button id="welcomeEnterBtn" class="wm-enter-btn">Enter</button>
+          </div>
+        </div>
+      </div>
+      <div id="welcomeOverlay" class="welcome-overlay">
+        <div id="wovText1" class="wov-text1">Welcome to Las Amigas Incorporated</div>
+        <div id="wovText2" class="wov-text2">The Power of WE</div>
+      </div>
+      ` : ''}
+      <div id="siteLoader" class="site-loader">
+        <div class="sl-inner">
+          <div class="sl-logo"><img src="${IMG.logo}" alt="Las Amigas Incorporated"></div>
+          <div class="sl-brand">Las Amigas<br>Incorporated</div>
+          <div class="sl-tagline">The Power of WE</div>
+          <div class="sl-bar-wrap"><div class="sl-bar" id="slBar"></div></div>
+          <div class="sl-pct" id="slPct">0%</div>
+        </div>
+      </div>
     `;
 
     this.setupInteractions();
@@ -3567,6 +3831,104 @@ class RootxApp extends HTMLElement {
         }
       });
     });
+
+    // Welcome Modal
+    const welcomeModal = shadow.getElementById('welcomeModal');
+    if (welcomeModal) {
+      // Auto-scroll the text panel
+      const wmTextWrap = shadow.getElementById('wmTextWrap');
+      if (wmTextWrap) {
+        let scrollRaf;
+        let paused = false;
+        const tick = () => {
+          if (!paused) {
+            if (wmTextWrap.scrollTop + wmTextWrap.clientHeight >= wmTextWrap.scrollHeight - 4) {
+              wmTextWrap.scrollTop = 0;
+            } else {
+              wmTextWrap.scrollTop += 0.6;
+            }
+          }
+          scrollRaf = requestAnimationFrame(tick);
+        };
+        const startDelay = setTimeout(() => { scrollRaf = requestAnimationFrame(tick); }, 2000);
+        wmTextWrap.addEventListener('mouseenter', () => { paused = true; });
+        wmTextWrap.addEventListener('mouseleave', () => { paused = false; });
+        wmTextWrap.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+        // Store so Enter button can cancel it
+        welcomeModal._cancelScroll = () => { clearTimeout(startDelay); cancelAnimationFrame(scrollRaf); };
+      }
+
+      const enterBtn = shadow.getElementById('welcomeEnterBtn');
+      const welcomeOverlay = shadow.getElementById('welcomeOverlay');
+      if (enterBtn && welcomeOverlay) {
+        enterBtn.addEventListener('click', () => {
+          if (welcomeModal._cancelScroll) welcomeModal._cancelScroll();
+          // Show black overlay first — hides website before modal fades
+          welcomeOverlay.classList.add('active');
+          welcomeModal.classList.add('fade-out');
+          setTimeout(() => {
+            welcomeModal.style.display = 'none';
+            const t1 = shadow.getElementById('wovText1');
+            const t2 = shadow.getElementById('wovText2');
+            setTimeout(() => {
+              t1.classList.add('show');
+              setTimeout(() => {
+                t2.classList.add('show');
+                t1.classList.add('shift');
+                setTimeout(() => {
+                  t1.style.transition = 'opacity 0.8s ease';
+                  t2.style.transition = 'opacity 0.8s ease';
+                  t1.style.opacity = '0';
+                  t2.style.opacity = '0';
+                  setTimeout(() => {
+                    welcomeOverlay.style.display = 'none';
+                  }, 900);
+                }, 2500);
+              }, 2500);
+            }, 300);
+          }, 700);
+        });
+      }
+    }
+
+    // Site Loader
+    const siteLoader = shadow.getElementById('siteLoader');
+    if (siteLoader) {
+      if (_siteLoaderComplete) {
+        siteLoader.style.display = 'none';
+      } else {
+        const slBar = shadow.getElementById('slBar');
+        const slPct = shadow.getElementById('slPct');
+        let progress = 0;
+        const bump = () => {
+          const step = progress < 60
+            ? Math.random() * 12 + 5
+            : progress < 85
+              ? Math.random() * 3 + 1
+              : Math.random() * 0.8 + 0.2;
+          progress = Math.min(progress + step, 95);
+          if (slBar) slBar.style.width = progress + '%';
+          if (slPct) slPct.textContent = Math.floor(progress) + '%';
+        };
+        const timer = setInterval(bump, 220);
+        const finish = () => {
+          clearInterval(timer);
+          if (slBar) slBar.style.width = '100%';
+          if (slPct) slPct.textContent = '100%';
+          setTimeout(() => {
+            _siteLoaderComplete = true;
+            siteLoader.classList.add('sl-done');
+            setTimeout(() => { siteLoader.style.display = 'none'; }, 900);
+          }, 400);
+        };
+        if (document.readyState === 'complete') {
+          setTimeout(finish, 700);
+        } else {
+          window.addEventListener('load', finish, { once: true });
+          setTimeout(finish, 7000);
+        }
+      }
+    }
 
     // Sticky Header
     const header = shadow.getElementById('siteHeader');
