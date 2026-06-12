@@ -330,11 +330,11 @@ const NAV_ITEMS = [
       { text: 'About Us', slug: 'about-us' },
       { text: 'Our Founders', slug: 'our-founders' },
       { text: 'Timeline', slug: 'timeline' },
+      { text: 'Affiliate Partners', slug: 'charitable-partners' },
     ],
   },
   { text: 'Our Impact', slug: 'our-impact' },
   { text: 'Get Involved', slug: 'get-involved' },
-  { text: 'Affiliate Partners', slug: 'charitable-partners' },
   {
     text: 'Programs',
     children: [
@@ -3550,39 +3550,39 @@ function renderEventsPage() {
     <section class="section bg-white">
       <div class="container">
         <div class="grid grid-3 fade-in">
-          <div class="card">
+          <a href="https://photos.app.goo.gl/WSoGeF8Mw7sYhnzBA" target="_blank" rel="noopener" class="card" style="text-decoration:none;color:inherit;cursor:pointer;">
             <div class="card-img card-img-contain">
-              <img src="${IMG.conclaveFlyer}" alt="Conclave 2025" loading="lazy">
+              <img src="${IMG.conclave2019_1}" alt="Conclave 2025" loading="lazy">
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
-              <div class="label">Upcoming</div>
+              <div class="label">Fresh Memories</div>
               <h3>Conclave 2025</h3>
-              <p>Join us at the JW Marriott for our national conclave.</p>
+              <p>The ink is barely dry — explore the moments, laughter, and legacy from our latest national gathering.</p>
             </div>
-          </div>
-          <div class="card">
+          </a>
+          <a href="https://photos.app.goo.gl/J5ViZtW4r8Bxqzhm8" target="_blank" rel="noopener" class="card" style="text-decoration:none;color:inherit;cursor:pointer;">
             <div class="card-img card-img-contain">
-              <img src="${IMG.happyBirthday}" alt="Conclave 2023" loading="lazy">
+              <img src="${IMG.conclave2024_1}" alt="Conclave 2024" loading="lazy">
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
-              <div class="label">Celebrations</div>
-              <h3>Conclave 2023</h3>
-              <p>Celebrating our members and their milestones.</p>
+              <div class="label">A Year of Distinction</div>
+              <h3>Conclave 2024</h3>
+              <p>A gathering marked by excellence, recognition, and the enduring strength of our sisterhood. View the official photo collection.</p>
             </div>
-          </div>
-          <div class="card">
+          </a>
+          <a href="https://photos.app.goo.gl/KEw7SryPFChFomoR7" target="_blank" rel="noopener" class="card" style="text-decoration:none;color:inherit;cursor:pointer;">
             <div class="card-img">
-              <img src="${IMG.conclave2023_1}" alt="Past Events" loading="lazy">
+              <img src="${IMG.conclave2023_1}" alt="Conclave 2023" loading="lazy">
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
-              <div class="label">History</div>
-              <h3>Past Conclaves</h3>
-              <p>Relive memorable moments from our previous national gatherings.</p>
+              <div class="label">A Historic Gathering</div>
+              <h3>Conclave 2023</h3>
+              <p>Revisit the milestones and cherished memories of a landmark gathering in our organization's storied history.</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -4285,62 +4285,67 @@ class RootxApp extends HTMLElement {
       });
     });
 
-    // Welcome Modal
+    // Welcome Modal — show once per browser session
     const welcomeModal = shadow.getElementById('welcomeModal');
     if (welcomeModal) {
-      // Auto-scroll the text panel
-      const wmTextWrap = shadow.getElementById('wmTextWrap');
-      if (wmTextWrap) {
-        let scrollRaf;
-        let paused = false;
-        const tick = () => {
-          if (!paused) {
-            if (wmTextWrap.scrollTop + wmTextWrap.clientHeight >= wmTextWrap.scrollHeight - 4) {
-              wmTextWrap.scrollTop = 0;
-            } else {
-              wmTextWrap.scrollTop += 0.6;
+      if (sessionStorage.getItem('wmSeen')) {
+        welcomeModal.style.display = 'none';
+        const welcomeOverlay = shadow.getElementById('welcomeOverlay');
+        if (welcomeOverlay) welcomeOverlay.style.display = 'none';
+      } else {
+        // Auto-scroll the text panel
+        const wmTextWrap = shadow.getElementById('wmTextWrap');
+        if (wmTextWrap) {
+          let scrollRaf;
+          let paused = false;
+          const tick = () => {
+            if (!paused) {
+              if (wmTextWrap.scrollTop + wmTextWrap.clientHeight >= wmTextWrap.scrollHeight - 4) {
+                wmTextWrap.scrollTop = 0;
+              } else {
+                wmTextWrap.scrollTop += 0.6;
+              }
             }
-          }
-          scrollRaf = requestAnimationFrame(tick);
-        };
-        const startDelay = setTimeout(() => { scrollRaf = requestAnimationFrame(tick); }, 2000);
-        wmTextWrap.addEventListener('mouseenter', () => { paused = true; });
-        wmTextWrap.addEventListener('mouseleave', () => { paused = false; });
-        wmTextWrap.addEventListener('touchstart', () => { paused = true; }, { passive: true });
-        // Store so Enter button can cancel it
-        welcomeModal._cancelScroll = () => { clearTimeout(startDelay); cancelAnimationFrame(scrollRaf); };
-      }
+            scrollRaf = requestAnimationFrame(tick);
+          };
+          const startDelay = setTimeout(() => { scrollRaf = requestAnimationFrame(tick); }, 2000);
+          wmTextWrap.addEventListener('mouseenter', () => { paused = true; });
+          wmTextWrap.addEventListener('mouseleave', () => { paused = false; });
+          wmTextWrap.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+          welcomeModal._cancelScroll = () => { clearTimeout(startDelay); cancelAnimationFrame(scrollRaf); };
+        }
 
-      const enterBtn = shadow.getElementById('welcomeEnterBtn');
-      const welcomeOverlay = shadow.getElementById('welcomeOverlay');
-      if (enterBtn && welcomeOverlay) {
-        enterBtn.addEventListener('click', () => {
-          if (welcomeModal._cancelScroll) welcomeModal._cancelScroll();
-          // Show black overlay first — hides website before modal fades
-          welcomeOverlay.classList.add('active');
-          welcomeModal.classList.add('fade-out');
-          setTimeout(() => {
-            welcomeModal.style.display = 'none';
-            const t1 = shadow.getElementById('wovText1');
-            const t2 = shadow.getElementById('wovText2');
+        const enterBtn = shadow.getElementById('welcomeEnterBtn');
+        const welcomeOverlay = shadow.getElementById('welcomeOverlay');
+        if (enterBtn && welcomeOverlay) {
+          enterBtn.addEventListener('click', () => {
+            sessionStorage.setItem('wmSeen', '1');
+            if (welcomeModal._cancelScroll) welcomeModal._cancelScroll();
+            welcomeOverlay.classList.add('active');
+            welcomeModal.classList.add('fade-out');
             setTimeout(() => {
-              t1.classList.add('show');
+              welcomeModal.style.display = 'none';
+              const t1 = shadow.getElementById('wovText1');
+              const t2 = shadow.getElementById('wovText2');
               setTimeout(() => {
-                t2.classList.add('show');
-                t1.classList.add('shift');
+                t1.classList.add('show');
                 setTimeout(() => {
-                  t1.style.transition = 'opacity 0.8s ease';
-                  t2.style.transition = 'opacity 0.8s ease';
-                  t1.style.opacity = '0';
-                  t2.style.opacity = '0';
+                  t2.classList.add('show');
+                  t1.classList.add('shift');
                   setTimeout(() => {
-                    welcomeOverlay.style.display = 'none';
-                  }, 900);
+                    t1.style.transition = 'opacity 0.8s ease';
+                    t2.style.transition = 'opacity 0.8s ease';
+                    t1.style.opacity = '0';
+                    t2.style.opacity = '0';
+                    setTimeout(() => {
+                      welcomeOverlay.style.display = 'none';
+                    }, 900);
+                  }, 2500);
                 }, 2500);
-              }, 2500);
-            }, 300);
-          }, 700);
-        });
+              }, 300);
+            }, 700);
+          });
+        }
       }
     }
 
