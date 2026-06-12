@@ -6,6 +6,11 @@
 // made by Raju Haldar - rajuhaldarx@gmial.com
 let _siteLoaderComplete = false;
 // ─── IMAGE URLS ─────────────────────────────────────────────────────────────
+
+
+const NEB_data = {"Regional Directors":[{"name":"Ronita Hemingsway","img":"1NKqFRcZIicD6Q5ATwv-Ynr9rrXCtvAIA","info":"Central Region","sub":""},{"name":"Katrina Harrison","img":"1GQLa2KA5sI_df8nRoTJC1_cZumUFWOEr","info":"MidAtlantic Region","sub":""},{"name":"Velma Greene","img":"1d3BQwUjI5FLmJNx_sjtSSeAJ7iOBbPq0","info":"Northeast Region","sub":""},{"name":"Wanda Pugh Trice","img":"1EBdje7Ov4FzjyraWObmIxfIywDiu2Y-Q","info":"Southeast Region","sub":""},{"name":"Mamie Watkins","img":"1Gg6cwmMgT2jKz_BaA9r8--JsXKN13sX4","info":"Southwest Region","sub":""}],"Presidential Council":[{"name":"Rosemary McNeil","img":"14D2i10QaQ7i4oZi2Df_waP-M1Dmc9eke","info":"15th National President","sub":"Presidential Advisor"},{"name":"Ethel Hart","img":"1nXScM-r1TwJN189dhJqS8d8g3NKTC-nd","info":"16th National President","sub":""},{"name":"Joann Williams","img":"1xBh5Pym_lAONOgTr6DRGdzgrRLhfMFEz","info":"17th National President","sub":""},{"name":"Frances Robinson","img":"1zTmFpHe21rAr53sQyWAXULCrSP2QF8yD","info":"18th National President","sub":""},{"name":"DeniAntionette Mazingo","img":"13h07XzduaaglHJ5g58HLs5WRkX9qP8T2","info":"19th National President","sub":""},{"name":"Roberta Epps","img":"1LA6yP0a9Y7-u-LydyPsTYnTJgmcg4nju","info":"20th National President","sub":""},{"name":"Agatha Grimes","img":"1PI8WxFg7tqywlvtayNKqcUe00g0dT5Nm","info":"21st National President","sub":"Immediate Past Presidentt"}],"National Officers":[{"name":"Cynthia Haddock Shepard","img":"1UY99f4E9-_goLDuh9scirgfTN38iDGgD","info":"National President","sub":""},{"name":"Evelyn Jemison-Coleman","img":"1DGnPII_7V3Vy_MS7s7EZiGvUyctYHB5y","info":"National Vice President","sub":""},{"name":"Nsombi Morrison","img":"1QIzqislhtiVVy7Bzpm4kxVXTbxRQ_ewe","info":"Recording Secretary","sub":""},{"name":"Traci Jones","img":"1vtH-FJHoM-KXRGo595zsNq1dmyfx6J-9","info":"Corresponding Secretary","sub":""},{"name":"Erica Barnhill","img":"1wBaQsaJA7BvBrBx6gOI3dXLEDsM5cghc","info":"Financial Secretary","sub":""},{"name":"Bernadette James","img":"1Byhx3xUiFJgcdPE1fGiNoLst21755F71","info":"National Treasurer","sub":""},{"name":"Angela Patterson Moore","img":"1LTl-hfL7_Mk_btPzmLZTlkXhpSC9QixU","info":"Conclave Headquarters Treasurer","sub":""},{"name":"Xavier McCutcheon","img":"1SpFoA1Ha0R2UOKSUvrPbFxwsPH1XNuJc","info":"Historian","sub":""},{"name":"Gwendolyn Roberts-Payne","img":"1B5bywY2vmjyRKmg3HfQweM8Q1Jfvd5IU","info":"Chaplain","sub":""},{"name":"Hattie Grier","img":"1YPFviS_bq3Oh1oRsUILuKxVG0MC55EV8","info":"Reporter","sub":""},{"name":"Betty Crawford","img":"1xcYoP1orCkG-vGB1ltd6Pyx7tk75eIwx","info":"Sergeant-At-Arms","sub":""},{"name":"Musheerah Ali","img":"1wBt_saf6vdQ8hdCmDW5PrXBRPk3gKvIK","info":"Parliamentarian","sub":""},{"name":"Angela McClanahan","img":"12RAxBwx9TfQn6u6Nlc6tYqUdsu7vcNj8","info":"Internal Examiner","sub":""},{"name":"Agatha Grimes","img":"196gNrqM0LThhR-na8xPTnvsPZgQ6zvt4","info":"Immediate Past National President","sub":""}],"Chapter Presidents":[{"name":"Betty Crawford","img":"1oo874K04fYoyLv_6E6Juqdq2NPg4Qux8","info":"Fayetteville Elite","sub":"Central Region"},{"name":"Brenda James","img":"1tBDjKDj9pNKXi3vHAgQLJh810bXtf1Vk","info":"Greensboro","sub":"Central Region"},{"name":"Felicia Andrews","img":"1bO04SiRGC3TZ2WdEnW_Gz1ObDvGat7fc","info":"High Point","sub":"Central Region"},{"name":"Verlean Randolph","img":"18oxYQ-v4IfSkj-Com4RCUCNtOH_JH7-I","info":"Chesterfield","sub":"Mid Atlantic Region"},{"name":"Angela Moore","img":"10WFU5GOK9vKs25vy-FGcEcnz9EX9sPtt","info":"Henrico","sub":"Mid Atlantic Region"},{"name":"Anna Hornsby","img":"1v4XxPnxORB2YGPvXzK4Xl993SXHR2SdK","info":"Newport News Hampton","sub":"Mid Atlantic Region"},{"name":"Anita English","img":"1X_p5PqFNWdY08y73IHn7MsjdDEUqsbEA","info":"Portsmouth","sub":"Mid Atlantic Region"},{"name":"Betty F. Stephens","img":"1XE0YRYLQq_WHPLEJt8aF6JXxpnjmphqf","info":"Richmond","sub":"Mid Atlantic Region"},{"name":"Bridgett Rider","img":"1UiQ6DhAIdmgVO9Z7zO1Y_zCvR_1l3ef9","info":"Suffolk","sub":"Mid Atlantic Region"},{"name":"Sharon Petty","img":"1F3LKNgLsu-QdO90cNvtu4pIezOLv7ngM","info":"Baltimore","sub":"Northeast Region"},{"name":"DeniAntionette Manzingo","img":"1G0tA2tc0mBK5WP9qV5MtODEwZFVP18EH","info":"Forestville","sub":"Northeast Region"},{"name":"Cathy Chambers","img":"1PH0QWeid0BtRo5uj2qefcXVCTzLjrmVx","info":"Seat Pleasant","sub":"Northeast Region"},{"name":"Nicole Gaskin-Laniyan","img":"1hWhKqm9ulhT42o9SwMa81ZALJvBSvKT3","info":"Southern Maryland","sub":"Northeast Region"},{"name":"Cheryl Roberts","img":"1uBUytljRwwgvXFt4VqlQFJyfQoHr8cZ4","info":"Tri State","sub":"Northeast Region"},{"name":"Carol T. Richardson","img":"1OHy6x1WwTRYAit3wRZn86ETeMkw_0et7","info":"Lumberton-Roberson","sub":"Southeast Region"},{"name":"Traci Jones","img":"1sSyE8TguZRMhQWbIyIZ_LfPB4GScDsgO","info":"Raeford","sub":"Southeast Region"},{"name":"Hattie Grier","img":"1_QKdbzqMmJzBhHpescJUy-K7Xk6BW-zj","info":"Raleigh-Durham","sub":"Southeast Region"},{"name":"Musheerah Ali","img":"1DBmfYfe1qWj4_A0a7dE45UKXdROe89Pk","info":"Red Springs","sub":"Southeast Region"},{"name":"Tameka Davis","img":"1tW44AuKN5ypxwk-GkWfSEXgZm8GtsIzk","info":"St Paul Bladen","sub":"Southeast Region"},{"name":"Evelyn Brisbon","img":"19JPwyc2S4kZgto48PoSuhvaaSq-yTcqn","info":"Whiteville","sub":"Southeast Region"},{"name":"Leslie Watson","img":"1dZCGhMLOkmzuHsR-NzStyeBoAQXIqT2Q","info":"Wilmington","sub":"Southeast Region"},{"name":"Rose Walker","img":"1bxCE-7v0S0NoSFPCMZR9ICpgpDelnGg5","info":"Augusta","sub":"Southwest Region"},{"name":"Willyce Felder","img":"11QWXTTCGiI5vtzqJR7PWw3NBW18NDltV","info":"Charlotte Mecklenburg","sub":"Southwest Region"},{"name":"Gale Hunter","img":"157Np1TJn3OEx5UL-YuXyLEB7LegjCQJA","info":"Gastonia","sub":"Southwest Region"},{"name":"Sandra Anderson","img":"1XCtTr-AXWxyEzzeYNhipCqJTCf3wgik3","info":"Greater Atlanta","sub":"Southwest Region"},{"name":"Barbara Garrett","img":"1JvRjsrWdVeJVeizekaj8VU7pptuhSW6v","info":"Greenville","sub":"Southwest Region"},{"name":"Corine Williams","img":"1wZ-MAyX_jQ1jpj9FDBhydze1lt0l1qz4","info":"Marlboro Dillon","sub":"Southwest Region"},{"name":"Beatrice Spaulding","img":"1sdi1JPsUc4T4hvHIkQKJppYDLh5FXgie","info":"Mooresville","sub":"Southwest Region"},{"name":"Elizabeth Kersey","img":"1ulvmJB_yxabIT7foCfuJDd19fo-IPDsk","info":"Morven","sub":"Southwest Region"}],"Board of Trustees":[{"name":"Barbara Garrett","img":"1QHi7SGv8Ng5LnLEA7EOm6uNnwindvH1z","info":"","sub":""},{"name":"Ronita Hemmingway","img":"1zA8UT96qeipEMfrIFUkTYE0GHIGytFvn","info":"","sub":""},{"name":"E Patterson","img":"1cdrAr6SAiInp18tbRr9CHrCqrEkQnzXr","info":"","sub":""},{"name":"Felicia Andrews","img":"1OfuKeyPCSjouOiMEqWyeIcgGYR5hJOSm","info":"","sub":""}]}
+const Tx_D="1iHTTa80ifam8ugiwTSm-wu16bEZZGo0y";
+
 const IMG = {
   logo: 'https://static.wixstatic.com/media/fd8f92_34328d41c68541d6b564f5cd1d865153~mv2.png/v1/fill/w_200,h_233,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Las%20Amigas%20Logo.png',
   logoFooter: 'https://static.wixstatic.com/media/fd8f92_846af7446dc3460381fff4181e36c84e~mv2.png/v1/fill/w_160,h_190,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/revised%20las%20amigas%20logo%20wo%20trademark.png',
@@ -1996,6 +2001,359 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   letter-spacing: 0.08em;
   margin-top: 12px;
 }
+
+/* ══ NEB FLOATING PIE MENU ══════════════════════════════════════════════════ */
+
+/* ── NEB button — half-circle peeks from right edge ── */
+.neb-fab {
+  position: fixed;
+  bottom: 180px;
+  right: 0;
+  width: 56px;
+  height: 80px;
+  cursor: grab;
+  z-index: 9000;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.neb-fab:active { cursor: grabbing; }
+
+.neb-btn {
+  width: 100%;
+  height: 100%;
+  background: #5e398f;
+  border-radius: 56px 0 0 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -4px 4px 20px rgba(94,57,143,0.55), -2px 2px 8px rgba(0,0,0,0.3);
+  transition: box-shadow 0.25s, background 0.25s;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.neb-btn:hover {
+  background: #4c0863;
+  box-shadow: -6px 6px 30px rgba(94,57,143,0.75), -3px 3px 12px rgba(0,0,0,0.35);
+}
+.neb-btn.active {
+  background: #3d1f6b;
+}
+.neb-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  line-height: 1.2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+.neb-label span {
+  display: block;
+  line-height: 1.2;
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Pie menu overlay ── */
+.neb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 8998;
+  background: rgba(10,8,20,0);
+  pointer-events: none;
+  transition: background 0.35s ease;
+}
+.neb-overlay.open {
+  background: rgba(10,8,20,0.45);
+  pointer-events: all;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* ── Pie menu container ── */
+.neb-pie {
+  position: fixed;
+  z-index: 8999;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.neb-pie.open { pointer-events: all; }
+
+/* Each pie slice */
+.neb-slice {
+  position: absolute;
+  top: 0; left: 0;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity 0.3s cubic-bezier(0.34,1.56,0.64,1),
+              transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  transition-delay: var(--d);
+  pointer-events: none;
+}
+.neb-pie.open .neb-slice {
+  opacity: 1;
+  transform: scale(1) translate(var(--tx), var(--ty));
+  pointer-events: all;
+}
+
+.neb-slice-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #ffffff 0%, #f3ecfc 100%);
+  border-radius: 50%;
+  box-shadow: 0 6px 24px rgba(94,57,143,0.25), 0 2px 8px rgba(0,0,0,0.15);
+  border: 2.5px solid rgba(94,57,143,0.15);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  padding: 8px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.neb-slice-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5e398f, #b76e79);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.neb-slice-btn:hover { transform: scale(1.12); box-shadow: 0 10px 35px rgba(94,57,143,0.4); }
+.neb-slice-btn:hover::before { opacity: 1; }
+.neb-slice-btn:hover .neb-slice-icon { color: #fff; }
+.neb-slice-btn:hover .neb-slice-text { color: #fff; }
+
+.neb-slice-icon {
+  font-size: 1.4rem;
+  position: relative;
+  z-index: 1;
+  color: #5e398f;
+  transition: color 0.25s;
+  line-height: 1;
+}
+.neb-slice-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3d1f6b;
+  position: relative;
+  z-index: 1;
+  line-height: 1.2;
+  transition: color 0.25s;
+  max-width: 80px;
+  text-align: center;
+}
+
+/* ── NEB Category Page ── */
+.neb-page {
+  min-height: 100vh;
+  background: #f8f5fc;
+}
+.neb-page-banner {
+  position: relative;
+  padding: 140px 0 80px;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, #3d1f6b 50%, #5e398f 100%);
+}
+.neb-page-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M40 0L0 40L40 80L80 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.neb-page-banner-content { position: relative; z-index: 1; }
+.neb-page-banner .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.06);
+  transition: all 0.3s;
+}
+.neb-page-banner .back-btn:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.4);
+}
+.neb-page-banner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 12px; }
+.neb-page-banner .neb-category-badge {
+  display: inline-block;
+  background: rgba(183,110,121,0.25);
+  border: 1px solid rgba(183,110,121,0.5);
+  color: #e8a4b0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+.neb-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+/* ── NEB Person Cards ── */
+.neb-cards-section { padding: 60px 0 80px; }
+.neb-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+@media (max-width: 1024px) {
+  .neb-cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .neb-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+.neb-person-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(94,57,143,0.08);
+  transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  position: relative;
+  border: 1px solid rgba(94,57,143,0.06);
+}
+.neb-person-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(94,57,143,0.2);
+  border-color: rgba(94,57,143,0.15);
+}
+.neb-person-card-img {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ede4f7, #f8f5fc);
+}
+.neb-person-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+.neb-person-card:hover .neb-person-card-img img { transform: scale(1.06); }
+.neb-person-card-img .neb-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,26,46,0.55) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.neb-person-card:hover .neb-img-overlay { opacity: 1; }
+.neb-person-card-body {
+  padding: 18px 20px 20px;
+}
+.neb-person-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.neb-person-info {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #b76e79;
+  margin-bottom: 4px;
+}
+.neb-person-sub {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.4;
+}
+.neb-person-card .neb-card-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5e398f, #b76e79);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.neb-person-card:hover .neb-card-accent { transform: scaleX(1); }
+
+/* Group sub-header (for chapters grouped by region) */
+.neb-group-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 4px;
+}
+.neb-group-header h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #5e398f;
+  white-space: nowrap;
+}
+.neb-group-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(94,57,143,0.3), transparent);
+}
+
+/* No-image placeholder */
+.neb-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ede4f7, #c9aee8);
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #5e398f;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .neb-person-card-img { height: 200px; }
+  .neb-fab { bottom: 90px; }
+}
 `;
 
 
@@ -3205,12 +3563,12 @@ function renderEventsPage() {
           </div>
           <div class="card">
             <div class="card-img card-img-contain">
-              <img src="${IMG.happyBirthday}" alt="Member Birthdays" loading="lazy">
+              <img src="${IMG.happyBirthday}" alt="Conclave 2023" loading="lazy">
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
               <div class="label">Celebrations</div>
-              <h3>Member Birthdays</h3>
+              <h3>Conclave 2023</h3>
               <p>Celebrating our members and their milestones.</p>
             </div>
           </div>
@@ -3608,6 +3966,87 @@ function renderPhotoGalleryPage(regionSlug) {
 }
 
 
+// ─── NEB PAGES ──────────────────────────────────────────────────────────────
+
+const NEB_CATEGORIES = Object.keys(NEB_data);
+
+const NEB_CATEGORY_META = {
+  'Regional Directors':   { icon: '🌎', slug: 'neb-regional-directors',   title: 'Regional Directors' },
+  'Presidential Council': { icon: '👑', slug: 'neb-presidential-council', title: 'Presidential Council' },
+  'National Officers':    { icon: '🏛️', slug: 'neb-national-officers',    title: 'National Officers' },
+  'Chapter Presidents':   { icon: '🌸', slug: 'neb-chapter-presidents',   title: 'Chapter Presidents' },
+  'Board of Trustees':    { icon: '⚖️', slug: 'neb-board-of-trustees',    title: 'Board of Trustees' },
+};
+
+function gdThumb(id) {
+  return `https://drive.google.com/thumbnail?id=${id}&sz=w400`;
+}
+
+function renderNEBPersonCard(person) {
+  const initial = person.name ? person.name.charAt(0) : 'N';
+  const imgHTML = person.img
+    ? `<img src="${gdThumb(person.img)}" alt="${person.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      + `<div class="neb-img-placeholder" style="display:none">${initial}</div>`
+    : `<div class="neb-img-placeholder">${initial}</div>`;
+
+  return `
+    <div class="neb-person-card">
+      <div class="neb-card-accent"></div>
+      <div class="neb-person-card-img">
+        ${imgHTML}
+        <div class="neb-img-overlay"></div>
+      </div>
+      <div class="neb-person-card-body">
+        <div class="neb-person-name">${person.name}</div>
+        ${person.info ? `<div class="neb-person-info">${person.info}</div>` : ''}
+        ${person.sub ? `<div class="neb-person-sub">${person.sub}</div>` : ''}
+      </div>
+    </div>`;
+}
+
+function renderNEBCategoryPage(categoryKey) {
+  const meta = NEB_CATEGORY_META[categoryKey] || { icon: '★', title: categoryKey };
+  const members = NEB_data[categoryKey] || [];
+
+  let cardsHTML;
+  if (categoryKey === 'Chapter Presidents') {
+    const groups = {};
+    members.forEach(m => {
+      const region = m.sub || 'Other';
+      if (!groups[region]) groups[region] = [];
+      groups[region].push(m);
+    });
+
+    cardsHTML = Object.entries(groups).map(([region, people]) => `
+      <div class="neb-group-header"><h3>${region}</h3></div>
+      ${people.map(p => renderNEBPersonCard(p)).join('')}
+    `).join('');
+  } else {
+    cardsHTML = members.map(p => renderNEBPersonCard(p)).join('');
+  }
+
+  return `
+    <div class="neb-page">
+      <div class="neb-page-banner">
+        <div class="neb-page-banner-content">
+          <div class="container">
+            <button class="back-btn" data-neb-back>← Back</button>
+            <div class="neb-category-badge">${meta.icon} NEB Directory</div>
+            <h1>${meta.title}</h1>
+            <div class="neb-count-badge">${members.length} member${members.length !== 1 ? 's' : ''}</div>
+          </div>
+        </div>
+      </div>
+      <div class="neb-cards-section">
+        <div class="container">
+          <div class="neb-cards-grid">
+            ${cardsHTML}
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
 // ─── PAGE ROUTER ────────────────────────────────────────────────────────────
 function getPageContent(slug) {
   if (MEMBER_SLUGS.has(slug) || isProductPage(slug)) {
@@ -3645,6 +4084,9 @@ function getPageContent(slug) {
 
   if (renderers[slug]) return renderers[slug]();
   if (REGION_DATA[slug]) return renderRegionPage(REGION_DATA[slug]);
+
+  const nebEntry = Object.entries(NEB_CATEGORY_META).find(([, m]) => m.slug === slug);
+  if (nebEntry) return renderNEBCategoryPage(nebEntry[0]);
 
   const galleryMatch = slug.match(/^(.+)-photo-gallery$/);
   if (galleryMatch) return renderPhotoGalleryPage(galleryMatch[1]);
@@ -3741,6 +4183,17 @@ class RootxApp extends HTMLElement {
         <div id="wovText2" class="wov-text2">The Power of WE</div>
       </div>
       ` : ''}
+      <!-- NEB Floating Pie Menu -->
+      <div class="neb-overlay" id="nebOverlay"></div>
+      <div class="neb-pie" id="nebPie"></div>
+      <div class="neb-fab" id="nebFab">
+        <button class="neb-btn" id="nebBtn" aria-label="Open NEB Directory">
+          <span class="neb-label">
+            <span>N</span><span>E</span><span>B</span>
+          </span>
+        </button>
+      </div>
+
       <div id="siteLoader" class="site-loader">
         <div class="sl-inner">
           <div class="sl-logo"><img src="${IMG.logo}" alt="Las Amigas Incorporated"></div>
@@ -3928,6 +4381,149 @@ class RootxApp extends HTMLElement {
           setTimeout(finish, 7000);
         }
       }
+    }
+
+    // ── NEB Floating Pie Menu ──────────────────────────────────────────────────
+    const nebFab    = shadow.getElementById('nebFab');
+    const nebBtn    = shadow.getElementById('nebBtn');
+    const nebPie    = shadow.getElementById('nebPie');
+    const nebOverlay = shadow.getElementById('nebOverlay');
+
+    if (nebFab && nebBtn && nebPie && nebOverlay) {
+      const categories = Object.entries(NEB_CATEGORY_META);
+      let pieOpen = false;
+      let isDragging = false;
+      let dragMoved = false;
+
+      // ── Build pie slices ───────────────────────────────────────────────────
+      // Slices fan strictly leftward (180° arc: from straight-up to straight-down)
+      // so none clip the right screen edge. Each slice div is centered on its point.
+      const totalSlices = categories.length;
+      const SLICE_R = 45; // half of the 90px slice button
+      const radius = 140; // distance from anchor to slice center
+
+      nebPie.innerHTML = categories.map(([key, meta], i) => {
+        const t = totalSlices === 1 ? 0.5 : i / (totalSlices - 1);
+        // -90° (top) → -270° (bottom) going left — purely left hemisphere
+        const angleDeg = -90 - t * 180;
+        const angleRad = (angleDeg * Math.PI) / 180;
+        // tx/ty positions the CENTER of the slice circle
+        const tx = Math.round(Math.cos(angleRad) * radius) - SLICE_R;
+        const ty = Math.round(Math.sin(angleRad) * radius) - SLICE_R;
+        const delay = i * 0.05;
+        return `
+          <div class="neb-slice" style="--tx:${tx}px;--ty:${ty}px;--d:${delay}s">
+            <button class="neb-slice-btn" data-neb-cat="${key}" aria-label="${meta.title}">
+              <span class="neb-slice-icon">${meta.icon}</span>
+              <span class="neb-slice-text">${meta.title}</span>
+            </button>
+          </div>`;
+      }).join('');
+
+      // ── Anchor pie at the left-center of the visible button ─────────────────
+      function positionPie() {
+        const fabRect = nebFab.getBoundingClientRect();
+        // left edge of the half-circle = start of the visible part
+        nebPie.style.left = fabRect.left + 'px';
+        nebPie.style.top  = (fabRect.top + fabRect.height / 2) + 'px';
+        nebPie.style.transform = 'none';
+      }
+
+      // ── Open / close ───────────────────────────────────────────────────────
+      function openPie() {
+        positionPie();
+        pieOpen = true;
+        nebPie.classList.add('open');
+        nebOverlay.classList.add('open');
+        nebBtn.classList.add('active');
+      }
+      function closePie() {
+        pieOpen = false;
+        nebPie.classList.remove('open');
+        nebOverlay.classList.remove('open');
+        nebBtn.classList.remove('active');
+      }
+
+      nebBtn.addEventListener('click', (e) => {
+        if (dragMoved) return;
+        pieOpen ? closePie() : openPie();
+      });
+      nebOverlay.addEventListener('click', closePie);
+
+      nebPie.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-neb-cat]');
+        if (!btn) return;
+        const key = btn.dataset.nebCat;
+        const meta = NEB_CATEGORY_META[key];
+        if (!meta) return;
+        closePie();
+        // wait for pie close animation (0.3s + last slice delay ~0.2s) before navigating
+        const lastDelay = (categories.length - 1) * 0.05;
+        const waitMs = Math.round((0.3 + lastDelay) * 1000) + 50;
+        setTimeout(() => {
+          this.setAttribute('page', meta.slug);
+          this.dispatchEvent(new CustomEvent('rootx-navigate', {
+            detail: { slug: meta.slug, href: '/' + meta.slug },
+            bubbles: true, composed: true,
+          }));
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, waitMs);
+      });
+
+      // ── Back button on NEB pages ───────────────────────────────────────────
+      shadow.addEventListener('click', (e) => {
+        if (e.target.closest('[data-neb-back]')) {
+          history.back ? history.back() : this.setAttribute('page', 'home');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      // ── Draggable (touch + mouse), half visible from right edge ───────────
+      let startX = 0, startY = 0, startBottom = 0, startRight = 0;
+
+      function getBottom() {
+        return parseInt(nebFab.style.bottom) || 120;
+      }
+
+      function pointerDown(clientX, clientY) {
+        isDragging = true;
+        dragMoved = false;
+        startX = clientX;
+        startY = clientY;
+        startBottom = getBottom();
+        startRight = 0;
+        closePie();
+      }
+      function pointerMove(clientX, clientY) {
+        if (!isDragging) return;
+        const dy = startY - clientY;
+        if (Math.abs(dy) > 4 || Math.abs(clientX - startX) > 4) dragMoved = true;
+        const newBottom = Math.max(40, Math.min(window.innerHeight - 100, startBottom + dy));
+        nebFab.style.bottom = newBottom + 'px';
+        nebFab.style.right = '0px';
+      }
+      function pointerUp() {
+        isDragging = false;
+        setTimeout(() => { dragMoved = false; }, 50);
+      }
+
+      nebFab.addEventListener('mousedown', (e) => {
+        if (e.target === nebBtn || nebBtn.contains(e.target)) return;
+        pointerDown(e.clientX, e.clientY);
+      });
+      window.addEventListener('mousemove', (e) => pointerMove(e.clientX, e.clientY));
+      window.addEventListener('mouseup', pointerUp);
+      this._scrollHandlers.push(() => {}); // placeholder so cleanup array stays intact
+
+      nebFab.addEventListener('touchstart', (e) => {
+        const t = e.touches[0];
+        pointerDown(t.clientX, t.clientY);
+      }, { passive: true });
+      nebFab.addEventListener('touchmove', (e) => {
+        const t = e.touches[0];
+        pointerMove(t.clientX, t.clientY);
+      }, { passive: true });
+      nebFab.addEventListener('touchend', pointerUp, { passive: true });
     }
 
     // Sticky Header
