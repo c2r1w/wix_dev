@@ -4156,7 +4156,7 @@ class RootxApp extends HTMLElement {
       <div id="welcomeModal" class="welcome-modal">
         <div class="welcome-modal-inner">
           <div class="wm-header">
-            Welcome Sisters, Partnerships, Affiliates, Sponsors and Supporters of Las Amigas Incorporated
+            Greetings and Welcome…. It is truly an honor to serve as the 22<sup>nd</sup> National President to a group of phenomenal and dedicated women.
           </div>
           <div class="wm-columns">
             <div class="wm-image">
@@ -4164,16 +4164,19 @@ class RootxApp extends HTMLElement {
             </div>
             <div class="wm-text-wrap" id="wmTextWrap">
               <div class="wm-text-inner" id="wmTextInner">
-                <p>Las Amigas Incorporated is more than just an organization—we are a sisterhood whose legacy believes in giving back and serving all humankind coupled with an empowering sisterhood. Our Co-Founders Dora Ramsey Mason and Mary Quick Moore, who were amazing visionaries, knew the importance and value of fostering lifelong friendships and creating a positive impact in our communities.</p>
-                <p>It is crucial that we concentrate on training, professional development, growing and sustaining membership, and emphasizing the value of our history. This also allows us as an organization to continue to build upon our five programmatic thrusts: Economic Development, Education, Family, Health, and Political Awareness. Together, we strive to build a brighter future while cherishing the bonds that unite us as one.</p>
-                <p>Whether you are a current member or someone exploring the possibility of joining (rejoining), we invite you to be part of this incredible journey.</p>
-                <p>Let us continue to inspire, lead, and uplift one another. Thank you for visiting our website, and we look forward to connecting with you!</p>
-                <p><em>In Highest Regards,<br>Cynthia Haddock Shepard<br>22nd National President<br>Las Amigas Incorporated</em></p>
+                <p><strong>Las Amigas Incorporated</strong> is an organization where <em>service, sisterhood, and purpose unite.</em> We are more than an organization — we are a powerful network of women dedicated to uplifting communities, inspiring change, and creating a lasting impact across generations.</p>
+                <p>Founded in 1957, by two visionary educators, <strong>Dora Ramsey Mason</strong> and <strong>Mary Quick Moore</strong>, Las Amigas Incorporated was born from compassion and action. What began as a small act of love and kindness has now grown into a thriving village of service <strong>with twenty-eight active chapters and counting.</strong></p>
+                <p>To my <strong><em>sisters</em></strong> — may we continue to serve with dedication, commitment, perseverance and grace as we do the work that unites us as one.</p>
+                <p>To our <strong><em>partners, sponsors, and affiliates</em></strong> — your collaboration strengthens our outreach and amplifies our impact. THANK YOU!</p>
+                <p>To our <strong><em>visitors</em></strong> — we invite you to learn more about the world of pink and orchid of Las Amigas Incorporated and we invite you to become a part of our growing legacy of excellence and empowerment.</p>
+                <p><strong>THANK YOU</strong> for visiting our website.</p>
+                <p><strong>Welcome to THE POWER OF WE!!</strong></p>
+                <p><em><strong>Cynthia Haddock Shepard</strong></em></p>
               </div>
             </div>
           </div>
           <div class="wm-footer">
-            <audio controls src="https://samplelib.com/mp3/sample-10s.mp3"></audio>
+            <audio controls src="https://static.wixstatic.com/mp3/b75b9e_65d0c00ad6044793b9e9a3e400349df8.mp3"></audio>
             <button id="welcomeEnterBtn" class="wm-enter-btn">Enter</button>
           </div>
         </div>
