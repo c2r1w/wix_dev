@@ -325,18 +325,22 @@ const ICONS = {
 // ─── NAVIGATION STRUCTURE ───────────────────────────────────────────────────
 const NAV_ITEMS = [
   {
-    text: 'About',
+    text: 'Who We Are',
     children: [
       { text: 'About Us', slug: 'about-us' },
       { text: 'Our Founders', slug: 'our-founders' },
       { text: 'Timeline', slug: 'timeline' },
       { text: 'Affiliate Partners', slug: 'charitable-partners' },
+      { text: 'Our Impact', slug: 'our-impact' },
+      { text: 'Central Region', slug: 'copy-of-southeast-region' },
+      { text: 'Mid-Atlantic Region', slug: 'copy-of-northeast-region-new' },
+      { text: 'Northeast Region', slug: 'about-1-1' },
+      { text: 'Southeast Region', slug: 'copy-of-mid-atlantic-region-new' },
+      { text: 'Southwest Region', slug: 'copy-of-southeast-region-new' },
     ],
   },
-  { text: 'Our Impact', slug: 'our-impact' },
-  { text: 'Get Involved', slug: 'get-involved' },
   {
-    text: 'Programs',
+    text: 'Programmatic Thrusts',
     children: [
       { text: 'Programmatic Thrusts', slug: 'programmatic-thrusts' },
       { text: 'Economic Development', slug: 'economic-development' },
@@ -347,25 +351,16 @@ const NAV_ITEMS = [
     ],
   },
   {
-    text: 'Regions',
-    children: [
-      { text: 'Central Region', slug: 'copy-of-southeast-region' },
-      { text: 'Mid-Atlantic Region', slug: 'copy-of-northeast-region-new' },
-      { text: 'Northeast Region', slug: 'about-1-1' },
-      { text: 'Southeast Region', slug: 'copy-of-mid-atlantic-region-new' },
-      { text: 'Southwest Region', slug: 'copy-of-southeast-region-new' },
-    ],
-  },
-  {
     text: 'Events',
     children: [
       { text: 'News & Events', slug: 'events' },
       { text: 'New Members', slug: 'new-members' },
       { text: 'In Memoriam', slug: 'in-memoriam' },
+      { text: 'Get Involved', slug: 'get-involved' },
     ],
   },
+  { text: 'Members Only', slug: 'members-home' },
   { text: 'Contact Us', slug: 'contact-us' },
-  { text: 'Donate', slug: 'donate' },
 ];
 
 
@@ -454,12 +449,26 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 .grid-5 { grid-template-columns: repeat(5, 1fr); }
 
+/* Justified-center grid: wraps at 3-up, centers any leftover row */
+.thrusts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+.thrusts-grid .card {
+  flex: 0 1 calc(33.333% - 22px);
+  min-width: 280px;
+}
+
 @media (max-width: 1024px) {
   .grid-4, .grid-5 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .thrusts-grid .card { flex: 0 1 calc(50% - 16px); }
 }
 @media (max-width: 768px) {
   .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+  .thrusts-grid .card { flex: 1 1 100%; }
   .section { padding: 60px 0; }
   .container { padding: 0 16px; }
 }
@@ -523,6 +532,32 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(183,110,121,0.45);
   color: #1a1a2e;
+}
+.btn-donate {
+  background: linear-gradient(135deg, #e8425f, #c81e4f, #e8425f);
+  background-size: 200% 200%;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(200,30,79,0.4), 0 0 0 0 rgba(232,66,95,0.6);
+  animation: donatePulse 2.4s ease-in-out infinite, donateGradient 4s ease infinite;
+}
+.btn-donate svg { width: 15px; height: 15px; transition: transform 0.4s ease; }
+.btn-donate:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 30px rgba(200,30,79,0.55);
+  color: #fff;
+  animation-play-state: paused;
+}
+.btn-donate:hover svg { transform: scale(1.2) rotate(-6deg); }
+.btn-donate:active { transform: translateY(-1px) scale(0.98); }
+@keyframes donatePulse {
+  0%, 100% { box-shadow: 0 4px 15px rgba(200,30,79,0.4), 0 0 0 0 rgba(232,66,95,0.5); }
+  50% { box-shadow: 0 4px 15px rgba(200,30,79,0.4), 0 0 0 8px rgba(232,66,95,0); }
+}
+@keyframes donateGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .btn-outline {
   background: transparent;
@@ -721,7 +756,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .menu-toggle.open span:nth-child(2) { opacity: 0; }
 .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* Member login button */
+/* Donate CTA button */
 .header-cta {
   margin-left: 12px;
 }
@@ -2414,7 +2449,10 @@ function renderHeader(currentPage) {
           <div class="nav-wrapper" id="navWrapper">
             ${navHTML}
             <div class="header-cta">
-              <a href="/members-home" class="btn btn-gold btn-sm">Members</a>
+              <a href="/donate" data-nav class="btn btn-donate btn-sm">
+                <span class="btn-donate-text">Donate</span>
+                ${ICONS.donate}
+              </a>
             </div>
           </div>
           <button class="menu-toggle" id="menuToggle" aria-label="Menu">
@@ -3248,17 +3286,13 @@ function renderProgrammaticThrustsPage() {
   ];
 
   return `
-    ${renderPageBanner('Programmatic Thrusts', 'Five pillars of service driving meaningful change.', IMG.blueStructure, [{ text: 'Programs', slug: 'programmatic-thrusts' }])}
+    ${renderPageBanner('Programmatic Thrusts', ' ', IMG.blueStructure, [{ text: 'Programs', slug: 'programmatic-thrusts' }])}
 
     <section class="section bg-white">
       <div class="container">
-        <div class="section-title fade-in">
-          <div class="label">Our Programs</div>
-          <h2>Five Pillars of Service</h2>
-          <div class="section-divider"></div>
-          <p>Our programmatic thrusts guide our community engagement and service initiatives.</p>
-        </div>
-        <div class="grid grid-3 fade-in" style="gap:32px">
+      
+      
+        <div class="thrusts-grid fade-in">
           ${programs.map(p => `
             <div class="card">
               <div class="card-img">
@@ -3266,7 +3300,6 @@ function renderProgrammaticThrustsPage() {
                 <div class="card-img-overlay"></div>
               </div>
               <div class="card-body">
-                <div class="label">Program</div>
                 <h3>${p.title}</h3>
                 <p>${p.desc}</p>
                 <a href="/${p.slug}" data-nav class="btn btn-outline-dark btn-sm">Learn More</a>
