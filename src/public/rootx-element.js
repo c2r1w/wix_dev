@@ -305,6 +305,8 @@ const ICONS = {
   menu: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>`,
   close: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>`,
   chevronDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>`,
+  chevronLeft: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>`,
+  chevronRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>`,
   heart: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`,
   people: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>`,
   book: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>`,
@@ -354,12 +356,19 @@ const NAV_ITEMS = [
     text: 'Events',
     children: [
       { text: 'News & Events', slug: 'events' },
-      { text: 'New Members', slug: 'new-members' },
-      { text: 'In Memoriam', slug: 'in-memoriam' },
-      { text: 'Get Involved', slug: 'get-involved' },
+      { text: 'Photo Gallery', slug: 'photo-gallery' },
+      { text: 'Conclave 2027', slug: 'conclave-2027' },
     ],
   },
-  { text: 'Members Only', slug: 'members-home' },
+  {
+    text: 'Members Only',
+    slug: 'members-home',
+    children: [
+      { text: 'New Members', slug: 'new-members' },
+      { text: 'In Memoriam', slug: 'in-memoriam' },
+      { text: 'Service Awards', slug: 'service-awards' },
+    ],
+  },
   { text: 'Contact Us', slug: 'contact-us' },
 ];
 
@@ -1015,6 +1024,24 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   padding: 0;
   box-sizing: border-box;
 }
+.rajugrd .card-img.card-img-sm {
+  height: 220px;
+}
+
+.rajugrd {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.rajugrd .card {
+  flex: 0 1 calc(33.333% - 19px);
+}
+@media (max-width: 900px) {
+  .rajugrd .card { flex: 0 1 calc(50% - 14px); }
+}
+@media (max-width: 600px) {
+  .rajugrd .card { flex: 0 1 100%; }
+}
 
 
 
@@ -1553,6 +1580,137 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 }
 .gallery-item:hover::after { opacity: 1; }
 
+/* ── Photo Gallery Carousel ─────────────────────────── */
+.pg-carousel {
+  position: relative;
+  margin: 40px 0;
+}
+.pg-carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+.pg-carousel-track::-webkit-scrollbar { height: 6px; }
+.pg-carousel-track::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
+.pg-carousel-slide {
+  flex: 0 0 auto;
+  width: 380px;
+  max-width: 80vw;
+  aspect-ratio: 4/3;
+  border-radius: 14px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.pg-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.pg-carousel-slide:hover img { transform: scale(1.06); }
+.pg-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #1a1a2e;
+  z-index: 2;
+}
+.pg-carousel-btn svg { width: 20px; height: 20px; }
+.pg-carousel-btn:hover { background: #f8f5fc; }
+.pg-carousel-prev { left: -8px; }
+.pg-carousel-next { right: -8px; }
+@media (max-width: 768px) {
+  .pg-carousel-btn { display: none; }
+}
+
+/* ── Photo Gallery Lightbox ─────────────────────────── */
+.pg-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,15,0.94);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+}
+.pg-lightbox.open { display: flex; }
+.pg-lightbox-img {
+  max-width: 88vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.pg-lightbox-caption {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  opacity: 0.85;
+}
+.pg-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.pg-lightbox-close svg { width: 20px; height: 20px; }
+.pg-lightbox-close:hover { background: rgba(255,255,255,0.2); }
+.pg-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.pg-lightbox-nav svg { width: 24px; height: 24px; }
+.pg-lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+.pg-lightbox-prev { left: 20px; }
+.pg-lightbox-next { right: 20px; }
+@media (max-width: 640px) {
+  .pg-lightbox-nav { width: 40px; height: 40px; }
+  .pg-lightbox-close { top: 12px; right: 12px; }
+  .pg-lightbox-prev { left: 8px; }
+  .pg-lightbox-next { right: 8px; }
+}
+
 /* ── Email Signup (inspired by AKA) ─────────────────── */
 .signup-section {
   background: #1a1a2e;
@@ -1816,176 +1974,6 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   100% { background-position: calc(200px + 100%) 0; }
 }
 
-/* ── Welcome Modal ─────────────────────────────────── */
-/* ── Welcome Modal ─────────────────────────────────── */
-.welcome-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(10,8,20,0.92);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  transition: opacity 0.7s ease;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-.welcome-modal.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-.welcome-modal-inner {
-  background: #fff;
-  border-radius: 18px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  max-width: 880px;
-  width: 100%;
-  max-height: 88vh;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(183,110,121,0.18);
-}
-.wm-header {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d1f3d 100%);
-  color: #fff;
-  padding: 22px 36px;
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.55;
-  letter-spacing: 0.01em;
-  border-bottom: 3px solid #b76e79;
-  flex-shrink: 0;
-}
-.wm-columns {
-  display: flex;
-  flex: 1;
-  min-height: 0;
-}
-.wm-image {
-  flex: 0 0 340px;
-  overflow: hidden;
-  position: relative;
-}
-.wm-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-}
-.wm-text-wrap {
-  flex: 1;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  position: relative;
-  padding: 28px 32px 0 32px;
-}
-.wm-text-wrap::-webkit-scrollbar { display: none; }
-.wm-text-wrap::after {
-  content: '';
-  position: sticky;
-  bottom: 0;
-  display: block;
-  height: 56px;
-  background: linear-gradient(transparent, #fff);
-  pointer-events: none;
-  margin-top: -56px;
-}
-.wm-text-inner p {
-  font-size: 0.875rem;
-  line-height: 1.9;
-  color: #444;
-  margin: 0 0 18px 0;
-}
-.wm-text-inner p em {
-  color: #b76e79;
-  font-style: italic;
-  font-weight: 600;
-}
-.wm-footer {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 24px;
-  background: #f9f5f6;
-  border-top: 1px solid rgba(183,110,121,0.2);
-  flex-shrink: 0;
-}
-.wm-footer audio {
-  flex: 1;
-  height: 36px;
-  border-radius: 8px;
-  min-width: 0;
-}
-.wm-footer .wm-enter-btn {
-  flex-shrink: 0;
-  background: #b76e79;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 32px;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background 0.2s, transform 0.15s;
-}
-.wm-footer .wm-enter-btn:hover {
-  background: #9a5660;
-  transform: translateY(-1px);
-}
-@media (max-width: 640px) {
-  .wm-image { display: none; }
-  .wm-header { padding: 18px 20px; }
-  .wm-text-wrap { padding: 20px 20px 0 20px; }
-  .wm-footer { flex-wrap: wrap; gap: 12px; }
-  .wm-footer audio { min-width: 100%; order: 1; }
-  .wm-footer .wm-enter-btn { order: 2; width: 100%; }
-}
-
-/* ── Welcome Overlay ────────────────────────────────── */
-.welcome-overlay {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  z-index: 9999;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 24px;
-}
-.welcome-overlay.active { display: flex; }
-.wov-text1, .wov-text2 {
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.wov-text1 {
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  color: #fff;
-  transform: translateY(20px);
-  font-weight: 700;
-  max-width: 800px;
-}
-.wov-text1.show { opacity: 1; transform: translateY(0); }
-.wov-text1.shift { transform: translateY(-50px); }
-.wov-text2 {
-  font-size: clamp(4rem, 8vw, 7.6rem);
-  color: #b76e79;
-  font-style: italic;
-  transform: translateY(20px);
-  font-weight: 700;
-  line-height: 1.1;
-}
-.wov-text2.show { opacity: 1; transform: translateY(0); }
 /* ── Site Loader ─────────────────────────────────── */
 .site-loader {
   position: fixed; inset: 0;
@@ -2651,7 +2639,6 @@ function renderHomePage() {
           <div class="label">What We Do</div>
           <h2>Our Programmatic Thrusts</h2>
           <div class="section-divider"></div>
-          <p>Five pillars of service driving meaningful change in underserved communities across the nation.</p>
         </div>
         <div class="grid grid-3 fade-in rajugrd" style="gap:28px">
           <div class="card">
@@ -2660,7 +2647,6 @@ function renderHomePage() {
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
-              <div class="label">Program</div>
               <h3>Economic Development</h3>
               <p>Addressing needs within our communities such as food insecurity.</p>
               <a href="/economic-development" data-nav class="btn btn-outline-dark btn-sm">Learn More</a>
@@ -2672,9 +2658,8 @@ function renderHomePage() {
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
-              <div class="label">Program</div>
               <h3>Education</h3>
-              <p>Advocating for literacy improvement and continuing the legacy of post-secondary education.</p>
+              <p>Advocating for literacy and the legacy of post-secondary education.</p>
               <a href="/education" data-nav class="btn btn-outline-dark btn-sm">Learn More</a>
             </div>
           </div>
@@ -2684,7 +2669,6 @@ function renderHomePage() {
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
-              <div class="label">Program</div>
               <h3>Family</h3>
               <p>Providing resources for those that need it most and to build stable homes.</p>
               <a href="/family" data-nav class="btn btn-outline-dark btn-sm">Learn More</a>
@@ -2696,7 +2680,6 @@ function renderHomePage() {
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
-              <div class="label">Program</div>
               <h3>Health</h3>
               <p>Helping fight the health disparities in the African American community.</p>
               <a href="/health" data-nav class="btn btn-outline-dark btn-sm">Learn More</a>
@@ -2708,7 +2691,6 @@ function renderHomePage() {
               <div class="card-img-overlay"></div>
             </div>
             <div class="card-body">
-              <div class="label">Program</div>
               <h3>Political Awareness</h3>
               <p>Bridging the gap between social justice and change within our communities.</p>
               <a href="/political-awareness" data-nav class="btn btn-outline-dark btn-sm">Learn More</a>
@@ -3955,6 +3937,83 @@ function renderPrivacyPolicyPage() {
 }
 
 
+// ─── MAIN PHOTO GALLERY PAGE ────────────────────────────────────────────────
+function renderMainPhotoGalleryPage() {
+  const featured = [
+    IMG.conclave2024_1, IMG.harambe, IMG.communityGarden,
+    IMG.thanksgivingDinner, IMG.movingIn, IMG.conclave2023_1,
+  ];
+
+  const galleryPhotos = [
+    { src: IMG.conclave2024_1, alt: 'Conclave 2024', caption: 'Conclave 2024' },
+    { src: IMG.conclave2023_1, alt: 'Conclave 2023', caption: 'Conclave 2023' },
+    { src: IMG.conclave2022_1, alt: 'Conclave 2022', caption: 'Conclave 2022' },
+    { src: IMG.conclave2019_1, alt: 'Conclave 2019', caption: 'Conclave 2019' },
+    { src: IMG.harambe, alt: 'Sisterhood gathering', caption: 'Sisterhood & Fellowship' },
+    { src: IMG.communityGarden, alt: 'Community service', caption: 'Community Service' },
+    { src: IMG.thanksgivingDinner, alt: 'Thanksgiving dinner outreach', caption: 'Thanksgiving Outreach' },
+    { src: IMG.movingIn, alt: 'Volunteers moving supplies', caption: 'Volunteer Day' },
+    { src: IMG.mooresvilleLibrary, alt: 'Mooresville library event', caption: 'Mooresville Library Event' },
+    { src: IMG.charlotteDonation, alt: 'Charlotte donation drive', caption: 'Charlotte Donation Drive' },
+    { src: IMG.bookDrive, alt: 'Book drive', caption: 'Book Drive' },
+    { src: IMG.highPointChapter, alt: 'High Point chapter', caption: 'High Point Chapter' },
+  ];
+
+  return `
+    ${renderPageBanner('Photo Gallery', 'Moments of service, sisterhood, and celebration from across Las Amigas.', IMG.conclave2024_1, [{ text: 'Events', slug: 'events' }, { text: 'Photo Gallery' }])}
+
+    <!-- Featured Carousel -->
+    <section class="section bg-white" style="padding-bottom:0">
+      <div class="container">
+        <div class="section-title fade-in">
+          <div class="label">Featured</div>
+          <h2>Highlights Reel</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="pg-carousel fade-in" id="pgCarousel">
+          <div class="pg-carousel-track" id="pgCarouselTrack">
+            ${featured.map((src, i) => `
+              <div class="pg-carousel-slide">
+                <img src="${src}" alt="Highlight photo ${i + 1}" loading="lazy" data-lightbox-src="${src}" data-lightbox-caption="Highlight ${i + 1}">
+              </div>
+            `).join('')}
+          </div>
+          <button type="button" class="pg-carousel-btn pg-carousel-prev" id="pgCarouselPrev" aria-label="Previous">${ICONS.chevronLeft}</button>
+          <button type="button" class="pg-carousel-btn pg-carousel-next" id="pgCarouselNext" aria-label="Next">${ICONS.chevronRight}</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="section-title fade-in">
+          <div class="label">Browse</div>
+          <h2>All Photos</h2>
+          <div class="section-divider"></div>
+          <p>Click any photo to zoom in and browse the full gallery.</p>
+        </div>
+        <div class="gallery-grid fade-in" id="pgLightboxGallery">
+          ${galleryPhotos.map((p, i) => `
+            <div class="gallery-item" data-lightbox-index="${i}">
+              <img src="${p.src}" alt="${p.alt}" loading="lazy" data-lightbox-src="${p.src}" data-lightbox-caption="${p.caption}">
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="pg-lightbox" id="pgLightbox">
+      <button type="button" class="pg-lightbox-close" id="pgLightboxClose" aria-label="Close">${ICONS.close}</button>
+      <button type="button" class="pg-lightbox-nav pg-lightbox-prev" id="pgLightboxPrev" aria-label="Previous photo">${ICONS.chevronLeft}</button>
+      <img class="pg-lightbox-img" id="pgLightboxImg" src="" alt="">
+      <button type="button" class="pg-lightbox-nav pg-lightbox-next" id="pgLightboxNext" aria-label="Next photo">${ICONS.chevronRight}</button>
+      <div class="pg-lightbox-caption" id="pgLightboxCaption"></div>
+    </div>`;
+}
+
+
 // ─── PHOTO GALLERY PAGE ────────────────────────────────────────────────────
 function renderPhotoGalleryPage(regionSlug) {
   const regionMapping = {
@@ -4103,6 +4162,7 @@ function getPageContent(slug) {
     'political-awareness': renderPoliticalAwarenessPage,
     'regions': renderRegionsPage,
     'events': renderEventsPage,
+    'photo-gallery': renderMainPhotoGalleryPage,
     'services-5': renderPastConclavesPage,
     'conclave-2019': renderPastConclavesPage,
     'conclave-2023': renderPastConclavesPage,
@@ -4143,6 +4203,7 @@ class RootxApp extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this._rendered = false;
     this._scrollHandlers = [];
+    this._keyHandlers = [];
   }
 
   connectedCallback() {
@@ -4150,6 +4211,8 @@ class RootxApp extends HTMLElement {
   }
 
   disconnectedCallback() {
+    this._keyHandlers.forEach(h => window.removeEventListener('keydown', h));
+    this._keyHandlers = [];
     this._scrollHandlers.forEach(h => window.removeEventListener('scroll', h));
     this._scrollHandlers = [];
   }
@@ -4164,6 +4227,8 @@ class RootxApp extends HTMLElement {
     // Clean up old scroll listeners
     this._scrollHandlers.forEach(h => window.removeEventListener('scroll', h));
     this._scrollHandlers = [];
+    this._keyHandlers.forEach(h => window.removeEventListener('keydown', h));
+    this._keyHandlers = [];
 
     const page = this.getAttribute('page') || 'home';
     const content = getPageContent(page);
@@ -4176,8 +4241,6 @@ class RootxApp extends HTMLElement {
 
     this.style.display = 'block';
 
-    const isHome = (page === 'home' || page === '');
-
     this.shadowRoot.innerHTML = `
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
       <style>${STYLES}</style>
@@ -4185,40 +4248,6 @@ class RootxApp extends HTMLElement {
       <main>${content}</main>
       ${renderFooter()}
       <div class="scroll-top" id="scrollTop">${ICONS.arrowUp}</div>
-      ${isHome ? `
-      <div id="welcomeModal" class="welcome-modal">
-        <div class="welcome-modal-inner">
-          <div class="wm-header">
-            Greetings and Welcome…. It is truly an honor to serve as the 22<sup>nd</sup> National President to a group of phenomenal and dedicated women.
-          </div>
-          <div class="wm-columns">
-            <div class="wm-image">
-              <img src="${IMG.president}" alt="Cynthia Haddock Shepard, 22nd National President">
-            </div>
-            <div class="wm-text-wrap" id="wmTextWrap">
-              <div class="wm-text-inner" id="wmTextInner">
-                <p><strong>Las Amigas Incorporated</strong> is an organization where <em>service, sisterhood, and purpose unite.</em> We are more than an organization — we are a powerful network of women dedicated to uplifting communities, inspiring change, and creating a lasting impact across generations.</p>
-                <p>Founded in 1957, by two visionary educators, <strong>Dora Ramsey Mason</strong> and <strong>Mary Quick Moore</strong>, Las Amigas Incorporated was born from compassion and action. What began as a small act of love and kindness has now grown into a thriving village of service <strong>with twenty-eight active chapters and counting.</strong></p>
-                <p>To my <strong><em>sisters</em></strong> — may we continue to serve with dedication, commitment, perseverance and grace as we do the work that unites us as one.</p>
-                <p>To our <strong><em>partners, sponsors, and affiliates</em></strong> — your collaboration strengthens our outreach and amplifies our impact. THANK YOU!</p>
-                <p>To our <strong><em>visitors</em></strong> — we invite you to learn more about the world of pink and orchid of Las Amigas Incorporated and we invite you to become a part of our growing legacy of excellence and empowerment.</p>
-                <p><strong>THANK YOU</strong> for visiting our website.</p>
-                <p><strong>Welcome to THE POWER OF WE!!</strong></p>
-                <p><em><strong>Cynthia Haddock Shepard</strong></em></p>
-              </div>
-            </div>
-          </div>
-          <div class="wm-footer">
-            <audio controls src="https://static.wixstatic.com/mp3/b75b9e_65d0c00ad6044793b9e9a3e400349df8.mp3"></audio>
-            <button id="welcomeEnterBtn" class="wm-enter-btn">Enter</button>
-          </div>
-        </div>
-      </div>
-      <div id="welcomeOverlay" class="welcome-overlay">
-        <div id="wovText1" class="wov-text1">Welcome to Las Amigas Incorporated</div>
-        <div id="wovText2" class="wov-text2">The Power of WE</div>
-      </div>
-      ` : ''}
       <!-- NEB Floating Pie Menu -->
       <div class="neb-overlay" id="nebOverlay"></div>
       <div class="neb-pie" id="nebPie"></div>
@@ -4320,70 +4349,6 @@ class RootxApp extends HTMLElement {
         }
       });
     });
-
-    // Welcome Modal — show once per browser session
-    const welcomeModal = shadow.getElementById('welcomeModal');
-    if (welcomeModal) {
-      if (sessionStorage.getItem('wmSeen')) {
-        welcomeModal.style.display = 'none';
-        const welcomeOverlay = shadow.getElementById('welcomeOverlay');
-        if (welcomeOverlay) welcomeOverlay.style.display = 'none';
-      } else {
-        // Auto-scroll the text panel
-        const wmTextWrap = shadow.getElementById('wmTextWrap');
-        if (wmTextWrap) {
-          let scrollRaf;
-          let paused = false;
-          const tick = () => {
-            if (!paused) {
-              if (wmTextWrap.scrollTop + wmTextWrap.clientHeight >= wmTextWrap.scrollHeight - 4) {
-                wmTextWrap.scrollTop = 0;
-              } else {
-                wmTextWrap.scrollTop += 0.6;
-              }
-            }
-            scrollRaf = requestAnimationFrame(tick);
-          };
-          const startDelay = setTimeout(() => { scrollRaf = requestAnimationFrame(tick); }, 2000);
-          wmTextWrap.addEventListener('mouseenter', () => { paused = true; });
-          wmTextWrap.addEventListener('mouseleave', () => { paused = false; });
-          wmTextWrap.addEventListener('touchstart', () => { paused = true; }, { passive: true });
-          welcomeModal._cancelScroll = () => { clearTimeout(startDelay); cancelAnimationFrame(scrollRaf); };
-        }
-
-        const enterBtn = shadow.getElementById('welcomeEnterBtn');
-        const welcomeOverlay = shadow.getElementById('welcomeOverlay');
-        if (enterBtn && welcomeOverlay) {
-          enterBtn.addEventListener('click', () => {
-            sessionStorage.setItem('wmSeen', '1');
-            if (welcomeModal._cancelScroll) welcomeModal._cancelScroll();
-            welcomeOverlay.classList.add('active');
-            welcomeModal.classList.add('fade-out');
-            setTimeout(() => {
-              welcomeModal.style.display = 'none';
-              const t1 = shadow.getElementById('wovText1');
-              const t2 = shadow.getElementById('wovText2');
-              setTimeout(() => {
-                t1.classList.add('show');
-                setTimeout(() => {
-                  t2.classList.add('show');
-                  t1.classList.add('shift');
-                  setTimeout(() => {
-                    t1.style.transition = 'opacity 0.8s ease';
-                    t2.style.transition = 'opacity 0.8s ease';
-                    t1.style.opacity = '0';
-                    t2.style.opacity = '0';
-                    setTimeout(() => {
-                      welcomeOverlay.style.display = 'none';
-                    }, 900);
-                  }, 2500);
-                }, 2500);
-              }, 300);
-            }, 700);
-          });
-        }
-      }
-    }
 
     // Site Loader
     const siteLoader = shadow.getElementById('siteLoader');
@@ -4518,6 +4483,63 @@ class RootxApp extends HTMLElement {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       });
+
+      // ── Photo Gallery: carousel + click-to-zoom lightbox ──────────────────
+      const pgLightbox = shadow.getElementById('pgLightbox');
+      if (pgLightbox) {
+        const pgLightboxImg = shadow.getElementById('pgLightboxImg');
+        const pgLightboxCaption = shadow.getElementById('pgLightboxCaption');
+        const pgItems = Array.from(shadow.querySelectorAll('[data-lightbox-src]'));
+        let pgIndex = 0;
+
+        const openPgLightbox = (i) => {
+          pgIndex = (i + pgItems.length) % pgItems.length;
+          const el = pgItems[pgIndex];
+          pgLightboxImg.src = el.dataset.lightboxSrc;
+          pgLightboxImg.alt = el.alt || '';
+          pgLightboxCaption.textContent = el.dataset.lightboxCaption || '';
+          pgLightbox.classList.add('open');
+        };
+        const closePgLightbox = () => pgLightbox.classList.remove('open');
+
+        pgItems.forEach((el, i) => {
+          el.addEventListener('click', () => openPgLightbox(i));
+        });
+
+        const pgClose = shadow.getElementById('pgLightboxClose');
+        const pgPrev = shadow.getElementById('pgLightboxPrev');
+        const pgNext = shadow.getElementById('pgLightboxNext');
+        if (pgClose) pgClose.addEventListener('click', closePgLightbox);
+        if (pgPrev) pgPrev.addEventListener('click', () => openPgLightbox(pgIndex - 1));
+        if (pgNext) pgNext.addEventListener('click', () => openPgLightbox(pgIndex + 1));
+
+        pgLightbox.addEventListener('click', (e) => {
+          if (e.target === pgLightbox) closePgLightbox();
+        });
+
+        const pgKeyHandler = (e) => {
+          if (!pgLightbox.classList.contains('open')) return;
+          if (e.key === 'Escape') closePgLightbox();
+          if (e.key === 'ArrowLeft') openPgLightbox(pgIndex - 1);
+          if (e.key === 'ArrowRight') openPgLightbox(pgIndex + 1);
+        };
+        window.addEventListener('keydown', pgKeyHandler);
+        this._keyHandlers.push(pgKeyHandler);
+
+        // Carousel prev/next
+        const pgTrack = shadow.getElementById('pgCarouselTrack');
+        const pgPrevBtn = shadow.getElementById('pgCarouselPrev');
+        const pgNextBtn = shadow.getElementById('pgCarouselNext');
+        if (pgTrack && pgPrevBtn && pgNextBtn) {
+          const scrollAmount = () => Math.min(400, pgTrack.clientWidth * 0.8);
+          pgPrevBtn.addEventListener('click', () => {
+            pgTrack.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+          });
+          pgNextBtn.addEventListener('click', () => {
+            pgTrack.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+          });
+        }
+      }
 
       // ── Draggable (touch + mouse), half visible from right edge ───────────
       let startX = 0, startY = 0, startBottom = 0, startRight = 0;
