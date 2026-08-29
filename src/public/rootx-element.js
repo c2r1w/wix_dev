@@ -2409,13 +2409,9 @@ function renderHeader(currentPage) {
       <div class="header-top hide-mobile">
         <div class="" style="display:flex;align-items:center;justify-content:space-between; margin:0 3rem;">
           <div style="display:flex;align-items:center;gap:6px">
-            <span style="display:inline-flex;align-items:center;gap:6px;margin-right:16px">
+            <span style="display:inline-flex;align-items:center;gap:6px">
               <span style="width:14px;height:14px;display:inline-flex">${ICONS.email}</span>
               <a href="mailto:info@lasamigasincorporated.org">info@lasamigasincorporated.org</a>
-            </span>
-            <span style="display:inline-flex;align-items:center;gap:6px">
-              <span style="width:14px;height:14px;display:inline-flex">${ICONS.location}</span>
-              Greensboro, NC 27402
             </span>
           </div>
           <div class="header-top-social">
@@ -2485,10 +2481,6 @@ function renderFooter() {
           </div>
           <div class="footer-col">
             <h4>Contact</h4>
-            <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;line-height:1.7;">
-              PO Box 511, Indian Trail,<br>
-              NC 28078
-            </p>
             <a href="mailto:info@lasamigasincorporated.org">info@lasamigasincorporated.org</a>
             <a href="/contact-us" data-nav>Contact Form</a>
             <a href="/privacy-policy" data-nav>Privacy Policy</a>
@@ -3803,15 +3795,6 @@ function renderContactPage() {
             <p>Have questions about Las Amigas Incorporated? Want to learn more about our programs or how to get involved? Send us a message and we\u2019ll get back to you.</p>
 
             <div style="margin-top:32px">
-              <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:24px">
-                <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#f8f5fc,#ede4f7);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                  <span style="color:#5e398f">${ICONS.location}</span>
-                </div>
-                <div>
-                  <h4 style="font-size:1rem;margin-bottom:4px">Address</h4>
-                  <p style="margin:0;font-size:0.92rem">P O BOX 1957<br>Greensboro, North Carolina 27402</p>
-                </div>
-              </div>
               <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:24px">
                 <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#f8f5fc,#ede4f7);display:flex;align-items:center;justify-content:center;flex-shrink:0">
                   <span style="color:#5e398f">${ICONS.email}</span>
