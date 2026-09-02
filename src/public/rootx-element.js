@@ -8,7 +8,7 @@ let _siteLoaderComplete = false;
 // ─── IMAGE URLS ─────────────────────────────────────────────────────────────
 
 
-const NEB_data = {"Regional Directors":[{"name":"Ronita Hemingsway","img":"1NKqFRcZIicD6Q5ATwv-Ynr9rrXCtvAIA","info":"Central Region","sub":""},{"name":"Katrina Harrison","img":"1GQLa2KA5sI_df8nRoTJC1_cZumUFWOEr","info":"MidAtlantic Region","sub":""},{"name":"Velma Greene","img":"1d3BQwUjI5FLmJNx_sjtSSeAJ7iOBbPq0","info":"Northeast Region","sub":""},{"name":"Wanda Pugh Trice","img":"1EBdje7Ov4FzjyraWObmIxfIywDiu2Y-Q","info":"Southeast Region","sub":""},{"name":"Mamie Watkins","img":"1Gg6cwmMgT2jKz_BaA9r8--JsXKN13sX4","info":"Southwest Region","sub":""}],"Presidential Council":[{"name":"Rosemary McNeil","img":"14D2i10QaQ7i4oZi2Df_waP-M1Dmc9eke","info":"15th National President","sub":"Presidential Advisor"},{"name":"Ethel Hart","img":"1nXScM-r1TwJN189dhJqS8d8g3NKTC-nd","info":"16th National President","sub":""},{"name":"Joann Williams","img":"1xBh5Pym_lAONOgTr6DRGdzgrRLhfMFEz","info":"17th National President","sub":""},{"name":"Frances Robinson","img":"1zTmFpHe21rAr53sQyWAXULCrSP2QF8yD","info":"18th National President","sub":""},{"name":"DeniAntionette Mazingo","img":"13h07XzduaaglHJ5g58HLs5WRkX9qP8T2","info":"19th National President","sub":""},{"name":"Roberta Epps","img":"1LA6yP0a9Y7-u-LydyPsTYnTJgmcg4nju","info":"20th National President","sub":""},{"name":"Agatha Grimes","img":"1PI8WxFg7tqywlvtayNKqcUe00g0dT5Nm","info":"21st National President","sub":"Immediate Past Presidentt"}],"National Officers":[{"name":"Cynthia Haddock Shepard","img":"1UY99f4E9-_goLDuh9scirgfTN38iDGgD","info":"National President","sub":""},{"name":"Evelyn Jemison-Coleman","img":"1DGnPII_7V3Vy_MS7s7EZiGvUyctYHB5y","info":"National Vice President","sub":""},{"name":"Nsombi Morrison","img":"1QIzqislhtiVVy7Bzpm4kxVXTbxRQ_ewe","info":"Recording Secretary","sub":""},{"name":"Traci Jones","img":"1vtH-FJHoM-KXRGo595zsNq1dmyfx6J-9","info":"Corresponding Secretary","sub":""},{"name":"Erica Barnhill","img":"1wBaQsaJA7BvBrBx6gOI3dXLEDsM5cghc","info":"Financial Secretary","sub":""},{"name":"Bernadette James","img":"1Byhx3xUiFJgcdPE1fGiNoLst21755F71","info":"National Treasurer","sub":""},{"name":"Angela Patterson Moore","img":"1LTl-hfL7_Mk_btPzmLZTlkXhpSC9QixU","info":"Conclave Headquarters Treasurer","sub":""},{"name":"Xavier McCutcheon","img":"1SpFoA1Ha0R2UOKSUvrPbFxwsPH1XNuJc","info":"Historian","sub":""},{"name":"Gwendolyn Roberts-Payne","img":"1B5bywY2vmjyRKmg3HfQweM8Q1Jfvd5IU","info":"Chaplain","sub":""},{"name":"Hattie Grier","img":"1YPFviS_bq3Oh1oRsUILuKxVG0MC55EV8","info":"Reporter","sub":""},{"name":"Betty Crawford","img":"1xcYoP1orCkG-vGB1ltd6Pyx7tk75eIwx","info":"Sergeant-At-Arms","sub":""},{"name":"Musheerah Ali","img":"1wBt_saf6vdQ8hdCmDW5PrXBRPk3gKvIK","info":"Parliamentarian","sub":""},{"name":"Angela McClanahan","img":"12RAxBwx9TfQn6u6Nlc6tYqUdsu7vcNj8","info":"Internal Examiner","sub":""},{"name":"Agatha Grimes","img":"196gNrqM0LThhR-na8xPTnvsPZgQ6zvt4","info":"Immediate Past National President","sub":""}],"Chapter Presidents":[{"name":"Betty Crawford","img":"1oo874K04fYoyLv_6E6Juqdq2NPg4Qux8","info":"Fayetteville Elite","sub":"Central Region"},{"name":"Brenda James","img":"1tBDjKDj9pNKXi3vHAgQLJh810bXtf1Vk","info":"Greensboro","sub":"Central Region"},{"name":"Felicia Andrews","img":"1bO04SiRGC3TZ2WdEnW_Gz1ObDvGat7fc","info":"High Point","sub":"Central Region"},{"name":"Verlean Randolph","img":"18oxYQ-v4IfSkj-Com4RCUCNtOH_JH7-I","info":"Chesterfield","sub":"Mid Atlantic Region"},{"name":"Angela Moore","img":"10WFU5GOK9vKs25vy-FGcEcnz9EX9sPtt","info":"Henrico","sub":"Mid Atlantic Region"},{"name":"Anna Hornsby","img":"1v4XxPnxORB2YGPvXzK4Xl993SXHR2SdK","info":"Newport News Hampton","sub":"Mid Atlantic Region"},{"name":"Anita English","img":"1X_p5PqFNWdY08y73IHn7MsjdDEUqsbEA","info":"Portsmouth","sub":"Mid Atlantic Region"},{"name":"Betty F. Stephens","img":"1XE0YRYLQq_WHPLEJt8aF6JXxpnjmphqf","info":"Richmond","sub":"Mid Atlantic Region"},{"name":"Bridgett Rider","img":"1UiQ6DhAIdmgVO9Z7zO1Y_zCvR_1l3ef9","info":"Suffolk","sub":"Mid Atlantic Region"},{"name":"Sharon Petty","img":"1F3LKNgLsu-QdO90cNvtu4pIezOLv7ngM","info":"Baltimore","sub":"Northeast Region"},{"name":"DeniAntionette Manzingo","img":"1G0tA2tc0mBK5WP9qV5MtODEwZFVP18EH","info":"Forestville","sub":"Northeast Region"},{"name":"Cathy Chambers","img":"1PH0QWeid0BtRo5uj2qefcXVCTzLjrmVx","info":"Seat Pleasant","sub":"Northeast Region"},{"name":"Nicole Gaskin-Laniyan","img":"1hWhKqm9ulhT42o9SwMa81ZALJvBSvKT3","info":"Southern Maryland","sub":"Northeast Region"},{"name":"Cheryl Roberts","img":"1uBUytljRwwgvXFt4VqlQFJyfQoHr8cZ4","info":"Tri State","sub":"Northeast Region"},{"name":"Carol T. Richardson","img":"1OHy6x1WwTRYAit3wRZn86ETeMkw_0et7","info":"Lumberton-Roberson","sub":"Southeast Region"},{"name":"Traci Jones","img":"1sSyE8TguZRMhQWbIyIZ_LfPB4GScDsgO","info":"Raeford","sub":"Southeast Region"},{"name":"Hattie Grier","img":"1_QKdbzqMmJzBhHpescJUy-K7Xk6BW-zj","info":"Raleigh-Durham","sub":"Southeast Region"},{"name":"Musheerah Ali","img":"1DBmfYfe1qWj4_A0a7dE45UKXdROe89Pk","info":"Red Springs","sub":"Southeast Region"},{"name":"Tameka Davis","img":"1tW44AuKN5ypxwk-GkWfSEXgZm8GtsIzk","info":"St Paul Bladen","sub":"Southeast Region"},{"name":"Evelyn Brisbon","img":"19JPwyc2S4kZgto48PoSuhvaaSq-yTcqn","info":"Whiteville","sub":"Southeast Region"},{"name":"Leslie Watson","img":"1dZCGhMLOkmzuHsR-NzStyeBoAQXIqT2Q","info":"Wilmington","sub":"Southeast Region"},{"name":"Rose Walker","img":"1bxCE-7v0S0NoSFPCMZR9ICpgpDelnGg5","info":"Augusta","sub":"Southwest Region"},{"name":"Willyce Felder","img":"11QWXTTCGiI5vtzqJR7PWw3NBW18NDltV","info":"Charlotte Mecklenburg","sub":"Southwest Region"},{"name":"Gale Hunter","img":"157Np1TJn3OEx5UL-YuXyLEB7LegjCQJA","info":"Gastonia","sub":"Southwest Region"},{"name":"Sandra Anderson","img":"1XCtTr-AXWxyEzzeYNhipCqJTCf3wgik3","info":"Greater Atlanta","sub":"Southwest Region"},{"name":"Barbara Garrett","img":"1JvRjsrWdVeJVeizekaj8VU7pptuhSW6v","info":"Greenville","sub":"Southwest Region"},{"name":"Corine Williams","img":"1wZ-MAyX_jQ1jpj9FDBhydze1lt0l1qz4","info":"Marlboro Dillon","sub":"Southwest Region"},{"name":"Beatrice Spaulding","img":"1sdi1JPsUc4T4hvHIkQKJppYDLh5FXgie","info":"Mooresville","sub":"Southwest Region"},{"name":"Elizabeth Kersey","img":"1ulvmJB_yxabIT7foCfuJDd19fo-IPDsk","info":"Morven","sub":"Southwest Region"}],"Board of Trustees":[{"name":"Barbara Garrett","img":"1QHi7SGv8Ng5LnLEA7EOm6uNnwindvH1z","info":"","sub":""},{"name":"Ronita Hemmingway","img":"1zA8UT96qeipEMfrIFUkTYE0GHIGytFvn","info":"","sub":""},{"name":"E Patterson","img":"1cdrAr6SAiInp18tbRr9CHrCqrEkQnzXr","info":"","sub":""},{"name":"Felicia Andrews","img":"1OfuKeyPCSjouOiMEqWyeIcgGYR5hJOSm","info":"","sub":""}]}
+const NEB_data = {"Regional Directors":[{"name":"Katrina Harrison","img":"17IzG5ciocMwFQZPCzJaQAOPYwnFtl4eP","info":"MidAtlantic Region","sub":""},{"name":"Mamie Watkins","img":"1F2eAxrxRlps0ApqD6QvBg-0FmgslBIkE","info":"Southwest Region","sub":""},{"name":"Ronita Hemingsway","img":"1UTM24I1h7YZVYXIotJkp10GQPD_0ulra","info":"Central Region","sub":""},{"name":"Wanda Pugh Trice","img":"1EZHF73WpfM95l01BG1pGlEY5W1FY9gn1","info":"Southeast Region","sub":""},{"name":"Velma Greene","img":"1PGuCW5HzDSmBfq2303dAfhw-O55pFmpn","info":"Northeast Region","sub":""}],"Presidential Council":[{"name":"Joann Williams","img":"13BswXWx038vwMwOqK12EFkJuD1_cb1XW","info":"17th National President","sub":""},{"name":"DeniAntionette Mazingo","img":"1DvNDzef_KIaKTZf3xG527sDL3LVKZATg","info":"19th National President","sub":""},{"name":"Ethel Hart","img":"1PraJ0zhMMZjynwnvLrSlecmmeKcCdRDG","info":"16th National President","sub":""},{"name":"Rosemary McNeil","img":"1Uuy18UOzL0eECk9L1OJVYddSKeddKjRJ","info":"15th National President","sub":"Presidential Advisor"},{"name":"Agatha Grimes","img":"1lRJzyV0SXGdfIBF0a_Wp_O7Maq1MqSRx","info":"21st National President","sub":"Immediate Past Presidentt"},{"name":"Frances Robinson","img":"19i3bgft3DBweq-f0-4Q-7qzuHl-lh6nx","info":"18th National President","sub":""},{"name":"Roberta Epps","img":"1KzT_eV6wb-gfVaa8LxgEcXOEAJL-YhKr","info":"20th National President","sub":""}],"National Officers":[{"name":"Gwendolyn Roberts-Payne","img":"1EDFhE7DVeeX70QhouR2KZuN168iKU_lX","info":"Chaplain","sub":""},{"name":"Evelyn Jemison-Coleman","img":"1-4K_TfnwToHvLtmcATHgWS2sbdxYk9uT","info":"National Vice President","sub":""},{"name":"Xavier McCutcheon","img":"12thzmqDnsykR7-NPSHybckvSujyJp4n4","info":"Historian","sub":""},{"name":"Traci Jones","img":"15gO3gS-TTvLqiyFQ6Rx-PfTJ67e_9Y7d","info":"Corresponding Secretary","sub":""},{"name":"Angela Patterson Moore","img":"1IxNg0XJ2CERWJ5To5A2oaXAMrk8NgP65","info":"Conclave Headquarters Treasurer","sub":""},{"name":"Cynthia Haddock Shepard","img":"1iW4naMuqPaCZLDhfdfPFgkirmJBgXqRB","info":"National President","sub":""},{"name":"Betty Crawford","img":"1ueOKKo6nNhMsWvEmB-FqpNuYAHxGUiuv","info":"Sergeant-At-Arms","sub":""},{"name":"image0 (1)","img":"1CZ0BUwU8_XArXzcxPqMvxmY14FVgHM4t","info":"","sub":""},{"name":"IMG_8016","img":"1Gv7WT_sugQ8mwNSfFlvHUlCD_YegjBxE","info":"","sub":""},{"name":"IMG_4171","img":"1KdskbD-q26aaKu7oKohYFFNXHBwfQJm4","info":"","sub":""},{"name":"IMG_1624","img":"1Um1-6zmj7UPN7y3_4bmAz2Xd7qFqwPWW","info":"","sub":""}],"Chapter Presidents":[{"name":"Tameka Davis","img":"1l48IOQDkfi3Op20h--D8IuytphC8jeE-","info":"St Paul Bladen","sub":"Southeast Region"},{"name":"Elizabeth Kersey","img":"1JaY456GZAiY6a7ZCdmeOtgpVxLRI-O92","info":"Morven","sub":"Southwest Region"},{"name":"Felicia Andrews","img":"1mvDF_WD4QwvcS3KQJBZPJ2qM1KrJvqVK","info":"High Point","sub":"Central Region"},{"name":"Cheryl Roberts","img":"1yebYMmb_AqnnhGxWKQLnA8Luod4wtgDy","info":"Tri State","sub":"Northeast Region"},{"name":"Barbara Garrett","img":"1Fhx5qLTNjDu-Gfm9FndN1IC7LQXNSOmW","info":"Greenville","sub":"Southwest Region"},{"name":"Angela Moore","img":"1I2aZLkCsuy2HJzqXBRRz7var8JLbN53i","info":"Henrico","sub":"Mid Atlantic Region"},{"name":"Leslie Watson","img":"1MQVbErlLmHjAK2QTum-2a_BfL3_9ouTO","info":"Wilmington","sub":"Southeast Region"},{"name":"Sandra Anderson","img":"1oIesuQlHEynY3bQlP3TDeez-JRXwuZlP","info":"Greater Atlanta","sub":"Southwest Region"},{"name":"Bridgett Rider","img":"1iXc1ydTtFmWyRGhVQYrhQ65hRfopOPui","info":"Suffolk","sub":"Mid Atlantic Region"},{"name":"DeniAntionette Manzingo","img":"1pC17eFC5p1dGRLY5Cjyt1pgtAgSsDN7g","info":"Forestville","sub":"Northeast Region"},{"name":"Rose Walker","img":"1t2gvUg5jA818GIv-nY-UnUSN-dED-okk","info":"Augusta","sub":"Southwest Region"},{"name":"Willyce Felder","img":"1Bcz66OQYZliBi4exweyMq1jSSPt70dFr","info":"Charlotte Mecklenburg","sub":"Southwest Region"},{"name":"Betty F. Stephens","img":"1GLlKF4Zn0193bd0gRzaA91lhYiyHweeX","info":"Richmond","sub":"Mid Atlantic Region"},{"name":"Verlean Randolph","img":"1UuanutVeoZ8lhBw6We3dQq3jKvuJCYUJ","info":"Chesterfield","sub":"Mid Atlantic Region"},{"name":"Beatrice Spaulding","img":"19Xv2-T8Eep7bCtzPA86kjiSlqH8MNzl0","info":"Mooresville","sub":"Southwest Region"},{"name":"Anna Hornsby","img":"1H608tmgruhJPbg8Z0YhTcNpZp6VoDRtw","info":"Newport News Hampton","sub":"Mid Atlantic Region"},{"name":"Anita English","img":"1Ia8GCsks8OSUTW4pAX6O2wJAejR1UOrD","info":"Portsmouth","sub":"Mid Atlantic Region"},{"name":"Sharon Petty","img":"1uVJZmTBR5_7VvxavbWa8MLhGOuCV7ifn","info":"Baltimore","sub":"Northeast Region"},{"name":"Nicole Gaskin-Laniyan","img":"1x3amSEy5d7f42pph-lXvhtac3SeMEl8u","info":"Southern Maryland","sub":"Northeast Region"},{"name":"Brenda James","img":"11GGbIwWNq_FbbihLXLQMLkUq00vybEkv","info":"Greensboro","sub":"Central Region"},{"name":"Carol T. Richardson","img":"1VwqiwQBc1AGZJ9-AkZgriKDs7jbt79m2","info":"Lumberton-Roberson","sub":"Southeast Region"},{"name":"Evelyn Brisbon","img":"1mE8v_pMXo1tSZBUxqVRDZQn4S0pSCf_j","info":"Whiteville","sub":"Southeast Region"},{"name":"Gale Hunter","img":"1B8SeozaPl8Y_gyA8vpcZCtMCT8Wdgptk","info":"Gastonia","sub":"Southwest Region"},{"name":"Betty Crawford","img":"1WrZMIWQe37RY_nvuSGss8yNlieD9iDRb","info":"Fayetteville Elite","sub":"Central Region"},{"name":"Cathy Chambers","img":"1_TV-KUl_wb51AsF6h1TvvHposabyWGFF","info":"Seat Pleasant","sub":"Northeast Region"},{"name":"Corine Williams","img":"1becHD6_vO1Ul-1JeFGjGyHDTSyzNLvH2","info":"Marlboro Dillon","sub":"Southwest Region"},{"name":"IMG_1589","img":"1JyzYbUriHA8lroWrN65SyscTAt9B1Pe8","info":"","sub":""},{"name":"IMG_1582","img":"1lZGec9WZgKAovy982ysGRJYaAB4Ggc2O","info":"","sub":""}],"Board of Trustees":[{"name":"E Patterson","img":"1K-1d8kscbUpvqunHKC5amRjjZIjxUUaf","info":"","sub":""},{"name":"Ronita Hemmingway","img":"1Y1RjAtUz2QjxesdGVDuqIChubGhDa7Fa","info":"","sub":""},{"name":"Felicia Andrews","img":"1YgoRmNS9dwOJLMFZdifwmkXxSrIMK4fr","info":"","sub":""},{"name":"Barbara Garrett","img":"1btYZXfRJIO2oie2ygex9LbJqRQc_nY4L","info":"","sub":""}]}
 const Tx_D="1iHTTa80ifam8ugiwTSm-wu16bEZZGo0y";
 
 const IMG = {
@@ -357,7 +357,14 @@ const NAV_ITEMS = [
     children: [
       { text: 'News & Events', slug: 'events' },
       { text: 'Photo Gallery', slug: 'photo-gallery' },
-      { text: 'Conclave 2027', slug: 'conclave-2027' },
+    ],
+  },
+  {
+    text: 'Future Events',
+    children: [
+      { text: 'Conclave 2027', slug: 'future-conclave-2027' },
+      { text: 'Comfort of Love 2027', slug: 'future-comfort-of-love-2027' },
+      { text: 'National Day of Service', slug: 'future-national-day-of-service' },
     ],
   },
   {
@@ -1061,6 +1068,39 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .card-body h3 { margin-bottom: 12px; font-size: 1.3rem; }
 .card-body p { font-size: 0.95rem; color: #777; margin-bottom: 16px; }
 
+/* ── Story Row (alternating image/text) ─────────────── */
+.story-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.story-row:not(:last-child) { margin-bottom: 72px; }
+.story-row-reverse .story-row-img { order: 2; }
+.story-row-reverse .story-row-text { order: 1; }
+.story-row-img {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+.story-row-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+.story-row-img:hover img { transform: scale(1.06); }
+.story-row-text h3 { margin-bottom: 16px; font-size: 1.6rem; }
+.story-row-text p { font-size: 1.02rem; color: #666; }
+@media (max-width: 768px) {
+  .story-row { grid-template-columns: 1fr; gap: 24px; }
+  .story-row-reverse .story-row-img,
+  .story-row-reverse .story-row-text { order: initial; }
+  .story-row:not(:last-child) { margin-bottom: 40px; }
+}
+
 /* Icon Card (program cards style like AKA) */
 .icon-card {
   background: #fff;
@@ -1592,9 +1632,10 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   padding-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.pg-carousel-track::-webkit-scrollbar { height: 6px; }
-.pg-carousel-track::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
+.pg-carousel-track::-webkit-scrollbar { display: none; height: 0; }
 .pg-carousel-slide {
   flex: 0 0 auto;
   width: 380px;
@@ -4041,6 +4082,159 @@ function renderPhotoGalleryPage(regionSlug) {
 }
 
 
+// ─── FUTURE EVENTS ──────────────────────────────────────────────────────────
+const FUTURE_EVENTS = {
+  'future-conclave-2027': {
+    label: 'Save the Date',
+    title: 'Conclave 2027',
+    subtitle: 'Our national gathering returns — fellowship, service, and sisterhood await.',
+    banner: IMG.conclaveFlyer,
+    featured: [IMG.conclaveFlyer, IMG.conclave2024_1, IMG.conclave2023_1, IMG.conclaveBoard],
+    photos: [IMG.conclave2024_1, IMG.conclave2023_1, IMG.conclave2022_1, IMG.conclave2019_1, IMG.conc24_2, IMG.conc24_3, IMG.conc24_4, IMG.conc24_5],
+    articles: [
+      { image: IMG.conclave2024_1, label: 'Behind the Scenes', title: 'What to Expect at Conclave 2027', excerpt: 'Every conclave begins the same way — a planning committee, a spreadsheet of dreams, and a sisterhood determined to outdo itself. This time is no different. Between the workshops, the worship services, and the late-night lobby conversations that somehow solve half the organization\'s problems, Conclave 2027 is shaping up to be one for the history books. We\'ll share venue and schedule details as they\'re finalized — but start breaking in your dancing shoes now.' },
+      { image: IMG.conclaveBoard, label: 'Reflection', title: 'A Look Back to Look Forward', excerpt: 'Ask any long-time member what they remember most about a past conclave, and you\'ll rarely hear about the agenda. They\'ll tell you about the sister who drove six hours just to hug everyone in the room, or the impromptu singalong that broke out during setup. Those are the moments Conclave 2027 is being built around — because the business of the organization matters, but the bonds are what we actually come back for.' },
+    ],
+    highlights: [
+      { icon: '📍', text: 'Location & venue announcement coming soon' },
+      { icon: '🗓️', text: 'Dates to be confirmed — mark your calendar' },
+      { icon: '🎓', text: 'Workshops, worship, and sisterhood programming' },
+    ],
+  },
+  'future-comfort-of-love-2027': {
+    label: 'Save the Date',
+    title: 'Comfort of Love 2027',
+    subtitle: 'A signature Las Amigas event of service, compassion, and community care.',
+    banner: IMG.communityGarden,
+    featured: [IMG.communityGarden, IMG.foodBank, IMG.homelessCovid, IMG.thanksgivingDinner],
+    photos: [IMG.foodBank, IMG.homelessCovid, IMG.thanksgivingDinner, IMG.charlotteDonation, IMG.bookDrive, IMG.gastoniaHospice],
+    articles: [
+      { image: IMG.thanksgivingDinner, label: 'Our History', title: 'The Story Behind Comfort of Love', excerpt: 'It started small — a handful of members delivering warm meals to a few families one winter. There was no grand plan, just a shared feeling that no one in the community should go without comfort during hard times. Years later, Comfort of Love has grown into one of our chapters\' most anticipated traditions, powered entirely by volunteers who show up, year after year, simply because it matters to them.' },
+      { image: IMG.homelessCovid, label: 'Community Voices', title: 'Voices from the Community', excerpt: '"I didn\'t expect anyone to remember us," one mother told a volunteer last year, holding a bag of groceries and a handwritten card from a member she\'d never met. Moments like that are why Comfort of Love keeps growing. Behind every meal served and every care package delivered is a neighbor who felt seen — and a sister who felt the same warmth in giving it.' },
+    ],
+    highlights: [
+      { icon: '❤️', text: 'Community outreach and compassionate care' },
+      { icon: '🤝', text: 'Volunteer opportunities open to all chapters' },
+      { icon: '📅', text: 'Details and sign-ups coming soon' },
+    ],
+  },
+  'future-national-day-of-service': {
+    label: 'Save the Date',
+    title: 'National Day of Service',
+    subtitle: 'Las Amigas chapters nationwide unite for a single day of impact.',
+    banner: IMG.communityGarden,
+    featured: [IMG.communityGarden, IMG.schoolTeacher, IMG.movingIn, IMG.mooresvilleLibrary],
+    photos: [IMG.schoolTeacher, IMG.movingIn, IMG.mooresvilleLibrary, IMG.charlotteSchool, IMG.doctorAppt, IMG.voteBoxes],
+    articles: [
+      { image: IMG.schoolTeacher, label: 'Nationwide', title: 'One Sisterhood, One Day, Nationwide Impact', excerpt: 'On the same Saturday every year, something remarkable happens — chapters from the Southwest to the Northeast, who may never meet in person, are out serving their own communities at the exact same time. A classroom gets repainted in one city. A senior center gets a visit in another. Different projects, different zip codes, one sisterhood moving together. That\'s the whole idea behind National Day of Service.' },
+      { image: IMG.mooresvilleLibrary, label: 'Past Impact', title: 'Past Service Day Highlights', excerpt: 'Last year\'s Day of Service touched more communities than any before it — school supply drives, library clean-ups, meals delivered to homebound neighbors, and voter registration tables staffed from morning to evening. None of it made headlines outside our own newsletter, and that was never the point. Every project, big or small, was chosen by the chapter that knew its community best.' },
+    ],
+    highlights: [
+      { icon: '🌎', text: 'All regions and chapters participate' },
+      { icon: '🙌', text: 'Local projects chosen by each chapter' },
+      { icon: '📅', text: 'Date announcement coming soon' },
+    ],
+  },
+};
+
+function renderFutureEventPage(slug) {
+  const event = FUTURE_EVENTS[slug];
+  if (!event) return renderEventsPage();
+
+  return `
+    ${renderPageBanner(event.title, event.subtitle, event.banner, [{ text: 'Future Events' }, { text: event.title }])}
+
+    <!-- Emotion-driven visuals: featured carousel -->
+    <section class="section bg-white" style="padding-bottom:0">
+      <div class="container">
+        <div class="section-title fade-in">
+          <div class="label">${event.label}</div>
+          <h2>Event Highlights</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="pg-carousel fade-in" id="pgCarousel">
+          <div class="pg-carousel-track" id="pgCarouselTrack">
+            ${event.featured.map((src, i) => `
+              <div class="pg-carousel-slide">
+                <img src="${src}" alt="${event.title} highlight ${i + 1}" loading="lazy" data-lightbox-src="${src}" data-lightbox-caption="${event.title} — Highlight ${i + 1}">
+              </div>
+            `).join('')}
+          </div>
+          <button type="button" class="pg-carousel-btn pg-carousel-prev" id="pgCarouselPrev" aria-label="Previous">${ICONS.chevronLeft}</button>
+          <button type="button" class="pg-carousel-btn pg-carousel-next" id="pgCarouselNext" aria-label="Next">${ICONS.chevronRight}</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event highlights list -->
+    <section class="section bg-light">
+      <div class="container">
+        <div class="grid grid-3 fade-in">
+          ${event.highlights.map(h => `
+            <div class="icon-card">
+              <div class="icon-wrap" style="font-size:1.8rem;display:flex;align-items:center;justify-content:center">${h.icon}</div>
+              <h3 style="font-size:1.1rem">${h.text}</h3>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles / stories -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="section-title fade-in">
+          <div class="label">Stories</div>
+          <h2>Articles &amp; Stories</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="fade-in">
+          ${event.articles.map((a, i) => `
+            <div class="story-row${i % 2 === 1 ? ' story-row-reverse' : ''}">
+              <div class="story-row-img">
+                <img src="${a.image}" alt="${a.title}" loading="lazy">
+              </div>
+              <div class="story-row-text">
+                ${a.label ? `<div class="label">${a.label}</div>` : ''}
+                <h3>${a.title}</h3>
+                <p>${a.excerpt}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- Photos -->
+    <section class="section bg-light">
+      <div class="container text-center">
+        <div class="section-title fade-in">
+          <div class="label">Gallery</div>
+          <h2>Photos</h2>
+          <div class="section-divider"></div>
+          <p>Click any photo to zoom in and browse the full gallery.</p>
+        </div>
+        <div class="gallery-grid fade-in" id="pgLightboxGallery">
+          ${event.photos.map((src, i) => `
+            <div class="gallery-item" data-lightbox-index="${i}">
+              <img src="${src}" alt="${event.title} photo ${i + 1}" loading="lazy" data-lightbox-src="${src}" data-lightbox-caption="${event.title} — Photo ${i + 1}">
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="pg-lightbox" id="pgLightbox">
+      <button type="button" class="pg-lightbox-close" id="pgLightboxClose" aria-label="Close">${ICONS.close}</button>
+      <button type="button" class="pg-lightbox-nav pg-lightbox-prev" id="pgLightboxPrev" aria-label="Previous photo">${ICONS.chevronLeft}</button>
+      <img class="pg-lightbox-img" id="pgLightboxImg" src="" alt="">
+      <button type="button" class="pg-lightbox-nav pg-lightbox-next" id="pgLightboxNext" aria-label="Next photo">${ICONS.chevronRight}</button>
+      <div class="pg-lightbox-caption" id="pgLightboxCaption"></div>
+    </div>`;
+}
+
+
 // ─── NEB PAGES ──────────────────────────────────────────────────────────────
 
 const NEB_CATEGORIES = Object.keys(NEB_data);
@@ -4164,6 +4358,8 @@ function getPageContent(slug) {
   const nebEntry = Object.entries(NEB_CATEGORY_META).find(([, m]) => m.slug === slug);
   if (nebEntry) return renderNEBCategoryPage(nebEntry[0]);
 
+  if (FUTURE_EVENTS[slug]) return renderFutureEventPage(slug);
+
   const galleryMatch = slug.match(/^(.+)-photo-gallery$/);
   if (galleryMatch) return renderPhotoGalleryPage(galleryMatch[1]);
 
@@ -4187,6 +4383,7 @@ class RootxApp extends HTMLElement {
     this._rendered = false;
     this._scrollHandlers = [];
     this._keyHandlers = [];
+    this._intervalHandlers = [];
   }
 
   connectedCallback() {
@@ -4198,6 +4395,8 @@ class RootxApp extends HTMLElement {
     this._keyHandlers = [];
     this._scrollHandlers.forEach(h => window.removeEventListener('scroll', h));
     this._scrollHandlers = [];
+    this._intervalHandlers.forEach(id => clearInterval(id));
+    this._intervalHandlers = [];
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
@@ -4212,6 +4411,8 @@ class RootxApp extends HTMLElement {
     this._scrollHandlers = [];
     this._keyHandlers.forEach(h => window.removeEventListener('keydown', h));
     this._keyHandlers = [];
+    this._intervalHandlers.forEach(id => clearInterval(id));
+    this._intervalHandlers = [];
 
     const page = this.getAttribute('page') || 'home';
     const content = getPageContent(page);
@@ -4515,12 +4716,52 @@ class RootxApp extends HTMLElement {
         const pgNextBtn = shadow.getElementById('pgCarouselNext');
         if (pgTrack && pgPrevBtn && pgNextBtn) {
           const scrollAmount = () => Math.min(400, pgTrack.clientWidth * 0.8);
+          const atEnd = () => pgTrack.scrollLeft + pgTrack.clientWidth >= pgTrack.scrollWidth - 4;
+
+          const scrollNext = () => {
+            if (atEnd()) {
+              pgTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              pgTrack.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+            }
+          };
+
           pgPrevBtn.addEventListener('click', () => {
             pgTrack.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
           });
           pgNextBtn.addEventListener('click', () => {
-            pgTrack.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+            scrollNext();
           });
+
+          // Auto-scroll: advance on an interval, pause on hover/touch/manual interaction
+          let pgAutoTimer = null;
+          const AUTO_SCROLL_MS = 3500;
+          const startAutoScroll = () => {
+            stopAutoScroll();
+            pgAutoTimer = setInterval(scrollNext, AUTO_SCROLL_MS);
+            this._intervalHandlers.push(pgAutoTimer);
+          };
+          const stopAutoScroll = () => {
+            if (pgAutoTimer) {
+              clearInterval(pgAutoTimer);
+              this._intervalHandlers = this._intervalHandlers.filter(id => id !== pgAutoTimer);
+              pgAutoTimer = null;
+            }
+          };
+          const pauseThenResume = () => {
+            stopAutoScroll();
+            clearTimeout(pgTrack._resumeTimer);
+            pgTrack._resumeTimer = setTimeout(startAutoScroll, 5000);
+          };
+
+          pgTrack.addEventListener('mouseenter', stopAutoScroll);
+          pgTrack.addEventListener('mouseleave', startAutoScroll);
+          pgTrack.addEventListener('touchstart', pauseThenResume, { passive: true });
+          pgTrack.addEventListener('wheel', pauseThenResume, { passive: true });
+          pgPrevBtn.addEventListener('click', pauseThenResume);
+          pgNextBtn.addEventListener('click', pauseThenResume);
+
+          startAutoScroll();
         }
       }
 
