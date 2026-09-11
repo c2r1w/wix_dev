@@ -8,7 +8,348 @@ let _siteLoaderComplete = false;
 // ─── IMAGE URLS ─────────────────────────────────────────────────────────────
 
 
-const NEB_data = {"Regional Directors":[{"name":"Katrina Harrison","img":"17IzG5ciocMwFQZPCzJaQAOPYwnFtl4eP","info":"MidAtlantic Region","sub":""},{"name":"Mamie Watkins","img":"1F2eAxrxRlps0ApqD6QvBg-0FmgslBIkE","info":"Southwest Region","sub":""},{"name":"Ronita Hemingsway","img":"1UTM24I1h7YZVYXIotJkp10GQPD_0ulra","info":"Central Region","sub":""},{"name":"Wanda Pugh Trice","img":"1EZHF73WpfM95l01BG1pGlEY5W1FY9gn1","info":"Southeast Region","sub":""},{"name":"Velma Greene","img":"1PGuCW5HzDSmBfq2303dAfhw-O55pFmpn","info":"Northeast Region","sub":""}],"Presidential Council":[{"name":"Joann Williams","img":"13BswXWx038vwMwOqK12EFkJuD1_cb1XW","info":"17th National President","sub":""},{"name":"DeniAntionette Mazingo","img":"1DvNDzef_KIaKTZf3xG527sDL3LVKZATg","info":"19th National President","sub":""},{"name":"Ethel Hart","img":"1PraJ0zhMMZjynwnvLrSlecmmeKcCdRDG","info":"16th National President","sub":""},{"name":"Rosemary McNeil","img":"1Uuy18UOzL0eECk9L1OJVYddSKeddKjRJ","info":"15th National President","sub":"Presidential Advisor"},{"name":"Agatha Grimes","img":"1lRJzyV0SXGdfIBF0a_Wp_O7Maq1MqSRx","info":"21st National President","sub":"Immediate Past Presidentt"},{"name":"Frances Robinson","img":"19i3bgft3DBweq-f0-4Q-7qzuHl-lh6nx","info":"18th National President","sub":""},{"name":"Roberta Epps","img":"1KzT_eV6wb-gfVaa8LxgEcXOEAJL-YhKr","info":"20th National President","sub":""}],"National Officers":[{"name":"Gwendolyn Roberts-Payne","img":"1EDFhE7DVeeX70QhouR2KZuN168iKU_lX","info":"Chaplain","sub":""},{"name":"Evelyn Jemison-Coleman","img":"1-4K_TfnwToHvLtmcATHgWS2sbdxYk9uT","info":"National Vice President","sub":""},{"name":"Xavier McCutcheon","img":"12thzmqDnsykR7-NPSHybckvSujyJp4n4","info":"Historian","sub":""},{"name":"Traci Jones","img":"15gO3gS-TTvLqiyFQ6Rx-PfTJ67e_9Y7d","info":"Corresponding Secretary","sub":""},{"name":"Angela Patterson Moore","img":"1IxNg0XJ2CERWJ5To5A2oaXAMrk8NgP65","info":"Conclave Headquarters Treasurer","sub":""},{"name":"Cynthia Haddock Shepard","img":"1iW4naMuqPaCZLDhfdfPFgkirmJBgXqRB","info":"National President","sub":""},{"name":"Betty Crawford","img":"1ueOKKo6nNhMsWvEmB-FqpNuYAHxGUiuv","info":"Sergeant-At-Arms","sub":""},{"name":"Nsombi Morrison","img":"1CZ0BUwU8_XArXzcxPqMvxmY14FVgHM4t","info":"Recording Secretary","sub":""},{"name":"Angela Mcclanahan","img":"1Gv7WT_sugQ8mwNSfFlvHUlCD_YegjBxE","info":"Internal Examiner","sub":""},{"name":"Bernadette James","img":"1KdskbD-q26aaKu7oKohYFFNXHBwfQJm4","info":"National Treasurer","sub":""},{"name":"Erica Barnhill","img":"1Um1-6zmj7UPN7y3_4bmAz2Xd7qFqwPWW","info":"Financial Secretary","sub":""}],"Chapter Presidents":[{"name":"Tameka Davis","img":"1l48IOQDkfi3Op20h--D8IuytphC8jeE-","info":"St Paul Bladen","sub":"Southeast Region"},{"name":"Elizabeth Kersey","img":"1JaY456GZAiY6a7ZCdmeOtgpVxLRI-O92","info":"Morven","sub":"Southwest Region"},{"name":"Felicia Andrews","img":"1mvDF_WD4QwvcS3KQJBZPJ2qM1KrJvqVK","info":"High Point","sub":"Central Region"},{"name":"Cheryl Roberts","img":"1yebYMmb_AqnnhGxWKQLnA8Luod4wtgDy","info":"Tri State","sub":"Northeast Region"},{"name":"Barbara Garrett","img":"1Fhx5qLTNjDu-Gfm9FndN1IC7LQXNSOmW","info":"Greenville","sub":"Southwest Region"},{"name":"Angela Moore","img":"1I2aZLkCsuy2HJzqXBRRz7var8JLbN53i","info":"Henrico","sub":"Mid Atlantic Region"},{"name":"Leslie Watson","img":"1MQVbErlLmHjAK2QTum-2a_BfL3_9ouTO","info":"Wilmington","sub":"Southeast Region"},{"name":"Sandra Anderson","img":"1oIesuQlHEynY3bQlP3TDeez-JRXwuZlP","info":"Greater Atlanta","sub":"Southwest Region"},{"name":"Bridgett Rider","img":"1iXc1ydTtFmWyRGhVQYrhQ65hRfopOPui","info":"Suffolk","sub":"Mid Atlantic Region"},{"name":"DeniAntionette Manzingo","img":"1pC17eFC5p1dGRLY5Cjyt1pgtAgSsDN7g","info":"Forestville","sub":"Northeast Region"},{"name":"Rose Walker","img":"1t2gvUg5jA818GIv-nY-UnUSN-dED-okk","info":"Augusta","sub":"Southwest Region"},{"name":"Willyce Felder","img":"1Bcz66OQYZliBi4exweyMq1jSSPt70dFr","info":"Charlotte Mecklenburg","sub":"Southwest Region"},{"name":"Betty F. Stephens","img":"1GLlKF4Zn0193bd0gRzaA91lhYiyHweeX","info":"Richmond","sub":"Mid Atlantic Region"},{"name":"Verlean Randolph","img":"1UuanutVeoZ8lhBw6We3dQq3jKvuJCYUJ","info":"Chesterfield","sub":"Mid Atlantic Region"},{"name":"Beatrice Spaulding","img":"19Xv2-T8Eep7bCtzPA86kjiSlqH8MNzl0","info":"Mooresville","sub":"Southwest Region"},{"name":"Anna Hornsby","img":"1H608tmgruhJPbg8Z0YhTcNpZp6VoDRtw","info":"Newport News Hampton","sub":"Mid Atlantic Region"},{"name":"Anita English","img":"1Ia8GCsks8OSUTW4pAX6O2wJAejR1UOrD","info":"Portsmouth","sub":"Mid Atlantic Region"},{"name":"Sharon Petty","img":"1uVJZmTBR5_7VvxavbWa8MLhGOuCV7ifn","info":"Baltimore","sub":"Northeast Region"},{"name":"Nicole Gaskin-Laniyan","img":"1x3amSEy5d7f42pph-lXvhtac3SeMEl8u","info":"Southern Maryland","sub":"Northeast Region"},{"name":"Brenda James","img":"11GGbIwWNq_FbbihLXLQMLkUq00vybEkv","info":"Greensboro","sub":"Central Region"},{"name":"Carol T. Richardson","img":"1VwqiwQBc1AGZJ9-AkZgriKDs7jbt79m2","info":"Lumberton-Roberson","sub":"Southeast Region"},{"name":"Evelyn Brisbon","img":"1mE8v_pMXo1tSZBUxqVRDZQn4S0pSCf_j","info":"Whiteville","sub":"Southeast Region"},{"name":"Gale Hunter","img":"1B8SeozaPl8Y_gyA8vpcZCtMCT8Wdgptk","info":"Gastonia","sub":"Southwest Region"},{"name":"Betty Crawford","img":"1WrZMIWQe37RY_nvuSGss8yNlieD9iDRb","info":"Fayetteville Elite","sub":"Central Region"},{"name":"Cathy Chambers","img":"1_TV-KUl_wb51AsF6h1TvvHposabyWGFF","info":"Seat Pleasant","sub":"Northeast Region"},{"name":"Corine Williams","img":"1becHD6_vO1Ul-1JeFGjGyHDTSyzNLvH2","info":"Marlboro Dillon","sub":"Southwest Region"},{"name":"Traci Jones","img":"1JyzYbUriHA8lroWrN65SyscTAt9B1Pe8","info":"Corresponding Secretary","sub":""},{"name":"Musheerah Ali","img":"1lZGec9WZgKAovy982ysGRJYaAB4Ggc2O","info":"Parliamentarian","sub":""}],"Board of Trustees":[{"name":"E Patterson","img":"1K-1d8kscbUpvqunHKC5amRjjZIjxUUaf","info":"","sub":""},{"name":"Ronita Hemmingway","img":"1Y1RjAtUz2QjxesdGVDuqIChubGhDa7Fa","info":"","sub":""},{"name":"Felicia Andrews","img":"1YgoRmNS9dwOJLMFZdifwmkXxSrIMK4fr","info":"","sub":""},{"name":"Barbara Garrett","img":"1btYZXfRJIO2oie2ygex9LbJqRQc_nY4L","info":"","sub":""}]}
+const NEB_data = {
+  "Regional Directors": [
+    {
+      "name": "Ronita Hemingsway",
+      "img": "1UTM24I1h7YZVYXIotJkp10GQPD_0ulra",
+      "info": "Central Region",
+      "sub": ""
+    },
+    {
+      "name": "Katrina Harrison",
+      "img": "17IzG5ciocMwFQZPCzJaQAOPYwnFtl4eP",
+      "info": "MidAtlantic Region",
+      "sub": ""
+    },
+    {
+      "name": "Velma Greene",
+      "img": "1PGuCW5HzDSmBfq2303dAfhw-O55pFmpn",
+      "info": "Northeast Region",
+      "sub": ""
+    },
+    {
+      "name": "Wanda Pugh Trice",
+      "img": "1EZHF73WpfM95l01BG1pGlEY5W1FY9gn1",
+      "info": "Southeast Region",
+      "sub": ""
+    },
+    {
+      "name": "Mamie Watkins",
+      "img": "1F2eAxrxRlps0ApqD6QvBg-0FmgslBIkE",
+      "info": "Southwest Region",
+      "sub": ""
+    }
+  ],
+  "Presidential Council": [
+    {
+      "name": "Rosemary McNeil",
+      "img": "1Uuy18UOzL0eECk9L1OJVYddSKeddKjRJ",
+      "info": "15th National President",
+      "sub": "Presidential Advisor"
+    },
+    {
+      "name": "Ethel Hart",
+      "img": "1PraJ0zhMMZjynwnvLrSlecmmeKcCdRDG",
+      "info": "16th National President",
+      "sub": ""
+    },
+    {
+      "name": "Joann Williams",
+      "img": "13BswXWx038vwMwOqK12EFkJuD1_cb1XW",
+      "info": "17th National President",
+      "sub": ""
+    },
+    {
+      "name": "Frances Robinson",
+      "img": "19i3bgft3DBweq-f0-4Q-7qzuHl-lh6nx",
+      "info": "18th National President",
+      "sub": ""
+    },
+    {
+      "name": "DeniAntionette Mazingo",
+      "img": "1DvNDzef_KIaKTZf3xG527sDL3LVKZATg",
+      "info": "19th National President",
+      "sub": ""
+    },
+    {
+      "name": "Roberta Epps",
+      "img": "1KzT_eV6wb-gfVaa8LxgEcXOEAJL-YhKr",
+      "info": "20th National President",
+      "sub": ""
+    },
+    {
+      "name": "Agatha Grimes",
+      "img": "1lRJzyV0SXGdfIBF0a_Wp_O7Maq1MqSRx",
+      "info": "21st National President",
+      "sub": "Immediate Past Presidentt"
+    }
+  ],
+  "National Officers": [
+    {
+      "name": "Cynthia Haddock Shepard",
+      "img": "1iW4naMuqPaCZLDhfdfPFgkirmJBgXqRB",
+      "info": "National President",
+      "sub": ""
+    },
+    {
+      "name": "Evelyn Jemison-Coleman",
+      "img": "1-4K_TfnwToHvLtmcATHgWS2sbdxYk9uT",
+      "info": "National Vice President",
+      "sub": ""
+    },
+    {
+      "name": "Nsombi Morrison",
+      "img": "1CZ0BUwU8_XArXzcxPqMvxmY14FVgHM4t",
+      "info": "Recording Secretary",
+      "sub": ""
+    },
+    {
+      "name": "Traci Jones",
+      "img": "15gO3gS-TTvLqiyFQ6Rx-PfTJ67e_9Y7d",
+      "info": "Corresponding Secretary",
+      "sub": ""
+    },
+    {
+      "name": "Erica Barnhill",
+      "img": "1Um1-6zmj7UPN7y3_4bmAz2Xd7qFqwPWW",
+      "info": "Financial Secretary",
+      "sub": ""
+    },
+    {
+      "name": "Bernadette James",
+      "img": "1KdskbD-q26aaKu7oKohYFFNXHBwfQJm4",
+      "info": "National Treasurer",
+      "sub": ""
+    },
+    {
+      "name": "Angela Patterson Moore",
+      "img": "1IxNg0XJ2CERWJ5To5A2oaXAMrk8NgP65",
+      "info": "Conclave Headquarters Treasurer",
+      "sub": ""
+    },
+    {
+      "name": "Xavier McCutcheon",
+      "img": "12thzmqDnsykR7-NPSHybckvSujyJp4n4",
+      "info": "Historian",
+      "sub": ""
+    },
+    {
+      "name": "Gwendolyn Roberts-Payne",
+      "img": "1EDFhE7DVeeX70QhouR2KZuN168iKU_lX",
+      "info": "Chaplain",
+      "sub": ""
+    },
+    {
+      "name": "Betty Crawford",
+      "img": "1ueOKKo6nNhMsWvEmB-FqpNuYAHxGUiuv",
+      "info": "Sergeant-At-Arms",
+      "sub": ""
+    },
+    {
+      "name": "Angela Mcclanahan",
+      "img": "1Gv7WT_sugQ8mwNSfFlvHUlCD_YegjBxE",
+      "info": "Internal Examiner",
+      "sub": ""
+    }
+  ],
+  "Chapter Presidents": [
+    {
+      "name": "Betty Crawford",
+      "img": "1WrZMIWQe37RY_nvuSGss8yNlieD9iDRb",
+      "info": "Fayetteville Elite",
+      "sub": "Central Region"
+    },
+    {
+      "name": "Brenda James",
+      "img": "11GGbIwWNq_FbbihLXLQMLkUq00vybEkv",
+      "info": "Greensboro",
+      "sub": "Central Region"
+    },
+    {
+      "name": "Felicia Andrews",
+      "img": "1mvDF_WD4QwvcS3KQJBZPJ2qM1KrJvqVK",
+      "info": "High Point",
+      "sub": "Central Region"
+    },
+    {
+      "name": "Verlean Randolph",
+      "img": "1UuanutVeoZ8lhBw6We3dQq3jKvuJCYUJ",
+      "info": "Chesterfield",
+      "sub": "Mid Atlantic Region"
+    },
+    {
+      "name": "Angela Moore",
+      "img": "1I2aZLkCsuy2HJzqXBRRz7var8JLbN53i",
+      "info": "Henrico",
+      "sub": "Mid Atlantic Region"
+    },
+    {
+      "name": "Anna Hornsby",
+      "img": "1H608tmgruhJPbg8Z0YhTcNpZp6VoDRtw",
+      "info": "Newport News Hampton",
+      "sub": "Mid Atlantic Region"
+    },
+    {
+      "name": "Anita English",
+      "img": "1Ia8GCsks8OSUTW4pAX6O2wJAejR1UOrD",
+      "info": "Portsmouth",
+      "sub": "Mid Atlantic Region"
+    },
+    {
+      "name": "Betty F. Stephens",
+      "img": "1GLlKF4Zn0193bd0gRzaA91lhYiyHweeX",
+      "info": "Richmond",
+      "sub": "Mid Atlantic Region"
+    },
+    {
+      "name": "Bridgett Rider",
+      "img": "1iXc1ydTtFmWyRGhVQYrhQ65hRfopOPui",
+      "info": "Suffolk",
+      "sub": "Mid Atlantic Region"
+    },
+    {
+      "name": "Sharon Petty",
+      "img": "1uVJZmTBR5_7VvxavbWa8MLhGOuCV7ifn",
+      "info": "Baltimore",
+      "sub": "Northeast Region"
+    },
+    {
+      "name": "DeniAntionette Manzingo",
+      "img": "1pC17eFC5p1dGRLY5Cjyt1pgtAgSsDN7g",
+      "info": "Forestville",
+      "sub": "Northeast Region"
+    },
+    {
+      "name": "Cathy Chambers",
+      "img": "1_TV-KUl_wb51AsF6h1TvvHposabyWGFF",
+      "info": "Seat Pleasant",
+      "sub": "Northeast Region"
+    },
+    {
+      "name": "Nicole Gaskin-Laniyan",
+      "img": "1x3amSEy5d7f42pph-lXvhtac3SeMEl8u",
+      "info": "Southern Maryland",
+      "sub": "Northeast Region"
+    },
+    {
+      "name": "Cheryl Roberts",
+      "img": "1yebYMmb_AqnnhGxWKQLnA8Luod4wtgDy",
+      "info": "Tri State",
+      "sub": "Northeast Region"
+    },
+    {
+      "name": "Carol T. Richardson",
+      "img": "1VwqiwQBc1AGZJ9-AkZgriKDs7jbt79m2",
+      "info": "Lumberton-Roberson",
+      "sub": "Southeast Region"
+    },
+    {
+      "name": "Traci Jones",
+      "img": "1JyzYbUriHA8lroWrN65SyscTAt9B1Pe8",
+      "info": "Corresponding Secretary",
+      "sub": ""
+    },
+    {
+      "name": "Musheerah Ali",
+      "img": "1lZGec9WZgKAovy982ysGRJYaAB4Ggc2O",
+      "info": "Parliamentarian",
+      "sub": ""
+    },
+    {
+      "name": "Tameka Davis",
+      "img": "1l48IOQDkfi3Op20h--D8IuytphC8jeE-",
+      "info": "St Paul Bladen",
+      "sub": "Southeast Region"
+    },
+    {
+      "name": "Evelyn Brisbon",
+      "img": "1mE8v_pMXo1tSZBUxqVRDZQn4S0pSCf_j",
+      "info": "Whiteville",
+      "sub": "Southeast Region"
+    },
+    {
+      "name": "Leslie Watson",
+      "img": "1MQVbErlLmHjAK2QTum-2a_BfL3_9ouTO",
+      "info": "Wilmington",
+      "sub": "Southeast Region"
+    },
+    {
+      "name": "Rose Walker",
+      "img": "1t2gvUg5jA818GIv-nY-UnUSN-dED-okk",
+      "info": "Augusta",
+      "sub": "Southwest Region"
+    },
+    {
+      "name": "Willyce Felder",
+      "img": "1Bcz66OQYZliBi4exweyMq1jSSPt70dFr",
+      "info": "Charlotte Mecklenburg",
+      "sub": "Southwest Region"
+    },
+    {
+      "name": "Gale Hunter",
+      "img": "1B8SeozaPl8Y_gyA8vpcZCtMCT8Wdgptk",
+      "info": "Gastonia",
+      "sub": "Southwest Region"
+    },
+    {
+      "name": "Sandra Anderson",
+      "img": "1oIesuQlHEynY3bQlP3TDeez-JRXwuZlP",
+      "info": "Greater Atlanta",
+      "sub": "Southwest Region"
+    },
+    {
+      "name": "Barbara Garrett",
+      "img": "1Fhx5qLTNjDu-Gfm9FndN1IC7LQXNSOmW",
+      "info": "Greenville",
+      "sub": "Southwest Region"
+    },
+    {
+      "name": "Corine Williams",
+      "img": "1becHD6_vO1Ul-1JeFGjGyHDTSyzNLvH2",
+      "info": "Marlboro Dillon",
+      "sub": "Southwest Region"
+    },
+    {
+      "name": "Beatrice Spaulding",
+      "img": "19Xv2-T8Eep7bCtzPA86kjiSlqH8MNzl0",
+      "info": "Mooresville",
+      "sub": "Southwest Region"
+    },
+    {
+      "name": "Elizabeth Kersey",
+      "img": "1JaY456GZAiY6a7ZCdmeOtgpVxLRI-O92",
+      "info": "Morven",
+      "sub": "Southwest Region"
+    }
+  ],
+  "Board of Trustees": [
+    {
+      "name": "E Patterson",
+      "img": "1K-1d8kscbUpvqunHKC5amRjjZIjxUUaf",
+      "info": "",
+      "sub": ""
+    },
+    {
+      "name": "Ronita Hemmingway",
+      "img": "1Y1RjAtUz2QjxesdGVDuqIChubGhDa7Fa",
+      "info": "",
+      "sub": ""
+    },
+    {
+      "name": "Felicia Andrews",
+      "img": "1YgoRmNS9dwOJLMFZdifwmkXxSrIMK4fr",
+      "info": "",
+      "sub": ""
+    },
+    {
+      "name": "Barbara Garrett",
+      "img": "1btYZXfRJIO2oie2ygex9LbJqRQc_nY4L",
+      "info": "",
+      "sub": ""
+    }
+  ]
+}
 const Tx_D="1iHTTa80ifam8ugiwTSm-wu16bEZZGo0y";
 
 const IMG = {
@@ -192,6 +533,8 @@ const IMG = {
   conc24_9: 'https://static.wixstatic.com/media/fd8f92_b65c100c219948afb5a946889e97b5cd~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80,enc_avif,quality_auto/fd8f92_b65c100c219948afb5a946889e97b5cd~mv2.jpg',
 };
 
+const PRESIDENT_VIDEO_ID = '18a8dzg2Hzv64DH707_XVXifKShHp-iMB';
+
 const BASE = '';
 
 // ─── MEMBER SLUGS (excluded from rendering) ─────────────────────────────────
@@ -322,6 +665,7 @@ const ICONS = {
   donate: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.94s4.18 1.36 4.18 3.85c0 1.89-1.44 2.93-3.12 3.19z"/></svg>`,
   volunteer: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>`,
   handshake: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.22 19.85c-.18.18-.5.18-.67 0l-3.89-3.89c-.18-.18-.18-.5 0-.67.18-.18.5-.18.67 0L12.22 19.85zm2.56-.91c.18.18.5.18.67 0l5.04-5.04c.18-.18.18-.5 0-.67L16 8.74l-4.11 4.11 2.89 2.89c.18.18.18.5 0 .67l-3.89 3.53zm-7.56-7.56l4.11-4.11L8 3.94c-.18-.18-.5-.18-.67 0L2.29 8.98c-.18.18-.18.5 0 .67l4.93 4.93z"/></svg>`,
+  play: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`,
 };
 
 // ─── NAVIGATION STRUCTURE ───────────────────────────────────────────────────
@@ -1434,6 +1778,73 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   border-radius: 16px;
   z-index: -1;
 }
+.president-img.has-video { cursor: pointer; }
+.president-img .play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(94,57,143,0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.president-img .play-btn svg { width: 30px; height: 30px; margin-left: 4px; }
+.president-img.has-video:hover .play-btn {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: #5e398f;
+}
+.video-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.video-modal.open { display: flex; }
+.video-modal:fullscreen { padding: 0; }
+.video-modal-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  max-height: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.video-modal:fullscreen .video-modal-inner {
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: auto;
+}
+.video-modal-inner iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-modal-close {
+  position: absolute;
+  top: -48px; right: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.video-modal:fullscreen .video-modal-close { top: 16px; right: 16px; }
+.video-modal-close svg { width: 20px; height: 20px; }
+.video-modal-close:hover { background: rgba(255,255,255,0.2); }
 .president-info .label { margin-bottom: 16px; }
 .president-info h2 { margin-bottom: 8px; }
 .president-info .president-title {
@@ -2650,8 +3061,9 @@ function renderHomePage() {
     <section class="section bg-light">
       <div class="container">
         <div class="president-section fade-in">
-          <div class="president-img">
+          <div class="president-img has-video" id="presidentVideoTrigger" role="button" tabindex="0" aria-label="Play video about President Shepard">
             <img src="${IMG.president}" alt="Cynthia H. Shepard" loading="lazy">
+            <div class="play-btn">${ICONS.play}</div>
           </div>
           <div class="president-info">
             <div class="label">22nd National President</div>
@@ -2664,6 +3076,13 @@ function renderHomePage() {
         </div>
       </div>
     </section>
+
+    <div class="video-modal" id="presidentVideoModal">
+      <div class="video-modal-inner">
+        <button type="button" class="video-modal-close" id="presidentVideoClose" aria-label="Close video">${ICONS.close}</button>
+        <iframe id="presidentVideoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="President Shepard video"></iframe>
+      </div>
+    </div>
 
     <!-- Programmatic Thrusts -->
     <section class="section bg-white">
@@ -4667,6 +5086,58 @@ class RootxApp extends HTMLElement {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       });
+
+      // ── President Section: video modal ─────────────────────────────────
+      const presidentVideoTrigger = shadow.getElementById('presidentVideoTrigger');
+      const presidentVideoModal = shadow.getElementById('presidentVideoModal');
+      if (presidentVideoTrigger && presidentVideoModal) {
+        const presidentVideoFrame = shadow.getElementById('presidentVideoFrame');
+        const presidentVideoClose = shadow.getElementById('presidentVideoClose');
+
+        const openPresidentVideo = () => {
+          presidentVideoFrame.src = `https://drive.google.com/file/d/${PRESIDENT_VIDEO_ID}/preview`;
+          presidentVideoModal.classList.add('open');
+          const requestFs = presidentVideoModal.requestFullscreen
+            || presidentVideoModal.webkitRequestFullscreen
+            || presidentVideoModal.msRequestFullscreen;
+          if (requestFs) requestFs.call(presidentVideoModal).catch(() => {});
+        };
+        const closePresidentVideo = () => {
+          presidentVideoModal.classList.remove('open');
+          presidentVideoFrame.src = '';
+          const fsElement = document.fullscreenElement || document.webkitFullscreenElement;
+          if (fsElement === presidentVideoModal) {
+            const exitFs = document.exitFullscreen || document.webkitExitFullscreen;
+            if (exitFs) exitFs.call(document).catch(() => {});
+          }
+        };
+
+        presidentVideoTrigger.addEventListener('click', openPresidentVideo);
+        presidentVideoTrigger.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openPresidentVideo();
+          }
+        });
+        if (presidentVideoClose) presidentVideoClose.addEventListener('click', closePresidentVideo);
+        presidentVideoModal.addEventListener('click', (e) => {
+          if (e.target === presidentVideoModal) closePresidentVideo();
+        });
+
+        const presidentVideoKeyHandler = (e) => {
+          if (!presidentVideoModal.classList.contains('open')) return;
+          if (e.key === 'Escape') closePresidentVideo();
+        };
+        window.addEventListener('keydown', presidentVideoKeyHandler);
+        this._keyHandlers.push(presidentVideoKeyHandler);
+
+        const presidentVideoFsHandler = () => {
+          const fsElement = document.fullscreenElement || document.webkitFullscreenElement;
+          if (!fsElement && presidentVideoModal.classList.contains('open')) closePresidentVideo();
+        };
+        document.addEventListener('fullscreenchange', presidentVideoFsHandler);
+        document.addEventListener('webkitfullscreenchange', presidentVideoFsHandler);
+      }
 
       // ── Photo Gallery: carousel + click-to-zoom lightbox ──────────────────
       const pgLightbox = shadow.getElementById('pgLightbox');
