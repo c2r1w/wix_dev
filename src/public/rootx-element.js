@@ -141,6 +141,14 @@ const NEB_data = {
       "sub": ""
     },
     {
+      "name": "Janet Dennis",
+      "img": "1HiuJoLTKLmyXBp9Lp7XBJSyYh3NZtyMa",
+      "info": "National Reporter",
+      "sub": ""
+    },
+
+
+    {
       "name": "Betty Crawford",
       "img": "1ueOKKo6nNhMsWvEmB-FqpNuYAHxGUiuv",
       "info": "Sergeant-At-Arms",
@@ -180,7 +188,7 @@ const NEB_data = {
     },
     {
       "name": "Angela Moore",
-      "img": "1I2aZLkCsuy2HJzqXBRRz7var8JLbN53i",
+      "img": "1IxNg0XJ2CERWJ5To5A2oaXAMrk8NgP65",
       "info": "Henrico",
       "sub": "Mid Atlantic Region"
     },
@@ -245,18 +253,6 @@ const NEB_data = {
       "sub": "Southeast Region"
     },
     {
-      "name": "Traci Jones",
-      "img": "1JyzYbUriHA8lroWrN65SyscTAt9B1Pe8",
-      "info": "Corresponding Secretary",
-      "sub": ""
-    },
-    {
-      "name": "Musheerah Ali",
-      "img": "1lZGec9WZgKAovy982ysGRJYaAB4Ggc2O",
-      "info": "Parliamentarian",
-      "sub": ""
-    },
-    {
       "name": "Tameka Davis",
       "img": "1l48IOQDkfi3Op20h--D8IuytphC8jeE-",
       "info": "St Paul Bladen",
@@ -275,8 +271,20 @@ const NEB_data = {
       "sub": "Southeast Region"
     },
     {
+      "name": "Traci Jones",
+      "img": "1JyzYbUriHA8lroWrN65SyscTAt9B1Pe8",
+      "info": "Corresponding Secretary",
+      "sub": "Southeast Region"
+    },
+    {
+      "name": "Musheerah Ali",
+      "img": "1lZGec9WZgKAovy982ysGRJYaAB4Ggc2O",
+      "info": "Parliamentarian",
+      "sub": "Southeast Region"
+    },
+    {
       "name": "Rose Walker",
-      "img": "1t2gvUg5jA818GIv-nY-UnUSN-dED-okk",
+      "img": "1bxCE-7v0S0NoSFPCMZR9ICpgpDelnGg5",
       "info": "Augusta",
       "sub": "Southwest Region"
     },
