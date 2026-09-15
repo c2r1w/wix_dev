@@ -123,7 +123,7 @@ const NEB_data = {
       "sub": ""
     },
     {
-      "name": "Angela Patterson Moore",
+      "name": "Angela Patterson-Moore",
       "img": "1IxNg0XJ2CERWJ5To5A2oaXAMrk8NgP65",
       "info": "Conclave Headquarters Treasurer",
       "sub": ""
@@ -138,6 +138,12 @@ const NEB_data = {
       "name": "Gwendolyn Roberts-Payne",
       "img": "1EDFhE7DVeeX70QhouR2KZuN168iKU_lX",
       "info": "Chaplain",
+      "sub": ""
+    },
+       {
+      "name": "Musheerah Ali",
+      "img": "1lZGec9WZgKAovy982ysGRJYaAB4Ggc2O",
+      "info": "Parliamentarian",
       "sub": ""
     },
     {
@@ -187,7 +193,7 @@ const NEB_data = {
       "sub": "Mid Atlantic Region"
     },
     {
-      "name": "Angela Moore",
+      "name": "Angela Patterson-Moore",
       "img": "1IxNg0XJ2CERWJ5To5A2oaXAMrk8NgP65",
       "info": "Henrico",
       "sub": "Mid Atlantic Region"
@@ -200,7 +206,7 @@ const NEB_data = {
     },
     {
       "name": "Anita English",
-      "img": "1Ia8GCsks8OSUTW4pAX6O2wJAejR1UOrD",
+      "img": "1hckexOL9EKzVnqeLS_PcEbdCn04iMivQ",
       "info": "Portsmouth",
       "sub": "Mid Atlantic Region"
     },
@@ -273,13 +279,13 @@ const NEB_data = {
     {
       "name": "Traci Jones",
       "img": "1JyzYbUriHA8lroWrN65SyscTAt9B1Pe8",
-      "info": "Corresponding Secretary",
+      "info": "Raeford",
       "sub": "Southeast Region"
     },
     {
       "name": "Musheerah Ali",
       "img": "1lZGec9WZgKAovy982ysGRJYaAB4Ggc2O",
-      "info": "Parliamentarian",
+      "info": "Red Springs",
       "sub": "Southeast Region"
     },
     {
