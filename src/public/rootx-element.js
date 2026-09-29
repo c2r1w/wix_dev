@@ -82,7 +82,7 @@ const NEB_data = {
       "name": "Agatha Grimes",
       "img": "1lRJzyV0SXGdfIBF0a_Wp_O7Maq1MqSRx",
       "info": "21st National President",
-      "sub": "Immediate Past Presidentt"
+      "sub": "Immediate Past President"
     }
   ],
   "National Officers": [
@@ -372,7 +372,7 @@ const IMG = {
   president: 'https://static.wixstatic.com/media/fd8f92_419fe813c99c4b0f892c7367bd8b2c9a~mv2.jpg/v1/fill/w_600,h_900,al_c,q_85,enc_avif,quality_auto/CShepard.jpg',
   volunteers: 'https://static.wixstatic.com/media/11062b_642de97584a2403ea74706b85754a031~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,enc_avif,quality_auto/11062b_642de97584a2403ea74706b85754a031~mv2.jpg',
   conclaveBoard: 'https://static.wixstatic.com/media/c822f1_e4ffba8ba60d4d9eb9260dea592f0fb0~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,enc_avif,quality_auto/c822f1_e4ffba8ba60d4d9eb9260dea592f0fb0~mv2.jpg',
-  honorary: 'https://static.wixstatic.com/media/fd8f92_40e867f3a8d9450f8bbd75140936a840~mv2.png/v1/fill/w_900,h_700,al_c,q_90,enc_avif,quality_auto/LAI%20Honorary%20Sisters_edited.png',
+  honorary: 'https://static.wixstatic.com/media/b75b9e_40227e0136034933bd9638c711eeadc3~mv2.png',
   harambe: 'https://static.wixstatic.com/media/c822f1_5f2b7567f6934abfbf5672e2d32c4dcb~mv2.jpg/v1/fill/w_1400,h_900,al_c,q_85,enc_avif,quality_auto/c822f1_5f2b7567f6934abfbf5672e2d32c4dcb~mv2.jpg',
   orchid: 'https://static.wixstatic.com/media/c822f1_0c90594f7d09424ca9c8a0afd97068ad~mv2.png/v1/fill/w_200,h_184,al_c,q_85,enc_avif,quality_auto/c822f1_0c90594f7d09424ca9c8a0afd97068ad~mv2.png',
   doraMason: 'https://static.wixstatic.com/media/c822f1_36f07b032b5e43e7a71018938dc630d9~mv2.png/v1/fill/w_600,h_580,al_c,q_90,enc_avif,quality_auto/Dora%20Mason_edited.png',
@@ -409,7 +409,7 @@ const IMG = {
   programFamily: 'https://static.wixstatic.com/media/c822f1_3d0b06875ec640858ef5acd7cfc6d389~mv2.png/v1/fill/w_600,h_500,al_c,q_85,enc_avif,quality_auto/13.png',
   programHealth: 'https://static.wixstatic.com/media/fd8f92_3c3b315b7bda4bf5be50ce15376dea42~mv2.png/v1/fill/w_600,h_500,al_c,q_85,enc_avif,quality_auto/8.png',
   programPolitical: 'https://static.wixstatic.com/media/c822f1_55bcc387ee2847c0bed4b985f275f38f~mv2.png/v1/fill/w_600,h_500,al_c,q_85,enc_avif,quality_auto/14.png',
-  conclaveFlyer: 'https://static.wixstatic.com/media/fd8f92_5d87e630b4754154a51baf9e4b77496b~mv2.png/v1/fill/w_800,h_1000,al_c,q_90,enc_avif,quality_auto/JW%20Mariott%20Flyer.png',
+  conclaveFlyer: 'https://static.wixstatic.com/media/b75b9e_f48ef0349376487bb0089ec7ad5fb020~mv2.png',
   // Values card images (About Us)
   valCommitment: 'https://static.wixstatic.com/media/c822f1_07c0160acdcc4bb9978df63c440759b3~mv2.png/v1/fill/w_360,h_246,al_c,q_85,enc_avif,quality_auto/8_edited.png',
   valCitizenship: 'https://static.wixstatic.com/media/c822f1_26c757bae2da4679b3d0c9ae08e2fd02~mv2.png/v1/fill/w_348,h_268,al_c,q_85,enc_avif,quality_auto/Copy%20of%20Copy.png',
@@ -835,14 +835,28 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   min-width: 280px;
 }
 
+/* Justified-center grid: wraps at 4-up, centers any leftover row */
+.leaders-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+.leaders-grid .leader-card {
+  flex: 0 1 calc(33.333% - 22px);
+  min-width: 220px;
+}
+
 @media (max-width: 1024px) {
   .grid-4, .grid-5 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .thrusts-grid .card { flex: 0 1 calc(50% - 16px); }
+  .leaders-grid .leader-card { flex: 0 1 calc(50% - 16px); }
 }
 @media (max-width: 768px) {
   .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
   .thrusts-grid .card { flex: 1 1 100%; }
+  .leaders-grid .leader-card { flex: 1 1 100%; }
   .section { padding: 60px 0; }
   .container { padding: 0 16px; }
 }
@@ -971,7 +985,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   -webkit-backdrop-filter: blur(20px);
 }
 .site-header.scrolled {
-  background: rgba(26, 26, 46, 0.98);
+  background: #5d449b;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 4px 30px rgba(0,0,0,0.15);
@@ -979,7 +993,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 
 /* Top bar */
 .header-top {
-  background: #1a1a2e;
+  background: #5d449b;
   padding: 8px 0;
   font-size: 0.8rem;
   color: rgba(255,255,255,0.7);
@@ -1741,7 +1755,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 
 /* ── Marquee Strip (inspired by NCNW) ──────────────── */
 .marquee-strip {
-  background: #b76e79;
+  background: #f8ccdb;
   padding: 14px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -2357,6 +2371,76 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 }
 .gold-line-center { margin-left: auto; margin-right: auto; }
 
+/* ── Countdown ──────────────────────────────────────── */
+.countdown-heading {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #5e398f;
+  margin-bottom: 20px;
+}
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.countdown-footnote {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 20px;
+}
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 20px 16px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(94,57,143,0.08);
+  border: 1px solid rgba(94,57,143,0.08);
+}
+.countdown-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 1;
+  background: linear-gradient(135deg, #5e398f, #b76e79);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.countdown-label {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 8px;
+}
+.countdown-sep {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #b76e79;
+  opacity: 0.6;
+  padding-bottom: 22px;
+}
+@media (max-width: 640px) {
+  .countdown { gap: 12px; }
+  .countdown-unit { min-width: 80px; padding: 14px 10px; }
+  .countdown-num { font-size: 1.8rem; }
+  .countdown-sep { font-size: 1.4rem; padding-bottom: 14px; }
+}
+
 /* ── Memorial Cards ─────────────────────────────────── */
 .memorial-card {
   background: #fff;
@@ -2498,8 +2582,8 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   position: fixed;
   bottom: 180px;
   right: 0;
-  width: 56px;
-  height: 80px;
+  width: 72px;
+  height: 150px;
   cursor: grab;
   z-index: 9000;
   touch-action: none;
@@ -2512,14 +2596,14 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   width: 100%;
   height: 100%;
   background: #5e398f;
-  border-radius: 56px 0 0 56px;
+  border-radius: 75px 0 0 75px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: -4px 4px 20px rgba(94,57,143,0.55), -2px 2px 8px rgba(0,0,0,0.3);
   transition: box-shadow 0.25s, background 0.25s;
   border: none;
-  padding: 0;
+  padding: 0 4px 0 0;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -2533,26 +2617,31 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 }
 .neb-label {
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
-  line-height: 1.2;
+  gap: 5px;
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
   text-transform: uppercase;
   width: 100%;
   text-align: center;
+  padding-left: 6px;
 }
-.neb-label span {
+.neb-label-word {
   display: block;
-  line-height: 1.2;
+  line-height: 1.15;
   width: 100%;
   text-align: center;
+  white-space: nowrap;
+}
+.neb-label-initial {
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 /* ── Pie menu overlay ── */
@@ -2721,15 +2810,34 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 /* ── NEB Person Cards ── */
 .neb-cards-section { padding: 60px 0 80px; }
 .neb-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 28px;
 }
+.neb-cards-grid .neb-person-card {
+  flex: 0 1 calc(25% - 21px);
+  min-width: 220px;
+}
+.neb-group-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+.neb-group-cards .neb-person-card {
+  flex: 0 1 calc(25% - 21px);
+  min-width: 220px;
+}
 @media (max-width: 1024px) {
-  .neb-cards-grid { grid-template-columns: repeat(3, 1fr); }
+  .neb-cards-grid .neb-person-card,
+  .neb-group-cards .neb-person-card { flex: 0 1 calc(33.333% - 19px); }
 }
 @media (max-width: 700px) {
-  .neb-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .neb-cards-grid, .neb-group-cards { gap: 16px; }
+  .neb-cards-grid .neb-person-card,
+  .neb-group-cards .neb-person-card { flex: 0 1 calc(50% - 8px); }
 }
 .neb-person-card {
   background: #fff;
@@ -2769,6 +2877,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .neb-person-card:hover .neb-img-overlay { opacity: 1; }
 .neb-person-card-body {
   padding: 18px 20px 20px;
+  text-align: center;
 }
 .neb-person-name {
   font-family: 'Playfair Display', serif;
@@ -2804,7 +2913,8 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 
 /* Group sub-header (for chapters grouped by region) */
 .neb-group-header {
-  grid-column: 1 / -1;
+  width: 100%;
+  flex: 1 1 100%;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -2841,7 +2951,9 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 
 @media (max-width: 768px) {
   .neb-person-card-img { height: 200px; }
-  .neb-fab { bottom: 90px; }
+  .neb-fab { bottom: 90px; width: 60px; height: 124px; }
+  .neb-btn { border-radius: 62px 0 0 62px; }
+  .neb-label { font-size: 0.42rem; }
 }
 `;
 
@@ -2934,7 +3046,6 @@ function renderFooter() {
             <a href="/about-us" data-nav>About Us</a>
             <a href="/our-founders" data-nav>Our Founders</a>
             <a href="/our-impact" data-nav>Our Impact</a>
-            <a href="/get-involved" data-nav>Get Involved</a>
             <a href="/donate" data-nav>Donate</a>
           </div>
           <div class="footer-col">
@@ -2996,8 +3107,7 @@ function renderHomePage() {
         <h1>Help Someone<br>In Need</h1>
         <p>Enhancing the quality of life and promoting the general improvement of the communities in which we serve.</p>
         <div class="hero-actions">
-          <a href="/get-involved" data-nav class="btn btn-gold btn-lg">Get Involved</a>
-          <a href="/donate" data-nav class="btn btn-outline btn-lg">Donate Now</a>
+      
         </div>
       </div>
     </section>
@@ -3235,23 +3345,8 @@ function renderHomePage() {
       </div>
     </section>
 
-    <!-- Gwinnett Chapter Induction -->
-    <section class="section-sm bg-light">
-      <div class="container">
-        <div class="feature-block fade-in">
-          <div class="feature-img">
-            <img src="${IMG.gwinnettInduction}" alt="Gwinnett Chapter Induction" loading="lazy">
-          </div>
-          <div class="feature-text">
-            <div class="label">Our Impact</div>
-            <h2>Gwinnett Chapter Induction</h2>
-            <p>Our newest chapter continues to grow and serve the Greater Atlanta community. Welcome to the sisterhood!</p>
-            <a href="/our-impact" data-nav class="btn btn-outline-dark btn-sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
+    
     <!-- CTA Sections -->
     <section class="cta-section">
       <div class="cta-bg" style="background-image:url('${IMG.harambe}')"></div>
@@ -3260,7 +3355,7 @@ function renderHomePage() {
         <h2 style="color:#fff">Sign Up to Learn More About Las Amigas</h2>
         <p style="color:rgba(255,255,255,0.8)">Stay connected with our mission and discover how you can make a difference in underserved communities.</p>
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-          <a href="/get-involved" data-nav class="btn btn-gold">Get Involved</a>
+        
           <a href="/contact-us" data-nav class="btn btn-outline">Contact Us</a>
         </div>
       </div>
@@ -3983,9 +4078,9 @@ function renderRegionPage(regionConfig) {
           <h2>Meet the Leaders</h2>
           <div class="section-divider"></div>
         </div>
-        <div class="grid grid-4 fade-in">
-          ${regionConfig.leaders.map(l => `
-            <div class="leader-card">
+        <div class="leaders-grid fade-in">
+          ${regionConfig.leaders.map((l, i) => `
+            <div class="leader-card" style="background:${i % 2 === 0 ? '#f8ccdb' : '#b2a4d0'}">
               ${l.photo
                 ? `<img src="${l.photo}" alt="${l.name || 'TBA'}" class="leader-photo" loading="lazy">`
                 : `<div class="leader-avatar">${l.name ? l.name.charAt(0) : '?'}</div>`
@@ -4521,6 +4616,9 @@ const FUTURE_EVENTS = {
     label: 'Save the Date',
     title: 'Conclave 2027',
     subtitle: 'Our national gathering returns — fellowship, service, and sisterhood await.',
+    countdownTarget: '2027-06-22T00:00:00',
+    countdownLabel: 'Conclave 2027 Begins In',
+    countdownFootnote: ' ',
     banner: IMG.conclaveFlyer,
     featured: [IMG.conclaveFlyer, IMG.conclave2024_1, IMG.conclave2023_1, IMG.conclaveBoard],
     photos: [IMG.conclave2024_1, IMG.conclave2023_1, IMG.conclave2022_1, IMG.conclave2019_1, IMG.conc24_2, IMG.conc24_3, IMG.conc24_4, IMG.conc24_5],
@@ -4576,6 +4674,31 @@ function renderFutureEventPage(slug) {
 
   return `
     ${renderPageBanner(event.title, event.subtitle, event.banner, [{ text: 'Future Events' }, { text: event.title }])}
+
+    ${event.countdownTarget ? `
+    <!-- Countdown to event -->
+    <section class="section bg-light" style="padding:56px 0">
+      <div class="container">
+        <div class="countdown-heading fade-in">${event.countdownLabel || 'Countdown to the Event'}</div>
+        <div class="countdown fade-in" data-countdown-target="${event.countdownTarget}">
+          <div class="countdown-unit">
+            <div class="countdown-num" data-unit="months">00</div>
+            <div class="countdown-label">Months</div>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <div class="countdown-num" data-unit="days">00</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <div class="countdown-num" data-unit="hours">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+        </div>
+        ${event.countdownFootnote ? `<div class="countdown-footnote fade-in">${event.countdownFootnote}</div>` : ''}
+      </div>
+    </section>` : ''}
 
     <!-- Emotion-driven visuals: featured carousel -->
     <section class="section bg-white" style="padding-bottom:0">
@@ -4684,15 +4807,16 @@ function gdThumb(id) {
   return `https://drive.google.com/thumbnail?id=${id}&sz=w400`;
 }
 
-function renderNEBPersonCard(person) {
+function renderNEBPersonCard(person, index) {
   const initial = person.name ? person.name.charAt(0) : 'N';
   const imgHTML = person.img
     ? `<img src="${gdThumb(person.img)}" alt="${person.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
       + `<div class="neb-img-placeholder" style="display:none">${initial}</div>`
     : `<div class="neb-img-placeholder">${initial}</div>`;
+  const bg = (index % 2 === 0) ? '#f8ccdb' : '#b2a4d0';
 
   return `
-    <div class="neb-person-card">
+    <div class="neb-person-card" style="background:${bg}">
       <div class="neb-card-accent"></div>
       <div class="neb-person-card-img">
         ${imgHTML}
@@ -4711,6 +4835,7 @@ function renderNEBCategoryPage(categoryKey) {
   const members = NEB_data[categoryKey] || [];
 
   let cardsHTML;
+  let cardIndex = 0;
   if (categoryKey === 'Chapter Presidents') {
     const groups = {};
     members.forEach(m => {
@@ -4721,10 +4846,12 @@ function renderNEBCategoryPage(categoryKey) {
 
     cardsHTML = Object.entries(groups).map(([region, people]) => `
       <div class="neb-group-header"><h3>${region}</h3></div>
-      ${people.map(p => renderNEBPersonCard(p)).join('')}
+      <div class="neb-group-cards">
+        ${people.map(p => renderNEBPersonCard(p, cardIndex++)).join('')}
+      </div>
     `).join('');
   } else {
-    cardsHTML = members.map(p => renderNEBPersonCard(p)).join('');
+    cardsHTML = members.map((p, i) => renderNEBPersonCard(p, i)).join('');
   }
 
   return `
@@ -4869,9 +4996,11 @@ class RootxApp extends HTMLElement {
       <div class="neb-overlay" id="nebOverlay"></div>
       <div class="neb-pie" id="nebPie"></div>
       <div class="neb-fab" id="nebFab">
-        <button class="neb-btn" id="nebBtn" aria-label="Open NEB Directory">
+        <button class="neb-btn" id="nebBtn" aria-label="Open National Executive Board Directory">
           <span class="neb-label">
-            <span>N</span><span>E</span><span>B</span>
+            <span class="neb-label-word"><span class="neb-label-initial">N</span>ational</span>
+            <span class="neb-label-word"><span class="neb-label-initial">E</span>xecutive</span>
+            <span class="neb-label-word"><span class="neb-label-initial">B</span>oard</span>
           </span>
         </button>
       </div>
@@ -5248,6 +5377,50 @@ class RootxApp extends HTMLElement {
 
           startAutoScroll();
         }
+      }
+
+      // ── Countdown timer (future event pages) ───────────────────────────────
+      const countdownEl = shadow.querySelector('[data-countdown-target]');
+      if (countdownEl) {
+        const target = new Date(countdownEl.dataset.countdownTarget).getTime();
+        const monthsEl = countdownEl.querySelector('[data-unit="months"]');
+        const daysEl = countdownEl.querySelector('[data-unit="days"]');
+        const hoursEl = countdownEl.querySelector('[data-unit="hours"]');
+        let countdownTimer = null;
+
+        const updateCountdown = () => {
+          const now = new Date();
+          let diff = target - now.getTime();
+          if (diff < 0) diff = 0;
+
+          const totalHours = Math.floor(diff / (1000 * 60 * 60));
+          const target2 = new Date(target);
+          let months = (target2.getFullYear() - now.getFullYear()) * 12 + (target2.getMonth() - now.getMonth());
+          const dayAdjust = new Date(now);
+          dayAdjust.setMonth(dayAdjust.getMonth() + months);
+          if (dayAdjust.getTime() > target && months > 0) months--;
+          if (months < 0) months = 0;
+
+          const remainderAfterMonths = new Date(now);
+          remainderAfterMonths.setMonth(remainderAfterMonths.getMonth() + months);
+          let remDiff = target - remainderAfterMonths.getTime();
+          if (remDiff < 0) remDiff = 0;
+          const days = Math.floor(remDiff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((remDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+          if (monthsEl) monthsEl.textContent = String(months).padStart(2, '0');
+          if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+          if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+
+          if (totalHours <= 0 && countdownTimer) {
+            clearInterval(countdownTimer);
+            this._intervalHandlers = this._intervalHandlers.filter(id => id !== countdownTimer);
+          }
+        };
+
+        updateCountdown();
+        countdownTimer = setInterval(updateCountdown, 60 * 1000);
+        this._intervalHandlers.push(countdownTimer);
       }
 
       // ── Draggable (touch + mouse), half visible from right edge ───────────
