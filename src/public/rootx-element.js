@@ -2527,7 +2527,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 /* ── Site Loader ─────────────────────────────────── */
 .site-loader {
   position: fixed; inset: 0;
-  background: #0e0c1e;
+  background: #5d449b;
   z-index: 20000;
   display: flex; align-items: center; justify-content: center;
   transition: opacity 0.8s ease;
