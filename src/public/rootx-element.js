@@ -1076,7 +1076,8 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .nav-item {
   position: relative;
 }
-.nav-item > a {
+.nav-item > a,
+.nav-item > .nav-trigger {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1090,10 +1091,22 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   transition: color 0.3s;
   white-space: nowrap;
 }
-.nav-item > a:hover { color: #b76e79; }
-.nav-item > a svg { width: 12px; height: 12px; opacity: 0.6; transition: transform 0.3s; }
-.nav-item.dropdown-open > a { color: #b76e79; }
-.nav-item.dropdown-open > a svg { transform: rotate(180deg); }
+.nav-item > .nav-trigger {
+  background: none;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-item > .nav-trigger:focus-visible,
+.nav-item > a:focus-visible { outline: 2px solid #b76e79; outline-offset: 2px; border-radius: 4px; }
+.nav-item > a:hover,
+.nav-item > .nav-trigger:hover { color: #b76e79; }
+.nav-item > a svg,
+.nav-item > .nav-trigger svg { width: 12px; height: 12px; opacity: 0.6; transition: transform 0.3s; }
+.nav-item.dropdown-open > .nav-trigger { color: #b76e79; }
+.nav-item.dropdown-open > .nav-trigger svg { transform: rotate(180deg); opacity: 1; }
 .nav-item.active > a { color: #b76e79; }
 
 /* Dropdown */
@@ -1184,7 +1197,8 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   }
   .nav-wrapper.open { right: 0; }
   .nav-item { width: 100%; }
-  .nav-item > a {
+  .nav-item > a,
+  .nav-item > .nav-trigger {
     padding: 14px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     width: 100%;
@@ -1200,10 +1214,19 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
     box-shadow: none;
     border: none;
     padding: 0 0 0 16px;
-    display: none;
+    display: block;
     min-width: auto;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 0.35s ease, visibility 0s linear 0.35s;
   }
-  .nav-item.dropdown-open > .dropdown { display: block; }
+  .nav-item > .nav-trigger { justify-content: space-between; }
+  .nav-item.dropdown-open > .dropdown {
+    max-height: 600px;
+    visibility: visible;
+    transition: max-height 0.35s ease, visibility 0s;
+  }
   .dropdown a {
     padding: 10px 0;
     font-size: 0.85rem;
@@ -2987,15 +3010,15 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 
 // ─── HEADER RENDERER ────────────────────────────────────────────────────────
 function renderHeader(currentPage) {
-  const navHTML = NAV_ITEMS.map(item => {
+  const navHTML = NAV_ITEMS.map((item, idx) => {
     const isActive = item.slug === currentPage ||
       (item.children && item.children.some(c => c.slug === currentPage));
 
     if (item.children) {
       return `
         <div class="nav-item${isActive ? ' active' : ''}">
-          <a href="/${item.children[0].slug}" data-nav>${item.text} ${ICONS.chevronDown}</a>
-          <div class="dropdown">
+          <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="dd-${idx}">${item.text} ${ICONS.chevronDown}</button>
+          <div class="dropdown" id="dd-${idx}">
             ${item.children.map(child => `
               <a href="/${child.slug}" data-nav>${child.text === item.text ? 'Overview' : child.text}</a>
             `).join('')}
@@ -4997,6 +5020,7 @@ class RootxApp extends HTMLElement {
     this._scrollHandlers = [];
     this._intervalHandlers.forEach(id => clearInterval(id));
     this._intervalHandlers = [];
+    if (this._navAbort) this._navAbort.abort();
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
@@ -5060,6 +5084,67 @@ class RootxApp extends HTMLElement {
     this._rendered = true;
   }
 
+  // Click-to-expand dropdowns: accordion on mobile, popover on desktop.
+  _setupNavDropdowns(shadow, toggle, navWrapper) {
+    if (this._navAbort) this._navAbort.abort();
+    const ac = this._navAbort = new AbortController();
+    const { signal } = ac;
+    const items = [...shadow.querySelectorAll('.nav-item')].filter(i => i.querySelector('.nav-trigger'));
+
+    const setOpen = (item, open) => {
+      item.classList.toggle('dropdown-open', open);
+      item.querySelector('.nav-trigger').setAttribute('aria-expanded', String(open));
+    };
+    const closeAll = (except) => items.forEach(i => { if (i !== except) setOpen(i, false); });
+    const closeDrawer = () => {
+      navWrapper.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    items.forEach(item => {
+      const trigger = item.querySelector('.nav-trigger');
+      trigger.addEventListener('click', () => {
+        const willOpen = !item.classList.contains('dropdown-open');
+        closeAll(item);
+        setOpen(item, willOpen);
+      }, { signal });
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && item.classList.contains('dropdown-open')) {
+          setOpen(item, false);
+          trigger.focus();
+          e.stopPropagation();
+        }
+      }, { signal });
+      // Picking a link collapses the menu
+      item.querySelectorAll('.dropdown a').forEach(a => a.addEventListener('click', () => closeAll(), { signal }));
+    });
+
+    // Tap/click outside closes open dropdowns (and the mobile drawer)
+    document.addEventListener('click', (e) => {
+      const path = e.composedPath();
+      if (!path.some(n => n.classList && n.classList.contains('nav-item'))) closeAll();
+      if (navWrapper.classList.contains('open') &&
+          !path.includes(navWrapper) && !path.includes(toggle)) closeDrawer();
+    }, { signal });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeAll(); closeDrawer(); }
+    }, { signal });
+
+    // Reset state when crossing the mobile/desktop breakpoint
+    window.matchMedia('(max-width: 1100px)').addEventListener('change', () => {
+      closeAll();
+      closeDrawer();
+    }, { signal });
+
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.addEventListener('click', () => {
+      const open = navWrapper.classList.contains('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      if (!open) closeAll();
+    }, { signal });
+  }
+
   setupInteractions() {
     const shadow = this.shadowRoot;
 
@@ -5072,24 +5157,7 @@ class RootxApp extends HTMLElement {
         navWrapper.classList.toggle('open');
       });
 
-      const navItems = shadow.querySelectorAll('.nav-item');
-      navItems.forEach(item => {
-        const dropdown = item.querySelector('.dropdown');
-        if (dropdown) {
-          item.querySelector('a').addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const wasOpen = item.classList.contains('dropdown-open');
-            navItems.forEach(i => i.classList.remove('dropdown-open'));
-            if (!wasOpen) item.classList.add('dropdown-open');
-          });
-        }
-      });
-      const closeDropdowns = () => navItems.forEach(i => i.classList.remove('dropdown-open'));
-      document.addEventListener('click', (e) => {
-        if (!e.composedPath().some(n => n.classList && n.classList.contains('nav-item'))) closeDropdowns();
-      });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDropdowns(); });
+      this._setupNavDropdowns(shadow, toggle, navWrapper);
     }
 
     // Scroll Animations
