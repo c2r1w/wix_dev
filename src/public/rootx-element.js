@@ -52,7 +52,7 @@ const NEB_data = {
       "name": "Ethel Hart",
       "img": "1PraJ0zhMMZjynwnvLrSlecmmeKcCdRDG",
       "info": "16th National President",
-      "sub": ""
+      "sub": "" 
     },
     {
       "name": "Joann Williams",
@@ -206,7 +206,7 @@ const NEB_data = {
     },
     {
       "name": "Anita English",
-      "img": "1hckexOL9EKzVnqeLS_PcEbdCn04iMivQ",
+      "img": "1AdipaTa6_r9AFMCmnMwetz0o_Zg8Kv_t",
       "info": "Portsmouth",
       "sub": "Mid Atlantic Region"
     },
@@ -218,7 +218,7 @@ const NEB_data = {
     },
     {
       "name": "Bridgett Rider",
-      "img": "1iXc1ydTtFmWyRGhVQYrhQ65hRfopOPui",
+      "img": "1n0hVJsClc0v67dHBYzwb7oRQXvs21TRZ",
       "info": "Suffolk",
       "sub": "Mid Atlantic Region"
     },
@@ -248,7 +248,7 @@ const NEB_data = {
     },
     {
       "name": "Cheryl Roberts",
-      "img": "1yebYMmb_AqnnhGxWKQLnA8Luod4wtgDy",
+      "img": "10_4hmbg-4W5m-ubxVappXDXxxY2BNsCC",
       "info": "Tri State",
       "sub": "Northeast Region"
     },
@@ -281,7 +281,15 @@ const NEB_data = {
       "img": "1JyzYbUriHA8lroWrN65SyscTAt9B1Pe8",
       "info": "Raeford",
       "sub": "Southeast Region"
+    },  {
+      "name": "Farrah McKoy",
+      "img": "1SAweEMGrZPUNwMxGscsOzZc3jZfZ-Mcb",
+      "info": "Raleigh-Durham",
+      "sub": "Southeast Region"
     },
+
+
+
     {
       "name": "Musheerah Ali",
       "img": "1lZGec9WZgKAovy982ysGRJYaAB4Ggc2O",
@@ -290,7 +298,7 @@ const NEB_data = {
     },
     {
       "name": "Rose Walker",
-      "img": "1bxCE-7v0S0NoSFPCMZR9ICpgpDelnGg5",
+      "img": "1VxM_KcGo8eS5wZtAnxU-p3js8ykabfw7",
       "info": "Augusta",
       "sub": "Southwest Region"
     },
@@ -980,7 +988,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   background: transparent;
 }
 .site-header.solid {
-  background: rgba(26, 26, 46, 0.98);
+  background:#5d449b;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
