@@ -74,13 +74,13 @@ const NEB_data = {
     },
     {
       "name": "Roberta Epps",
-      "img": "1KzT_eV6wb-gfVaa8LxgEcXOEAJL-YhKr",
+      "img": "1QzvPE-sNAQ7MTro23XT4ZvoNM_w85BIY",
       "info": "20th National President",
       "sub": ""
     },
     {
       "name": "Agatha Grimes",
-      "img": "1lRJzyV0SXGdfIBF0a_Wp_O7Maq1MqSRx",
+      "img": "1cGKb74nAL9NI1AG66OUQU-7kuPYetHVh",
       "info": "21st National President",
       "sub": "Immediate Past President"
     }
@@ -161,7 +161,7 @@ const NEB_data = {
       "sub": ""
     },
     {
-      "name": "Angela Mcclanahan",
+      "name": "Angelia Mcclanahan",
       "img": "1Gv7WT_sugQ8mwNSfFlvHUlCD_YegjBxE",
       "info": "Internal Examiner",
       "sub": ""
@@ -1857,6 +1857,23 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   height: 100%;
   border: 0;
 }
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .video-modal-close {
   position: absolute;
   top: -48px; right: 0;
@@ -2816,7 +2833,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   gap: 28px;
 }
 .neb-cards-grid .neb-person-card {
-  flex: 0 1 calc(25% - 21px);
+  flex: 0 1 calc(33.333% - 19px);
   min-width: 220px;
 }
 .neb-group-cards {
@@ -2827,12 +2844,12 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   gap: 28px;
 }
 .neb-group-cards .neb-person-card {
-  flex: 0 1 calc(25% - 21px);
+  flex: 0 1 calc(33.333% - 19px);
   min-width: 220px;
 }
 @media (max-width: 1024px) {
   .neb-cards-grid .neb-person-card,
-  .neb-group-cards .neb-person-card { flex: 0 1 calc(33.333% - 19px); }
+  .neb-group-cards .neb-person-card { flex: 0 1 calc(50% - 14px); }
 }
 @media (max-width: 700px) {
   .neb-cards-grid, .neb-group-cards { gap: 16px; }
@@ -3400,6 +3417,19 @@ function renderAboutPage() {
     <section class="section bg-light">
       <div class="container">
         <div class="section-title fade-in">
+          <div class="label">From Our Leadership</div>
+          <h2>Message from Our National President</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="video-embed fade-in">
+          <iframe src="https://drive.google.com/file/d/${PRESIDENT_VIDEO_ID}/preview" allow="autoplay; encrypted-media" allowfullscreen title="Message from Our National President"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white">
+      <div class="container">
+        <div class="section-title fade-in">
           <div class="label">What We Believe</div>
           <h2>Our Purpose</h2>
           <div class="section-divider"></div>
@@ -3425,7 +3455,7 @@ function renderAboutPage() {
       </div>
     </section>
 
-    <section class="section bg-white">
+    <section class="section bg-light">
       <div class="container">
         <div class="section-title fade-in">
           <div class="label">Core Principles</div>
