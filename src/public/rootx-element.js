@@ -1091,7 +1091,9 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   white-space: nowrap;
 }
 .nav-item > a:hover { color: #b76e79; }
-.nav-item > a svg { width: 12px; height: 12px; opacity: 0.6; }
+.nav-item > a svg { width: 12px; height: 12px; opacity: 0.6; transition: transform 0.3s; }
+.nav-item.dropdown-open > a { color: #b76e79; }
+.nav-item.dropdown-open > a svg { transform: rotate(180deg); }
 .nav-item.active > a { color: #b76e79; }
 
 /* Dropdown */
@@ -1111,7 +1113,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
   box-shadow: 0 15px 50px rgba(0,0,0,0.3);
   border: 1px solid rgba(255,255,255,0.08);
 }
-.nav-item:hover > .dropdown {
+.nav-item.dropdown-open > .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -2995,7 +2997,7 @@ function renderHeader(currentPage) {
           <a href="/${item.children[0].slug}" data-nav>${item.text} ${ICONS.chevronDown}</a>
           <div class="dropdown">
             ${item.children.map(child => `
-              <a href="/${child.slug}" data-nav>${child.text}</a>
+              <a href="/${child.slug}" data-nav>${child.text === item.text ? 'Overview' : child.text}</a>
             `).join('')}
           </div>
         </div>`;
@@ -5070,17 +5072,24 @@ class RootxApp extends HTMLElement {
         navWrapper.classList.toggle('open');
       });
 
-      shadow.querySelectorAll('.nav-item').forEach(item => {
+      const navItems = shadow.querySelectorAll('.nav-item');
+      navItems.forEach(item => {
         const dropdown = item.querySelector('.dropdown');
         if (dropdown) {
           item.querySelector('a').addEventListener('click', (e) => {
-            if (window.innerWidth <= 1100) {
-              e.preventDefault();
-              item.classList.toggle('dropdown-open');
-            }
+            e.preventDefault();
+            e.stopPropagation();
+            const wasOpen = item.classList.contains('dropdown-open');
+            navItems.forEach(i => i.classList.remove('dropdown-open'));
+            if (!wasOpen) item.classList.add('dropdown-open');
           });
         }
       });
+      const closeDropdowns = () => navItems.forEach(i => i.classList.remove('dropdown-open'));
+      document.addEventListener('click', (e) => {
+        if (!e.composedPath().some(n => n.classList && n.classList.contains('nav-item'))) closeDropdowns();
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDropdowns(); });
     }
 
     // Scroll Animations
