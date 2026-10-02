@@ -484,8 +484,8 @@ const IMG = {
   // ── Leader headshots: Northeast Region ──
   leaderWillaMajors: 'https://static.wixstatic.com/media/fd8f92_ec2b394a403b4edcbba7ddc1d2ac373a~mv2.png/v1/crop/x_204,y_0,w_787,h_959/fill/w_443,h_540,al_c,q_85,enc_avif,quality_auto/Willa%20Majors%20Johnson_edited.png',
   leaderThelmaMurray: 'https://static.wixstatic.com/media/fd8f92_592a6c980bcc4e29a08b8e972aeb4b7f~mv2.png/v1/crop/x_257,y_0,w_887,h_1081/fill/w_443,h_540,al_c,q_85,enc_avif,quality_auto/orchid%20flower-02_edited_edited_edited_edited_edited.png',
-  leaderSharonPetty: 'https://static.wixstatic.com/media/fd8f92_bcaf82ea8075412caa365624daff887f~mv2.jpg/v1/fill/w_443,h_540,al_c,q_80,enc_avif,quality_auto/Floral%20Title%20Page%20Presentation%20(8_edited.jpg',
-  leaderDeniAntoinette: 'https://static.wixstatic.com/media/fd8f92_bcaf82ea8075412caa365624daff887f~mv2.jpg/v1/fill/w_443,h_540,al_c,q_80,enc_avif,quality_auto/Floral%20Title%20Page%20Presentation%20(8_edited.jpg',
+  leaderSharonPetty: 'https://drive.google.com/thumbnail?id=1uVJZmTBR5_7VvxavbWa8MLhGOuCV7ifn&sz=w400',
+   leaderDeniAntoinette: 'https://drive.google.com/thumbnail?id=1DvNDzef_KIaKTZf3xG527sDL3LVKZATg&sz=w400',
   leaderEleanorJohnson: 'https://static.wixstatic.com/media/fd8f92_3400f9113de74dafac1752f24c9d202c~mv2.png/v1/crop/x_0,y_114,w_1980,h_2414/fill/w_443,h_540,al_c,q_85,enc_avif,quality_auto/Eleanor%20Johnson_edited_edited_edited_edi.png',
   leaderNicoleGaskin: 'https://static.wixstatic.com/media/fd8f92_90bb56fb304d4478801304f588063592~mv2.jpg/v1/crop/x_27,y_0,w_246,h_300/fill/w_344,h_420,al_c,lg_1,q_80,enc_avif,quality_auto/Dr%20Nicole%20Gaskins-Laniyan1_edited.jpg',
   leaderDanitaBerry: 'https://static.wixstatic.com/media/fd8f92_ff191b4ea7e94466ae4ffb63549bf435~mv2.png/v1/fill/w_443,h_540,al_c,q_85,enc_avif,quality_auto/orchid%20flower-02_edited_edited_edited.png',
@@ -498,7 +498,7 @@ const IMG = {
   leaderEvelynJemison: 'https://static.wixstatic.com/media/fd8f92_94bf6ba6649c430cacff0c694985deb7~mv2.jpg/v1/crop/x_172,y_0,w_931,h_1136/fill/w_443,h_540,al_c,q_80,enc_avif,quality_auto/Red%20Springs%20Chpt_edited_edited.jpg',
   leaderReneeBeatty: 'https://static.wixstatic.com/media/fd8f92_6eda9eb5ea6b4aebb333f504d77add9e~mv2.jpg/v1/fill/w_443,h_540,al_c,q_80,enc_avif,quality_auto/Renee%20Beaty%20Wilmington%20Chp%20President_edited.jpg',
   // ── Leader headshots: Southwest Region ──
-  leaderMamieWatkins: 'https://static.wixstatic.com/media/fd8f92_bcfa62f2d315403e9e4056a1fad7c1cf~mv2.jpg/v1/crop/x_0,y_74,w_1921,h_2342/fill/w_443,h_540,al_c,q_80,enc_avif,quality_auto/MWatkins%20v1_edited_edited_edited.jpg',
+  leaderMamieWatkins: 'https://drive.google.com/thumbnail?id=1yYF1m0zXgRRsw6lsWPzutisF9S58iRKs&amp;sz=w400',
   leaderElizabethKersey: 'https://static.wixstatic.com/media/fd8f92_95460137186c40c08b443d216a795b87~mv2.jpg/v1/crop/x_0,y_130,w_1428,h_1741/fill/w_443,h_540,al_c,q_80,enc_avif,quality_auto/9_edited.jpg',
   leaderSandraAnderson: 'https://static.wixstatic.com/media/fd8f92_3669a0c574de4085a39e3b5f4891b8f8~mv2.jpg/v1/fill/w_443,h_540,al_c,q_80,enc_avif,quality_auto/sandra%20anderson_edited.jpg',
   leaderCynthiaShepard: 'https://static.wixstatic.com/media/fd8f92_20d36c44daf84cae985279405a78319c~mv2.jpg/v1/crop/x_0,y_130,w_1428,h_1741/fill/w_443,h_540,al_c,q_80,enc_avif,quality_auto/11_edited.jpg',
@@ -1104,7 +1104,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 .nav-item > a:hover,
 .nav-item > .nav-trigger:hover { color: #b76e79; }
 .nav-item > a svg,
-.nav-item > .nav-trigger svg { width: 12px; height: 12px; opacity: 0.6; transition: transform 0.3s; }
+.nav-item > .nav-trigger svg { width: 18px; height: 18px; stroke-width: 2.5; opacity: 0.8; transition: transform 0.3s; }
 .nav-item.dropdown-open > .nav-trigger { color: #b76e79; }
 .nav-item.dropdown-open > .nav-trigger svg { transform: rotate(180deg); opacity: 1; }
 .nav-item.active > a { color: #b76e79; }
@@ -1186,7 +1186,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
     top: 0; right: -100%;
     width: 320px;
     height: 100vh;
-    background: #1a1a2e;
+    background: #5d449b;
     flex-direction: column;
     align-items: flex-start;
     padding: 80px 24px 24px;
@@ -2281,7 +2281,7 @@ p { margin-bottom: 1rem; color: #555; font-size: 1.05rem; line-height: 1.8; }
 
 /* ── Footer ─────────────────────────────────────────── */
 .site-footer {
-  background: #0d0d1a;
+  background: #5d449b;
   color: rgba(255,255,255,0.7);
   padding-top: 80px;
 }
