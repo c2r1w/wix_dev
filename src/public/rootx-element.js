@@ -4429,11 +4429,20 @@ function renderContactPage() {
             <div style="margin-top:32px">
               <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:24px">
                 <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#f8f5fc,#ede4f7);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                  <span style="color:#5e398f">${ICONS.email}</span>
+                  <span style="color:#5e398f;width:22px;height:22px;display:inline-flex">${ICONS.email}</span>
                 </div>
                 <div>
                   <h4 style="font-size:1rem;margin-bottom:4px">Email</h4>
                   <p style="margin:0;font-size:0.92rem"><a href="mailto:info@lasamigasincorporated.org" style="color:#5e398f">info@lasamigasincorporated.org</a></p>
+                </div>
+              </div>
+              <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:24px">
+                <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#f8f5fc,#ede4f7);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <span style="color:#5e398f;width:22px;height:22px;display:inline-flex">${ICONS.location}</span>
+                </div>
+                <div>
+                  <h4 style="font-size:1rem;margin-bottom:4px">Location</h4>
+                  <p style="margin:0;font-size:0.92rem">PO Box 511, Indian Trail, NC 28078</p>
                 </div>
               </div>
             </div>
